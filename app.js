@@ -265,25 +265,795 @@ const serviceConfig = {
   cafe: {
     title: "ì–´ë–¤ ë¶€ì‚° ê°ì„±ì„ ë§Œë‚˜ê³  ì‹¶ë‚˜ìš”?",
     description: "ìœ„ì¹˜ì™€ ì—¬í–‰ ìƒí™©ì— ë§žì¶° ì˜¤ì…˜ë·°Â·ê°ì„± ì¹´íŽ˜ì™€ ë””ì €íŠ¸ë¥¼ ì¶”ì²œí•´ ë“œë ¤ìš”.",
-    resultTitle: "ë‹¹ì‹ ì„ ìœ„í•œ ë¶€ì‚° ë·óO7¶‰žËkºwµçq…”¹…É•„¤¤Í½É”€¬ô€Äàì(€€€€€€€¥˜€¡Í•±•Ñ•‘5‰Ñ¤¤Í½É”€¬ô¡…Í¡Q•áÐ¡€‘íÁ±…”¹¹…µ•ô´‘íÍ•±•Ñ•‘5‰Ñ¥ô´‘íÍÑ…Ñ”¹½µÁ…¹¥½¹õ€¤€”€ÈÐì(€€€€€€€É•ÑÕÉ¸ì€¸¸¹Á±…”°Í½É”è5…Ñ ¹µ¥¸¡Í½É”°€äà¤ôì(€€€€€ô¤ì((€€€€€É•ÑÕÉ¸É…¹­•(€€€€€€€€¹Í½ÉÐ ¡„°ˆ¤€ôø…Ñ•½Éä€ôôô€‰™½½ˆ(€€€€€€€€€€üˆ¹É…Ñ¥¹œ€´„¹É…Ñ¥¹œñðˆ¹Í½É”€´„¹Í½É”(€€€€€€€€€€èˆ¹Í½É”€´„¹Í½É”ñðˆ¹É…Ñ¥¹œ€´„¹É…Ñ¥¹œ¤(€€€€€€€€¹Í±¥” À°€Ì¤ì(€€€ô¤ì(€ô((€½¹ÍÐ™½½‘…¹‘¥‘…Ñ•Ì€ô™½½‘…Ñ„¹™¥±Ñ•È ¡Á±…”¤€ôøÁ±…”¹…É•…Ìü¹¥¹±Õ‘•Ì¡ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹±½…Ñ¥½¸¤¤ì(€É•ÑÕÉ¸ÍÑ…Ñ”¹…Ñ•½É¥•Ì¹™±…Ñ5…À ¡…Ñ•½Éä¤€ôøì(€€€¥˜€¡…Ñ•½Éä€ôôô€‰™½½ˆ¤ì(€€€€€É•ÑÕÉ¸™½½‘…¹‘¥‘…Ñ•Ì(€€€€€€€€¹µ…À ¡Á±…”¤€ôø€¡ì€¸¸¹Á±…”°Í½É”èÍ½É•½½¡Á±…”°ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¤°Í•ÉÙ¥”è…Ñ•½Éäô¤¤(€€€€€€€€¹™¥±Ñ•È ¡Á±…”¤€ôøÁ±…”¹Í½É”€ø€Ä¤(€€€€€€€€¹Í½ÉÐ ¡„°ˆ¤€ôøˆ¹É…Ñ¥¹œ€´„¹É…Ñ¥¹œñðˆ¹Í½É”€´„¹Í½É”¤(€€€€€€€€¹Í±¥” À°€Ì¤ì(€€€ô(€€€½¹ÍÐÍ½ÕÉ”€ô…Ñ•½Éä€ôôô€‰…™”ˆ€ü…™•…Ñ„€è…Ñ•½Éä€ôôô€‰…Ñ¥Ù¥Ñäˆ€ü…Ñ¥Ù¥Ñå…Ñ„€è…ÑÑÉ…Ñ¥½¹…Ñ„ì(€€€É•ÑÕÉ¸Í½ÕÉ”(€€€€€€¹µ…À ¡Á±…”¤€ôø€¡ì€¸¸¹Á±…”°Í½É”èÍ½É•ÑÑÉ…Ñ¥½¸¡Á±…”°ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¤°Í•ÉÙ¥”è…Ñ•½Éäô¤¤(€€€€€€¹Í½ÉÐ ¡„°ˆ¤€ôøˆ¹Í½É”€´„¹Í½É”¤(€€€€€€¹Í±¥” À°€Ì¤ì(€ô¤ì)ô()™Õ¹Ñ¥½¸É•…Ñ•5…ÁUÉ°¡¹…µ”¤ì(€½¹ÍÐ±½…Ñ¥½¸€ôÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹±½…Ñ¥½¸ñð€‹®Ú²
-Àˆì(€½¹ÍÐÁ±…”€ôÍÑ…Ñ”¹É•½µµ•¹‘…Ñ¥½¹Ì¹™¥¹ ¡¥Ñ•´¤€ôø¥Ñ•´¹¹…µ”€ôôô¹…µ”¤ì(€½¹ÍÐ…É•„€ôÁ±…”ü¹…É•„ñð±½…Ñ¥½¸ì(€É•ÑÕÉ¸¡ÑÑÁÌè¼½µ…À¹­…­…¼¹½´½±¥¹¬½Í•…É ¼‘í•¹½‘•UI%½µÁ½¹•¹Ð¡ƒ®Ú²
-À€‘í…É•…ô€‘í¹…µ•õ€¥õ€ì)ô()™Õ¹Ñ¥½¸É•…Ñ•½½±•5…ÁUÉ°¡¹…µ”¤ì(€½¹ÍÐÁ±…”€ôÍÑ…Ñ”¹É•½µµ•¹‘…Ñ¥½¹Ì¹™¥¹ ¡¥Ñ•´¤€ôø¥Ñ•´¹¹…µ”€ôôô¹…µ”¤ì(€½¹ÍÐ…É•„€ôÁ±…”ü¹…É•„ñð€‹®Ú²
-Àˆì(€É•ÑÕÉ¸¡ÑÑÁÌè¼½ÝÝÜ¹½½±”¹½´½µ…ÁÌ½Í•…É ¼ý…Á¤ôÄ™ÅÕ•Éäô‘í•¹½‘•UI%½µÁ½¹•¹Ð¡ƒ®Ú²
-À€‘í…É•…ô€‘í¹…µ•õ€¥õ€ì)ô()™Õ¹Ñ¥½¸•Ñ…±±‰…­A±…•%µ…”¡Á±…”¤ì(€½¹ÍÐ•á…ÑEÕ•Éä€ô•¹½‘•UI%½µÁ½¹•¹Ð¡ƒ®Ú²
-À€‘íÁ±…”¹…É•„ñð€ˆ‰ô€‘íÁ±…”¹¹…µ•õ€¤ì(€É•ÑÕÉ¸¡ÑÑÁÌè¼½ÑÍ”È¹µ´¹‰¥¹œ¹¹•Ð½Ñ ýÄô‘í•á…ÑEÕ•Éåô™ÜôäÀÀ™ ôÔÐÀ™ŒôÜ™ÉÌôÄ™ÀôÁ€ì)ô()…Íå¹Œ™Õ¹Ñ¥½¸™¥¹‘A±…•%µ…”¡¹…µ”°…É•„¤ì(€½¹ÍÐ…¡•-•ä€ô‰ÕÍ…¸µÉ•…°µÁ¡½Ñ¼µØÈè‘í…É•…ôè‘í¹…µ•õ€ì(€½¹ÍÐ…¡•€ôÍ•ÍÍ¥½¹MÑ½É…”¹•Ñ%Ñ•´¡…¡•-•ä¤ì(€¥˜€¡…¡•¤É•ÑÕÉ¸…¡•ì(€½¹ÍÐÁ…É…µÌ€ô¹•ÜUI1M•…É¡A…É…µÌ¡ì(€€€…Ñ¥½¸è€‰ÅÕ•Éäˆ°(€€€•¹•É…Ñ½Èè€‰Í•…É ˆ°(€€€ÍÉÍ•…É è¥¹Ñ¥Ñ±”épˆ‘í¹…µ•õpˆƒ®Ú²
-Á€°(€€€ÍÉ¹…µ•ÍÁ…”è€ˆØˆ°(€€€ÍÉ±¥µ¥Ðè€ˆÔˆ°(€€€ÁÉ½Àè€‰¥µ…•¥¹™¼ˆ°(€€€¥¥ÁÉ½Àè€‰ÕÉ°ˆ°(€€€¥¥ÕÉ±Ý¥‘Ñ è€ˆäÀÀˆ°(€€€™½Éµ…Ðè€‰©Í½¸ˆ°(€€€½É¥¥¸è€ˆ¨ˆ°(€ô¤ì(€ÑÉäì(€€€½¹ÍÐÉ•ÍÁ½¹Í”€ô…Ý…¥Ð™•Ñ ¡¡ÑÑÁÌè¼½½µµ½¹Ì¹Ý¥­¥µ•‘¥„¹½Éœ½Ü½…Á¤¹Á¡Àü‘íÁ…É…µÍõ€¤ì(€€€¥˜€ …É•ÍÁ½¹Í”¹½¬¤É•ÑÕÉ¸€ˆˆì(€€€½¹ÍÐ‘…Ñ„€ô…Ý…¥ÐÉ•ÍÁ½¹Í”¹©Í½¸ ¤ì(€€€½¹ÍÐ¥µ…”€ô=‰©•Ð¹Ù…±Õ•Ì¡‘…Ñ„¹ÅÕ•Éäü¹Á…•Ìñðíô¤¹™¥¹ ¡Á…”¤€ôøÁ…”¹¥µ…•¥¹™¼ü¹lÁtü¹Ñ¡Õµ‰ÕÉ°¤ü¹¥µ…•¥¹™¼ü¹lÁtü¹Ñ¡Õµ‰ÕÉ°ñð€ˆˆì(€€€¥˜€¡¥µ…”¤Í•ÍÍ¥½¹MÑ½É…”¹Í•Ñ%Ñ•´¡…¡•-•ä°¥µ…”¤ì(€€€É•ÑÕÉ¸¥µ…”ì(€ô…Ñ €¡|¤ì(€€€É•ÑÕÉ¸€ˆˆì(€ô)ô()…Íå¹Œ™Õ¹Ñ¥½¸¡å‘É…Ñ•A±…•%µ…•Ì ¤ì(€½¹ÍÐ¥µ…•±•µ•¹ÑÌ€ôl¸¸¹É•½µµ•¹‘…Ñ¥½¹1¥ÍÐ¹ÅÕ•ÉåM•±•Ñ½É±° ‰m‘…Ñ„µÁ±…”µ¥µ…•tˆ¥tì(€…Ý…¥ÐAÉ½µ¥Í”¹…±°¡¥µ…•±•µ•¹ÑÌ¹µ…À¡…Íå¹Œ€¡¥µ…”¤€ôøì(€€€¥µ…”¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ‰•ÉÉ½Èˆ°€ ¤€ôøì(€€€€€¥˜€¡¥µ…”¹ÍÉŒ€„ôô¥µ…”¹‘…Ñ…Í•Ð¹™…±±‰…¬¤ì(€€€€€€€¥µ…”¹ÍÉŒ€ô¥µ…”¹‘…Ñ…Í•Ð¹™…±±‰…¬ì(€€€€€€€É•ÑÕÉ¸ì(€€€€€ô(€€€€€¥µ…”¹±…ÍÍ1¥ÍÐ¹…‘ ‰¥ÌµÕ¹…Ù…¥±…‰±”ˆ¤ì(€€€€€¥µ…”¹±½Í•ÍÐ ˆ¹Á±…”µÙ¥ÍÕ…°ˆ¤ü¹±…ÍÍ1¥ÍÐ¹…‘ ‰Á¡½Ñ¼µÕ¹…Ù…¥±…‰±”ˆ¤ì(€€€ô¤ì(€€€½¹ÍÐÍ½ÕÉ”€ô…Ý…¥Ð™¥¹‘A±…•%µ…”¡‘•½‘•UI%½µÁ½¹•¹Ð¡¥µ…”¹‘…Ñ…Í•Ð¹Á±…•%µ…”¤°‘•½‘•UI%½µÁ½¹•¹Ð¡¥µ…”¹‘…Ñ…Í•Ð¹…É•„¤¤ì(€€€¥˜€¡Í½ÕÉ”¤¥µ…”¹ÍÉŒ€ôÍ½ÕÉ”ì(€€€¥µ…”¹±…ÍÍ1¥ÍÐ¹É•µ½Ù” ‰¥Ìµ±½…‘¥¹œˆ¤ì(€ô¤¤ì)ô()™Õ¹Ñ¥½¸É•¹‘•ÉI•½µµ•¹‘…Ñ¥½¹Ì ¤ì(€½¹ÍÐÍ•Ñ¥½¹9…µ•Ì€ôì…ÑÑÉ…Ñ¥½¸è€‹Â~N4ƒ®ÎóªÆÃ®š°ˆ°™½½è€‹Â~6Ðƒ®žo²žDˆ°…™”è€‹ŠbW¾â<ƒ®ÞÀ›²æÓ¶:`ˆ°…Ñ¥Ù¥Ñäè€‹Â~>ƒ²ÊÓ¶^`ˆôì(€É•½µµ•¹‘…Ñ¥½¹1¥ÍÐ¹¥¹¹•É!Q50€ôÍÑ…Ñ”¹…Ñ•½É¥•Ì¹µ…À ¡…Ñ•½Éä¤€ôøì(€€€½¹ÍÐÁ±…•Ì€ôÍÑ…Ñ”¹É•½µµ•¹‘…Ñ¥½¹Ì¹™¥±Ñ•È ¡Á±…”¤€ôøÁ±…”¹Í•ÉÙ¥”€ôôô…Ñ•½Éä¤ì(€€€É•ÑÕÉ¸€ñÍ•Ñ¥½¸±…ÍÌô‰É•½µµ•¹‘…Ñ¥½¸µÍ•Ñ¥½¸ˆø(€€€€€€ñ Ì±…ÍÌô‰É•½µµ•¹‘…Ñ¥½¸µÍ•Ñ¥½¸µ¡•…‘¥¹œˆø‘íÍ•Ñ¥½¹9…µ•Ím…Ñ•½Éåuô€ñÍÁ…¸û²ÚS²Êp€ÏªÎÌð½ÍÁ…¸øð½ Ìø(€€€€€€ñ‘¥Ø±…ÍÌô‰É•½µµ•¹‘…Ñ¥½¸µÉ¥ˆø‘íÁ±…•Ì¹µ…À (€€€€€€¡Á±…”°¥¹‘•à¤€ôø€(€€€€€€€€ñ…ÉÑ¥±”±…ÍÌô‰Á±…”µ…Éˆø(€€€€€€€€€€ñ‘¥Ø±…ÍÌô‰Á±…”µÙ¥ÍÕ…°ˆÍÑå±”ôˆ´µ…ÉµÉ…‘¥•¹Ðè€‘íÁ±…”¹É…‘¥•¹Ñôˆø(€€€€€€€€€€€€ñ„±…ÍÌô‰Á±…”µÁ¡½Ñ¼µ±¥¹¬ˆ¡É•˜ôˆ‘íÉ•…Ñ•½½±•5…ÁUÉ°¡Á±…”¹¹…µ”¥ôˆÑ…É•Ðô‰}‰±…¹¬ˆÉ•°ô‰¹½½Á•¹•È¹½É•™•ÉÉ•Èˆ…É¥„µ±…‰•°ô‰½½±”ƒ²ž®>²^C²p€‘íÁ±…”¹¹…µ•ôƒ².“²‚pƒ²
-³²žƒ®ÎÓªâÀˆø(€€€€€€€€€€€€€€ñ¥µœ±…ÍÌô‰Á±…”µÁ¡½Ñ¼¥Ìµ±½…‘¥¹œˆÍÉŒôˆ‘í•Ñ…±±‰…­A±…•%µ…”¡Á±…”¥ôˆ‘…Ñ„µ™…±±‰…¬ôˆ‘í•Ñ…±±‰…­A±…•%µ…”¡Á±…”¥ôˆ‘…Ñ„µÁ±…”µ¥µ…”ôˆ‘í•¹½‘•UI%½µÁ½¹•¹Ð¡Á±…”¹¹…µ”¥ôˆ‘…Ñ„µ…É•„ôˆ‘í•¹½‘•UI%½µÁ½¹•¹Ð¡Á±…”¹…É•„ñð€‹®Ú²
-Àˆ¥ôˆ…±Ðôˆ‘íÁ±…”¹¹…µ•ôƒ².“²‚pƒ²z—²0ƒ²
-³²žˆ±½…‘¥¹œô‰±…éäˆ€¼ø(€€€€€€€€€€€€ð½„ø(€€€€€€€€€€€€ñÍÁ…¸±…ÍÌô‰Á±…”µÁ¡½Ñ¼µÍ¡…‘”ˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆøð½ÍÁ…¸ø(€€€€€€€€€€€€ñÍÁ…¸±…ÍÌô‰Á±…”µÁ¡½Ñ¼µ±…‰•°ˆû².“²‚pƒ²z—²0ƒ²
-³²žð½ÍÁ…¸ø(€€€€€€€€€€€€ñÍÁ…¸±…ÍÌô‰Á±…”µÉ…¹¬ˆø‘í¥¹‘•à€¬€Åôð½ÍÁ…¸ø(€€€€€€€€€€€€ñÍÁ…¸±…ÍÌô‰µ…Ñ µ‰…‘”ˆø‘íÁ±…”¹Í•ÉÙ¥”€ôôô€‰™½½ˆ€üƒ¶>'²‚@€‘íÁ±…”¹É…Ñ¥¹œ¹Ñ½¥á• Ä¥õ€€èƒ²Þ£¶Z”ƒ²vó²æ`€‘íÁ±…”¹Í½É•ô•ôð½ÍÁ…¸ø(€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€ñ‘¥Ø±…ÍÌô‰Á±…”µ½¹Ñ•¹Ðˆø(€€€€€€€€€€€€ñÀ±…ÍÌô‰Á±…”µ…Ñ•½Éäˆø‘íÁ±…”¹…Ñ•½Éåôð½Àø(€€€€€€€€€€€€ñ Ìø‘íÁ±…”¹¹…µ•ôð½ Ìø(€€€€€€€€€€€€ñÀ±…ÍÌô‰Á±…”µ‘•ÍÉ¥ÁÑ¥½¸ˆø‘íÁ±…”¹‘•ÍÉ¥ÁÑ¥½¹ôð½Àø(€€€€€€€€€€€€ñ‘¥Ø±…ÍÌô‰Á±…”µÑ…Ìˆø(€€€€€€€€€€€€€€‘íÁ±…”¹‘¥ÍÁ±…åQ…Ì¹µ…À ¡Ñ…œ¤€ôø€ñÍÁ…¸±…ÍÌô‰Á±…”µÑ…œˆø‘íÑ…ôð½ÍÁ…¸ù€¤¹©½¥¸ ˆˆ¥ô(€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€ñ‘¥Ø±…ÍÌô‰É•Ù¥•Üµ‰½àˆøñˆû¶Vs²’ƒ®š³®ÞÀð½ˆøƒ
-ÜƒŠp‘íÁ±…”¹É•Ù¥•Ý÷Štð½‘¥Øø(€€€€€€€€€€€€ñ‘¥Ø±…ÍÌô‰µ…Àµ±¥¹¬µÉ½Üˆø(€€€€€€€€€€€€€€ñ„±…ÍÌô‰µ…Àµ±¥¹¬ˆ¡É•˜ôˆ‘íÉ•…Ñ•5…ÁUÉ°¡Á±…”¹¹…µ”¥ôˆÑ…É•Ðô‰}‰±…¹¬ˆÉ•°ô‰¹½½Á•¹•È¹½É•™•ÉÉ•Èˆ…É¥„µ±…‰•°ô‹²æÓ²æÓ²b“®ž×²^C²p€‘íÁ±…”¹¹…µ•ôƒªÊ²'¶VcªâÀˆû²æÓ²æÓ²b“®žÔ€ñÍÁ…¸…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆûŠ\ð½ÍÁ…¸øð½„ø(€€€€€€€€€€€€€€ñ„±…ÍÌô‰µ…Àµ±¥¹¬½½±”µµ…Àµ±¥¹¬ˆ¡É•˜ôˆ‘íÉ•…Ñ•½½±•5…ÁUÉ°¡Á±…”¹¹…µ”¥ôˆÑ…É•Ðô‰}‰±…¹¬ˆÉ•°ô‰¹½½Á•¹•È¹½É•™•ÉÉ•Èˆ…É¥„µ±…‰•°ô‰½½±”ƒ²ž®>²^C²p€‘íÁ±…”¹¹…µ•ôƒªÊ²'¶VcªâÀˆù½½±”ƒ²ž®>€ñÍÁ…¸…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆûŠ\ð½ÍÁ…¸øð½„ø(€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€ð½‘¥Øø(€€€€€€€€ð½…ÉÑ¥±”ø(€€€€€€¤¹©½¥¸ ˆˆ¥ôð½‘¥Øøð½Í•Ñ¥½¸ù€ì(€ô¤¹©½¥¸ ˆˆ¤ì(€¡å‘É…Ñ•A±…•%µ…•Ì ¤ì)ô()™Õ¹Ñ¥½¸™½Éµ…Ñ5‰Ñ¤¡Ù…±Õ”¤ì(€½¹ÍÐ±…‰•±Ì€ôì(€€€%M(è€‹²V²vÓ²^C²*“²^C¶R²‚s²vÐˆ°(€€€%9@è€‹²V²vÓ²^S²^C¶R¶Rðˆ°(€€€M@è€‹²vÓ²^C²*“²^C¶R¶Rðˆ°(€€€9(è€‹²vÓ²^S²^C¶R²‚s²vÐˆ°(€€€%9Q(è€‹²V²vÓ²^S¶.Ã²‚s²vÐˆ°(€€€9Q@è€‹²vÓ²^S¶.Ã¶Rðˆ°(€€€MQ(è€‹²vÓ²^C²*“¶.Ã²‚s²vÐˆ°(€€€U9-9=]8è€‹²ÇªÊ¤ƒ²rƒ¶bTƒ®ª£®šˆ°(€ôì(€É•ÑÕÉ¸±…‰•±ÍmÙ…±Õ•tñðÙ…±Õ”ì)ô()™Õ¹Ñ¥½¸É•¹‘•ÉMÕµµ…Éä ¤ì(€½¹ÍÐ±…‰•±Ì€ômtì(€±…‰•±Ì¹ÁÕÍ ¡ÍÑ…Ñ”¹±…¹Õ…”¤ì(€±…‰•±Ì¹ÁÕÍ ¡ÍÑ…Ñ”¹½µÁ…¹¥½¸¤ì(€±…‰•±Ì¹ÁÕÍ ¡ÍÑ…Ñ”¹…”¤ì(€½¹ÍÐ…Ñ•½Éå9…µ•Ì€ôì…ÑÑÉ…Ñ¥½¸è€‹®ÎóªÆÃ®š°ˆ°™½½è€‹®žo²žDˆ°…™”è€‹®ÞÀ›²æÓ¶:`ˆ°…Ñ¥Ù¥Ñäè€‹²ÊÓ¶^`ˆôì(€ÍÑ…Ñ”¹…Ñ•½É¥•Ì¹™½É…  ¡…Ñ•½Éä¤€ôø±…‰•±Ì¹ÁÕÍ ¡…Ñ•½Éå9…µ•Ím…Ñ•½Éåt¤¤ì(€¥˜€¡ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹µ‰Ñ¤¤±…‰•±Ì¹ÁÕÍ ¡™½Éµ…Ñ5‰Ñ¤¡ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹µ‰Ñ¤¤¤ì(€¥˜€¡ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹µ•…±Q¥µ”¤±…‰•±Ì¹ÁÕÍ ¡ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹µ•…±Q¥µ”¤ì(€mÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹ÍÁ¥•1•Ù•°°ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹É…ÝAÉ•™•É•¹”°ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹…‘Ù•¹ÑÕÉ•AÉ•™•É•¹”°ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹½½­¥¹AÉ•™•É•¹•t(€€€€¹™¥±Ñ•È¡	½½±•…¸¤(€€€€¹™½É…  ¡Ù…±Õ”¤€ôø±…‰•±Ì¹ÁÕÍ ¡Ù…±Õ”¤¤ì(€¥˜€¡ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹ÍÑ…ÉÑQ¥µ”€˜˜ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹•¹‘Q¥µ”¤±…‰•±Ì¹ÁÕÍ ¡€‘íÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹ÍÑ…ÉÑQ¥µ•ôèÀÁø‘íÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹•¹‘Q¥µ•ôèÀÁ€¤ì(€¥˜€¡ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹±½…Ñ¥½¸¤±…‰•±Ì¹ÁÕÍ ¡ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹±½…Ñ¥½¸€¬€ˆƒ²Ús®Âpˆ¤ì(€¥˜€¡ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹Ý•…Ñ¡•È¤±…‰•±Ì¹ÁÕÍ ¡ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ¹Ý•…Ñ¡•È¤ì((€‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½È ˆÉ•ÍÕ±ÐµÍÕµµ…Éäˆ¤¹¥¹¹•É!Q50€ô±…‰•±Ì(€€€€¹µ…À ¡±…‰•°¤€ôø€ñÍÁ…¸±…ÍÌô‰ÍÕµµ…Éäµ¡¥Àˆø‘í±…‰•±ôð½ÍÁ…¸ù€¤(€€€€¹©½¥¸ ˆˆ¤ì)ô()™Õ¹Ñ¥½¸É•¹‘•ÉI½ÕÑ” ¤ì(€É½ÕÑ•M•Ñ¥½¸¹¡¥‘‘•¸€ô™…±Í”ì(€½¹ÍÐ¥Í½½‘=¹±ä€ôÍÑ…Ñ”¹…Ñ•½É¥•Ì¹±•¹Ñ €ôôô€Ä€˜˜ÍÑ…Ñ”¹…Ñ•½É¥•ÍlÁt€ôôô€‰™½½ˆì(€½¹ÍÐÉ½ÕÑ•I•½µµ•¹‘…Ñ¥½¹Ì€ô¥Í½½‘=¹±ä(€€€€üÍÑ…Ñ”¹É•½µµ•¹‘…Ñ¥½¹Ì(€€€€èÍÑ…Ñ”¹…Ñ•½É¥•Ì¹µ…À ¡…Ñ•½Éä¤€ôøÍÑ…Ñ”¹É•½µµ•¹‘…Ñ¥½¹Ì¹™¥¹ ¡Á±…”¤€ôøÁ±…”¹Í•ÉÙ¥”€ôôô…Ñ•½Éä¤¤¹™¥±Ñ•È¡	½½±•…¸¤¹Í±¥” À°€Ì¤ì(€É½ÕÑ•1¥ÍÐ¹¥¹¹•É!Q50€ôÉ½ÕÑ•I•½µµ•¹‘…Ñ¥½¹Ì(€€€€¹µ…À ¡Á±…”°¥¹‘•à¤€ôøì(€€€€€½¹ÍÐÍÑ½À€ô€(€€€€€€€€ñ‘¥Ø±…ÍÌô‰É½ÕÑ”µÍÑ½Àˆø(€€€€€€€€€€ñ•´ø‘í¥¹‘•à€¬€Å÷®Ê#²žàƒ²ÚS²Êpð½•´ø(€€€€€€€€€€ñˆø‘íÁ±…”¹¹…µ•ôð½ˆø(€€€€€€€€€€ñÍÁ…¸ø‘íÁ±…”¹…É•…ôƒ
-Ü€‘í¥¹‘•à€ôôô€À€ü€‹²^³¶Z$ƒ².s²zDˆ€è€‹®.“²v0ƒ²ÚS²Êpƒ²z—²0‰ôð½ÍÁ…¸ø(€€€€€€€€ð½‘¥Øù€ì(€€€€€½¹ÍÐ…ÉÉ½Ü€ô¥¹‘•à€ðÉ½ÕÑ•I•½µµ•¹‘…Ñ¥½¹Ì¹±•¹Ñ €´€Ä€ü€ñ‘¥Ø±…ÍÌô‰É½ÕÑ”µ…ÉÉ½Üˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆûŠHð½‘¥Øù€€è€ˆˆì(€€€€€É•ÑÕÉ¸ÍÑ½À€¬…ÉÉ½Üì(€€€ô¤(€€€€¹©½¥¸ ˆˆ¤ì(€É•¹‘•ÉI½ÕÑ•5…À¡É½ÕÑ•I•½µµ•¹‘…Ñ¥½¹Ì¤ì)ô()™Õ¹Ñ¥½¸±½…‘-…­…½5…ÁÌ¡…ÁÁ-•ä¤ì(€¥˜€¡Ý¥¹‘½Ü¹­…­…¼ü¹µ…ÁÌü¹Í•ÉÙ¥•Ì¤É•ÑÕÉ¸AÉ½µ¥Í”¹É•Í½±Ù” ¤ì(€É•ÑÕÉ¸¹•ÜAÉ½µ¥Í” ¡É•Í½±Ù”°É•©•Ð¤€ôøì(€€€‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½È ˆ­…­…¼µµ…ÁÌµÍ‘¬ˆ¤ü¹É•µ½Ù” ¤ì(€€€½¹ÍÐÍÉ¥ÁÐ€ô‘½Õµ•¹Ð¹É•…Ñ•±•µ•¹Ð ‰ÍÉ¥ÁÐˆ¤ì(€€€ÍÉ¥ÁÐ¹¥€ô€‰­…­…¼µµ…ÁÌµÍ‘¬ˆì(€€€ÍÉ¥ÁÐ¹ÍÉŒ€ô¡ÑÑÁÌè¼½‘…Á¤¹­…­…¼¹½´½ØÈ½µ…ÁÌ½Í‘¬¹©Ìý…ÁÁ­•äô‘í•¹½‘•UI%½µÁ½¹•¹Ð¡…ÁÁ-•ä¥ô™±¥‰É…É¥•ÌõÍ•ÉÙ¥•Ì™…ÕÑ½±½…õ™…±Í•€ì(€€€ÍÉ¥ÁÐ¹½¹±½…€ô€ ¤€ôøÝ¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹±½…¡É•Í½±Ù”¤ì(€€€ÍÉ¥ÁÐ¹½¹•ÉÉ½È€ôÉ•©•Ðì(€€€‘½Õµ•¹Ð¹¡•…¹…ÁÁ•¹‘¡¥±¡ÍÉ¥ÁÐ¤ì(€ô¤ì)ô()™Õ¹Ñ¥½¸Í•…É¡]¥Ñ¡-…­…¼¡ÅÕ•Éä°‘¥ÍÑÉ¥Ð¤ì(€É•ÑÕÉ¸¹•ÜAÉ½µ¥Í” ¡É•Í½±Ù”¤€ôøì(€€€½¹ÍÐÁ±…•ÍM•ÉÙ¥”€ô¹•ÜÝ¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹Í•ÉÙ¥•Ì¹A±…•Ì ¤ì(€€€Á±…•ÍM•ÉÙ¥”¹­•åÝ½É‘M•…É ¡ÅÕ•Éä°€¡É•ÍÕ±ÑÌ°ÍÑ…ÑÕÌ¤€ôøì(€€€€€¥˜€¡ÍÑ…ÑÕÌ€„ôôÝ¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹Í•ÉÙ¥•Ì¹MÑ…ÑÕÌ¹=,¤É•ÑÕÉ¸É•Í½±Ù”¡¹Õ±°¤ì(€€€€€½¹ÍÐ•á…ÑÉ•…I•ÍÕ±Ð€ôÉ•ÍÕ±ÑÌ¹™¥¹ ¡É•ÍÕ±Ð¤€ôø(€€€€€€€€‘íÉ•ÍÕ±Ð¹…‘‘É•ÍÍ}¹…µ”ñð€ˆ‰ô€‘íÉ•ÍÕ±Ð¹É½…‘}…‘‘É•ÍÍ}¹…µ”ñð€ˆ‰õ€¹¥¹±Õ‘•Ì¡‘¥ÍÑÉ¥Ð¤(€€€€€€¤ì(€€€€€É•Í½±Ù”¡•á…ÑÉ•…I•ÍÕ±Ð€üì(€€€€€€€àè9Õµ‰•È¡•á…ÑÉ•…I•ÍÕ±Ð¹à¤°äè9Õµ‰•È¡•á…ÑÉ•…I•ÍÕ±Ð¹ä¤°(€€€€€€€¹…µ”è•á…ÑÉ•…I•ÍÕ±Ð¹Á±…•}¹…µ”°ÕÉ°è•á…ÑÉ•…I•ÍÕ±Ð¹Á±…•}ÕÉ°°(€€€€€ô€è¹Õ±°¤ì(€€€ô¤ì(€ô¤ì)ô()…Íå¹Œ™Õ¹Ñ¥½¸É•¹‘•ÉI½ÕÑ•5…À¡Á±…•Ì¤ì(€½¹ÍÐµ…Á±•µ•¹Ð€ô‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½È ˆÉ½ÕÑ”µµ…Àˆ¤ì(€½¹ÍÐÉ½ÕÑ•1¥¹¬€ô‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½È ˆ­…­…¼µÉ½ÕÑ”µ±¥¹¬ˆ¤ì(€¥˜€ …µ…Á±•µ•¹Ðñð€…Á±…•Ì¹±•¹Ñ ¤É•ÑÕÉ¸ì(€ÍÑ…Ñ”¹É½ÕÑ•I•½µµ•¹‘…Ñ¥½¹Ì€ôÁ±…•Ìì(€É½ÕÑ•1¥¹¬¹¡É•˜€ôÉ•…Ñ•5…ÁUÉ°¡Á±…•ÍlÁt¹¹…µ”¤ì(€½¹ÍÐ…ÁÁ-•ä€ô±½…±MÑ½É…”¹•Ñ%Ñ•´ ‰­…­…½5…ÁÍ)…Ù…MÉ¥ÁÑ-•äˆ¤ñð€ˆˆì(€¥˜€ ……ÁÁ-•ä¤ì(€€€µ…Á±•µ•¹Ð¹¥¹¹•É!Q50€ô€ñ‘¥Ø±…ÍÌô‰µ…Àµ•µÁÑäµÍÑ…Ñ”ˆøñˆû²æÓ²æÓ²b“®žÔ)…Ù…MÉ¥ÁÐƒ¶
-“®–ðƒ²^ÃªÊÃ¶VÐƒ²Žó²ã²jPð½ˆøñÍÁ…¸ûŠc²ž®>A$ƒ²“²‚WŠg²vƒ®"®–Ó®¦Ðƒ²ƒ¶tƒ²ž²^·²v`ƒ²ÚS²Êpƒ²z—²0ƒ®ž#²î“²f ƒªÊ÷®†s²ƒ²vÐƒ¶Fs².s®B§®.#®.¸ð½ÍÁ…¸øð½‘¥Øù€ì(€€€É•ÑÕÉ¸ì(€ô(€µ…Á±•µ•¹Ð¹¥¹¹•É!Q50€ô€ñ‘¥Ø±…ÍÌô‰µ…Àµ•µÁÑäµÍÑ…Ñ”ˆøñˆû²æÓ²æÓ²b“®ž×²vƒ®Ú#®~³²b“®*Pƒ²’GŠ˜ð½ˆøñÍÁ…¸û²z—²3ªÂ ƒ²ƒ¶w¶Vpƒ²ž²^·²^@ƒ²z#®*S²ž ƒ¶fW²vã¶VcªÎ€ƒ²z#²*×®.#®.¸ð½ÍÁ…¸øð½‘¥Øù€ì(€ÑÉäì(€€€…Ý…¥Ð±½…‘-…­…½5…ÁÌ¡…ÁÁ-•ä¤ì(€€€½¹ÍÐ½½É‘¥¹…Ñ•Ì€ô€¡…Ý…¥ÐAÉ½µ¥Í”¹…±°¡Á±…•Ì¹µ…À¡…Íå¹Œ€¡Á±…”¤€ôø€¡ìÁ±…”°Á½¥¹Ðè…Ý…¥ÐÍ•…É¡]¥Ñ¡-…­…¼¡ƒ®Ú²
-À€‘íÁ±…”¹…É•…ô€‘íÁ±…”¹¹…µ•õ€°Á±…”¹…É•„¤ô¤¤¤¤¹™¥±Ñ•È ¡¥Ñ•´¤€ôø¥Ñ•´¹Á½¥¹Ð¤ì(€€€¥˜€ …½½É‘¥¹…Ñ•Ì¹±•¹Ñ ¤Ñ¡É½Ü¹•ÜÉÉ½È ‰•½½‘¥¹œ™…¥±•ˆ¤ì(€€€µ…Á±•µ•¹Ð¹¥¹¹•É!Q50€ô€ˆˆì(€€€½¹ÍÐ•¹Ñ•È€ô¹•ÜÝ¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹1…Ñ1¹œ¡½½É‘¥¹…Ñ•ÍlÁt¹Á½¥¹Ð¹ä°½½É‘¥¹…Ñ•ÍlÁt¹Á½¥¹Ð¹à¤ì(€€€½¹ÍÐµ…À€ô¹•ÜÝ¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹5…À¡µ…Á±•µ•¹Ð°ì•¹Ñ•È°±•Ù•°è€Üô¤ì(€€€µ…À¹…‘‘½¹ÑÉ½°¡¹•ÜÝ¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹i½½µ½¹ÑÉ½° ¤°Ý¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹½¹ÑÉ½±A½Í¥Ñ¥½¸¹I%!P¤ì(€€€½¹ÍÐ‰½Õ¹‘Ì€ô¹•ÜÝ¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹1…Ñ1¹	½Õ¹‘Ì ¤ì(€€€½¹ÍÐÁ…Ñ €ô½½É‘¥¹…Ñ•Ì¹µ…À ¡ìÁ±…”°Á½¥¹Ðô°¥¹‘•à¤€ôøì(€€€€€½¹ÍÐÁ½Í¥Ñ¥½¸€ô¹•ÜÝ¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹1…Ñ1¹œ¡Á½¥¹Ð¹ä°Á½¥¹Ð¹à¤ì(€€€€€‰½Õ¹‘Ì¹•áÑ•¹¡Á½Í¥Ñ¥½¸¤ì(€€€€€½¹ÍÐµ…É­•È€ô¹•ÜÝ¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹5…É­•È¡ìÁ½Í¥Ñ¥½¸°µ…À°Ñ¥Ñ±”è€‘í¥¹‘•à€¬€Åô¸€‘íÁ±…”¹¹…µ•õ€ô¤ì(€€€€€½¹ÍÐ½Ù•É±…ä€ô¹•ÜÝ¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹ÕÍÑ½µ=Ù•É±…ä¡ì(€€€€€€€Á½Í¥Ñ¥½¸°å¹¡½Èè€È¸Ä°(€€€€€€€½¹Ñ•¹Ðè€ñ„¡É•˜ôˆ‘íÁ½¥¹Ð¹ÕÉ±ôˆÑ…É•Ðô‰}‰±…¹¬ˆÉ•°ô‰¹½½Á•¹•ÈˆÍÑå±”ô‰Á…‘‘¥¹œèÙÁà€åÁàí‰½É‘•ÈµÉ…‘¥ÕÌèÄÁÁàí‰…­É½Õ¹èŒÈÔÅÀÀí½±½Èè™•”ÔÀÀí™½¹ÐèÜÀÀ€ÄÉÁàÍ…¹ÌµÍ•É¥˜íÑ•áÐµ‘•½É…Ñ¥½¸é¹½¹”í‰½àµÍ¡…‘½ÜèÀ€ÑÁà€ÄÉÁà€ŒÀÀÀÌˆø‘í¥¹‘•à€¬€Åô¸€‘íÁ±…”¹¹…µ•ôð½„ù€°(€€€€€ô¤ì(€€€€€½Ù•É±…ä¹Í•Ñ5…À¡µ…À¤ì(€€€€€É•ÑÕÉ¸Á½Í¥Ñ¥½¸ì(€€€ô¤ì(€€€¥˜€¡Á…Ñ ¹±•¹Ñ €ø€Ä¤¹•ÜÝ¥¹‘½Ü¹­…­…¼¹µ…ÁÌ¹A½±å±¥¹”¡ìµ…À°Á…Ñ °ÍÑÉ½­•½±½Èè€ˆ”ÐÍˆÅŒˆ°ÍÑÉ½­•]•¥¡Ðè€Ø°ÍÑÉ½­•=Á…¥Ñäè€À¸àà°ÍÑÉ½­•MÑå±”è€‰Í½±¥ˆô¤ì(€€€µ…À¹Í•Ñ	½Õ¹‘Ì¡‰½Õ¹‘Ì°€ÔÔ°€ÔÔ°€ÔÔ°€ÔÔ¤ì(€€€½¹ÍÐ±…ÍÐ€ô½½É‘¥¹…Ñ•Ì¹…Ð ´Ä¤ì(€€€É½ÕÑ•1¥¹¬¹¡É•˜€ô¡ÑÑÁÌè¼½µ…À¹­…­…¼¹½´½±¥¹¬½Ñ¼¼‘í•¹½‘•UI%½µÁ½¹•¹Ð¡±…ÍÐ¹Á½¥¹Ð¹¹…µ”ñð±…ÍÐ¹Á±…”¹¹…µ”¥ô°‘í±…ÍÐ¹Á½¥¹Ð¹åô°‘í±…ÍÐ¹Á½¥¹Ð¹áõ€ì(€ô…Ñ €¡|¤ì(€€€µ…Á±•µ•¹Ð¹¥¹¹•É!Q50€ô€ñ‘¥Ø±…ÍÌô‰µ…Àµ•µÁÑäµÍÑ…Ñ”ˆøñˆû²æÓ²æÓ²b“®ž×²vƒ¶Fs².s¶Vc²ž ƒ®ªï¶Z#²ZÓ²jPð½ˆøñÍÁ…¸ù)…Ù…MÉ¥ÁÐƒ¶
-°ƒ²æÓ²æÓ²b“®žÔƒ²
-³²j¤ƒ²“²‚T°ƒ®NÇ®†w®Bpƒ²
-³²vÓ¶*àƒ®>®¦S²vã²vƒ¶fW²vã¶VÐƒ²Žó²ã²jP¸ð½ÍÁ…¸øð½‘¥Øù€ì(€ô)ô()™Õ¹Ñ¥½¸Í¡½ÝI•ÍÕ±ÑÌ¡•Ù•¹Ð¤ì(€•Ù•¹Ð¹ÁÉ•Ù•¹Ñ•™…Õ±Ð ¤ì(€¥˜€ …ÅÕ¥é½É´¹É•Á½ÉÑY…±¥‘¥Ñä ¤¤É•ÑÕÉ¸ì((€ÕÁ‘…Ñ•5‰Ñ¥Y…±Õ” ¤ì(€ÍÑ…Ñ”¹…¹ÍÝ•ÉÌ€ô•Ñ¹ÍÝ•ÉÌ¡ÅÕ¥é½É´¤ì(€ÍÑ…Ñ”¹É•½µµ•¹‘…Ñ¥½¹Ì€ô•ÑI•½µµ•¹‘…Ñ¥½¹Ì ¤ì(€‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½È ˆÉ•ÍÕ±ÐµÑ¥Ñ±”ˆ¤¹Ñ•áÑ½¹Ñ•¹Ð€ô€‹²ƒ¶w¶Vpƒ®ª£®N€ƒ®Ú²Vó²v`ƒ®Ú²
-Àƒ®ž{²Úƒ²ÚS²Êpˆì(€‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½È ˆÉ•ÍÕ±Ðµ‘•ÍÉ¥ÁÑ¥½¸ˆ¤¹Ñ•áÑ½¹Ñ•¹Ð€ô€‹®>g¶Z$ƒ²rƒ¶bT°ƒ®
-c²vÓ®2²f ƒ®ž{²ÚƒªÊ²
-°ƒªÊÃªÎó®–ðƒ®Âc²b¶VÐƒ®Ú²Vó®Î®†pƒ²àƒªÎÏ²R¤ƒªÎ£®zC²ZÓ²jP¸ˆì(€É•¹‘•ÉMÕµµ…Éä ¤ì(€É•¹‘•ÉI•½µµ•¹‘…Ñ¥½¹Ì ¤ì(€É•¹‘•ÉI½ÕÑ” ¤ì(€Í¡½ÝMÉ••¸ ‰É•ÍÕ±Ðˆ¤ì)ô()™Õ¹Ñ¥½¸Í¡½ÝQ½…ÍÐ¡µ•ÍÍ…”¤ì(€Ñ½…ÍÐ¹Ñ•áÑ½¹Ñ•¹Ð€ôµ•ÍÍ…”ì(€Ñ½…ÍÐ¹±…ÍÍ1¥ÍÐ¹…‘ ‰Í¡½Üˆ¤ì(€Ý¥¹‘½Ü¹±•…ÉQ¥µ•½ÕÐ¡Í¡½ÝQ½…ÍÐ¹Ñ¥µ•È¤ì(€Í¡½ÝQ½…ÍÐ¹Ñ¥µ•È€ôÝ¥¹‘½Ü¹Í•ÑQ¥µ•½ÕÐ  ¤€ôøÑ½…ÍÐ¹±…ÍÍ1¥ÍÐ¹É•µ½Ù” ‰Í¡½Üˆ¤°€ÈÐÀÀ¤ì)ô()™Õ¹Ñ¥½¸Í…Ù•I•ÍÕ±Ð ¤ì(€Ý¥¹‘½Ü¹	ÕÍ…¹$Äá¸¹‘½Ý¹±½…‘I•ÍÕ±Ð¡ÍÑ…Ñ”¤ì(€Í¡½ÝQ½…ÍÐ ‹²ÚS²ÊpƒªÊÃªÎó®–ðƒ¶23²vó®†pƒ²‚²z—¶Z#²ZÓ²jP¸ˆ¤ì)ô()ÍÑ…ÉÑ	ÕÑÑ½¸¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ‰±¥¬ˆ°ÁÉ•Á…É•EÕ¥è¤ì)ÅÕ¥é½É´¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ‰ÍÕ‰µ¥Ðˆ°Í¡½ÝI•ÍÕ±ÑÌ¤ì)‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½È ˆÉ•ÍÑ…ÉÐµ‰ÕÑÑ½¸ˆ¤¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ‰±¥¬ˆ°€ ¤€ôøÍ¡½ÝMÉ••¸ ‰ÍÑ…ÉÐˆ¤¤ì)‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½È ˆÍ…Ù”µ‰ÕÑÑ½¸ˆ¤¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ‰±¥¬ˆ°Í…Ù•I•ÍÕ±Ð¤ì)‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½È ˆµ…Àµ…Á¤µÍ•ÑÑ¥¹Ìˆ¤ü¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ‰±¥¬ˆ°€ ¤€ôøì(€½¹ÍÐÕÉÉ•¹Ð€ô±½…±MÑ½É…”¹•Ñ%Ñ•´ ‰­…­…½5…ÁÍ)…Ù…MÉ¥ÁÑ-•äˆ¤ñð€ˆˆì(€½¹ÍÐ…ÁÁ-•ä€ôÝ¥¹‘½Ü¹ÁÉ½µÁÐ ‹²æÓ²æÓ²b“®RS®Ê£®†s¶6ó²*“²^C²pƒ®Âsªâ'¶Vp)…Ù…MÉ¥ÁÐƒ¶
-“®–ðƒ²z®‚—¶VÐƒ²Žó²ã²jP¹q»²Þ£²3¶Vc®¦Ðƒ¶b²z°ƒ²“²‚W²vƒ²rƒ²ž¶V§®.#®.¸ˆ°ÕÉÉ•¹Ð¤ì(€¥˜€¡…ÁÁ-•ä€ôôô¹Õ±°¤É•ÑÕÉ¸ì(€¥˜€¡…ÁÁ-•ä¹ÑÉ¥´ ¤¤±½…±MÑ½É…”¹Í•Ñ%Ñ•´ ‰­…­…½5…ÁÍ)…Ù…MÉ¥ÁÑ-•äˆ°…ÁÁ-•ä¹ÑÉ¥´ ¤¤ì(€•±Í”±½…±MÑ½É…”¹É•µ½Ù•%Ñ•´ ‰­…­…½5…ÁÍ)…Ù…MÉ¥ÁÑ-•äˆ¤ì(€É•¹‘•ÉI½ÕÑ•5…À¡ÍÑ…Ñ”¹É½ÕÑ•I•½µµ•¹‘…Ñ¥½¹Ìñðmt¤ì)ô¤ì()‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½É±° ‰m‘…Ñ„µ‰…­tˆ¤¹™½É…  ¡‰ÕÑÑ½¸¤€ôøì(€‰ÕÑÑ½¸¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ‰±¥¬ˆ°€ ¤€ôøÍ¡½ÝMÉ••¸¡‰ÕÑÑ½¸¹‘…Ñ…Í•Ð¹‰…¬¤¤ì)ô¤ì()‘å¹…µ¥¥•±‘Ì¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ‰±¥¬ˆ°€¡•Ù•¹Ð¤€ôøì(€½¹ÍÐµ½‘•	ÕÑÑ½¸€ô•Ù•¹Ð¹Ñ…É•Ð¹±½Í•ÍÐ ‰m‘…Ñ„µµ‰Ñ¤µµ½‘•tˆ¤ì(€¥˜€¡µ½‘•	ÕÑÑ½¸¤Í•Ñ5‰Ñ¥5½‘”¡µ½‘•	ÕÑÑ½¸¹‘…Ñ…Í•Ð¹µ‰Ñ¥5½‘”¤ì)ô¤ì()‘å¹…µ¥¥•±‘Ì¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ‰¡…¹”ˆ°€¡•Ù•¹Ð¤€ôøì(€¥˜€¡•Ù•¹Ð¹Ñ…É•Ð¹µ…Ñ¡•Ì ¥¹ÁÕÑm¹…µ•xô‰µ‰Ñ¥|‰tœ¤¤ÕÁ‘…Ñ•5‰Ñ¥Y…±Õ” ¤ì)ô¤ì()‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½É±° ‰¥¹ÁÕÑm¹…µ”ô…Ñ•½Éätˆ¤¹™½É…  ¡¥¹ÁÕÐ¤€ôøì(€¥¹ÁÕÐ¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ‰¡…¹”ˆ°€ ¤€ôøì(€€€½¹ÍÐÍ•±•Ñ•‘…É€ô¥¹ÁÕÐ¹±½Í•ÍÐ ˆ¹…Ñ•½Éäµ¡•¬ˆ¤ì(€€€Í•±•Ñ•‘…Éü¹ÍÉ½±±%¹Ñ½Y¥•Ü¡ì‰•¡…Ù¥½Èè€‰Íµ½½Ñ ˆ°‰±½¬è€‰¹•…É•ÍÐˆô¤ì(€€€‘½Õµ•¹Ð¹ÅÕ•ÉåM•±•Ñ½È ˆ…Ñ•½Éäµ•ÉÉ½Èˆ¤¹¡¥‘‘•¸€ô•ÑM•±•Ñ•‘Y…±Õ•Ì ‰…Ñ•½Éäˆ¤¹±•¹Ñ €ø€Àì(€ô¤ì)ô¤ì
+    resultTitle: "ë‹¹ì‹ ì„ ìœ„í•œ ë¶€ì‚° ë·°&ë””ì €íŠ¸ ì„¸ ê³³",
+    resultDescription: "ì˜¤ì…˜ë·°ì™€ ê°ì„± í‚¤ì›Œë“œë¥¼ ì¤‘ì‹¬ìœ¼ë¡œ ë¶€ì‚°ë‹¤ìš´ ê³µê°„ì„ ê³¨ëžì–´ìš”.",
+  },
+  activity: {
+    title: "ë¶€ì‚°ì—ì„œ ì–´ë–¤ ì²´í—˜ì„ í•´ë³¼ê¹Œìš”?",
+    description: "ì„±ê²©ê³¼ ì—¬í–‰ ìƒí™©ì— ë§žì¶° í•´ì–‘ ë ˆì €ì™€ ì²´í—˜ ì„¸ ê°€ì§€ë¥¼ ì¶”ì²œí•´ ë“œë ¤ìš”.",
+    resultTitle: "ë‹¹ì‹ ì„ ìœ„í•œ ë¶€ì‚° ë†€ê±°ë¦¬Â·ì²´í—˜ ì„¸ ê°€ì§€",
+    resultDescription: "ì„œí•‘, ìš”íŠ¸, ì¼€ì´ë¸”ì¹´, ê³µë°© ë“± ì²´í—˜í˜• ìž¥ì†Œë¥¼ ê³¨ëžì–´ìš”.",
+  },
+};
+
+const screens = {
+  start: document.querySelector("#start-screen"),
+  quiz: document.querySelector("#quiz-screen"),
+  result: document.querySelector("#result-screen"),
+};
+
+const state = {
+  service: "attraction",
+  categories: ["attraction"],
+  companion: "ì»¤í”Œ",
+  age: "20ëŒ€",
+  language: "í•œêµ­ì–´",
+  answers: {},
+  recommendations: [],
+};
+
+const startButton = document.querySelector("#start-button");
+const quizForm = document.querySelector("#quiz-form");
+const dynamicFields = document.querySelector("#dynamic-fields");
+const recommendationList = document.querySelector("#recommendation-list");
+const routeSection = document.querySelector("#route-section");
+const routeList = document.querySelector("#route-list");
+const toast = document.querySelector("#toast");
+
+function showScreen(screenName) {
+  Object.entries(screens).forEach(([name, element]) => {
+    const isTarget = name === screenName;
+    element.hidden = !isTarget;
+    element.classList.toggle("active", isTarget);
+  });
+
+  const stepNumber = { start: 1, quiz: 2, result: 3 }[screenName];
+  document.querySelectorAll(".step").forEach((step, index) => {
+    step.classList.toggle("active", index + 1 === stepNumber);
+    step.classList.toggle("complete", index + 1 < stepNumber);
+  });
+
+  document.querySelector(".planner").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function getSelectedValue(name) {
+  return document.querySelector(`input[name="${name}"]:checked`)?.value || "";
+}
+
+function getSelectedValues(name) {
+  return [...document.querySelectorAll(`input[name="${name}"]:checked`)].map((input) => input.value);
+}
+
+function getToday() {
+  const now = new Date();
+  const timezoneOffset = now.getTimezoneOffset() * 60000;
+  return new Date(now.getTime() - timezoneOffset).toISOString().slice(0, 10);
+}
+
+const mbtiQuestions = [
+  ["ì—¬í–‰ì§€ì— ë„ì°©í•˜ë©´ ê°€ìž¥ ë¨¼ì € í•˜ê³  ì‹¶ì€ ê²ƒì€?", "ìœ ëª…í•œ ê´€ê´‘ì§€ ëŒì•„ë‹¤ë‹ˆê¸°", "ì¹´íŽ˜ë‚˜ ìˆ™ì†Œì—ì„œ ì—¬ìœ ë¡­ê²Œ ì‰¬ê¸°", "E", "I"],
+  ["ì—¬í–‰ì„ ê°„ë‹¤ë©´ ì–´ë–¤ ìž¥ì†Œê°€ ë” ëŒë ¤?", "ì‚¬ëžŒì´ ë§Žê³  í™œê¸°ì°¬ ë²ˆí™”ê°€", "ì¡°ìš©í•˜ê³  í•œì í•œ ìžì—° ì†", "E", "I"],
+  ["ì—¬í–‰ ê³„íšì€ ì–´ë–»ê²Œ ì§œëŠ” íŽ¸ì´ ì¢‹ì•„?", "ì‹œê°„ëŒ€ë³„ë¡œ ê¼¼ê¼¼í•˜ê²Œ ê³„íší•˜ê¸°", "ëŒ€ëžµì ì¸ ìž¥ì†Œë§Œ ì •í•˜ê³  ì¦‰í¥ì ìœ¼ë¡œ ì›€ì§ì´ê¸°", "J", "P"],
+  ["ê´€ê´‘ì§€ë¥¼ ê³ ë¥¸ë‹¤ë©´ ë¬´ì—‡ì´ ë” ì¤‘ìš”í•´?", "ì‹¤ì œë¡œ ë³¼ê±°ë¦¬ì™€ ì²´í—˜ê±°ë¦¬ê°€ ë§Žì€ ê³³", "ë¶„ìœ„ê¸°ê°€ ì¢‹ê³  íŠ¹ë³„í•œ ëŠë‚Œì´ ë“œëŠ” ê³³", "S", "N"],
+  ["ì—¬í–‰ ì¤‘ ë” ì¢‹ì•„í•˜ëŠ” í™œë™ì€?", "ë§›ì§‘, ì‡¼í•‘, ì²´í—˜ ë“± ì§ì ‘ ì¦ê¸°ëŠ” í™œë™", "í’ê²½ êµ¬ê²½, ì‚¬ì§„ ì°ê¸°, ì‚°ì±…ì²˜ëŸ¼ ì—¬ìœ ë¡œìš´ í™œë™", "S", "N"],
+  ["ì—¬í–‰ ì¤‘ ì˜ˆìƒì¹˜ ëª»í•œ ì¼ì´ ìƒê¸´ë‹¤ë©´?", "ê·¸ ìƒí™©ì— ë§žì¶° ë°”ë¡œ ë‹¤ë¥¸ ê³„íšì„ ì„¸ìš´ë‹¤", "ë‹¹í™©í•´ì„œ ì›ëž˜ ê³„íšëŒ€ë¡œ í•˜ê³  ì‹¶ì–´ì§„ë‹¤", "P", "J"],
+  ["ì—¬í–‰ì§€ì—ì„œ ì‚¬ì§„ì„ ì°ëŠ”ë‹¤ë©´?", "ìœ ëª…í•œ í¬í† ìŠ¤íŒŸì—ì„œ ì¸ì¦ìƒ·ì„ ë‚¨ê¸´ë‹¤", "ìš°ì—°ížˆ ë°œê²¬í•œ ì˜ˆìœ ìž¥ì†Œì—ì„œ ì°ëŠ”ë‹¤", "S", "N"],
+  ["ì–´ë–¤ ì—¬í–‰ì§€ê°€ ë” ëŒë ¤?", "ìƒˆë¡œìš´ ë¬¸í™”ì™€ ìƒ‰ë‹¤ë¥¸ ê²½í—˜ì„ í•  ìˆ˜ ìžˆëŠ” ê³³", "ìµìˆ™í•˜ê³  íŽ¸ì•ˆí•˜ê²Œ ì¦ê¸¸ ìˆ˜ ìžˆëŠ” ê³³", "N", "S"],
+  ["ì—¬í–‰ì—ì„œ ê°€ìž¥ ì¤‘ìš”í•˜ë‹¤ê³  ìƒê°í•˜ëŠ” ê²ƒì€?", "ìž¬ë¯¸ìžˆê³  ë‹¤ì–‘í•œ ê²½í—˜", "íŽ¸ì•ˆí•¨ê³¼ ì¢‹ì€ ë¶„ìœ„ê¸°", "T", "F"],
+  ["ë”± í•˜ë£¨ë§Œ ê´€ê´‘í•  ìˆ˜ ìžˆë‹¤ë©´?", "ìµœëŒ€í•œ ë§Žì€ ê³³ì„ ëŒì•„ë‹¤ë‹Œë‹¤", "í•œë‘ ê³³ì„ ì²œì²œížˆ ì œëŒ€ë¡œ ì¦ê¸´ë‹¤", "E", "I"],
+];
+
+function renderPersonalityFields() {
+  const directRows = [["I", "E"], ["S", "N"], ["T", "F"], ["J", "P"]];
+  const mbtiLabels = { I: "ë‚´í–¥í˜•", E: "ì™¸í–¥í˜•", S: "ê´€ì°°í˜•", N: "ì§ê´€í˜•", T: "ì‚¬ê³ í˜•", F: "ê°ì •í˜•", J: "ê³„íší˜•", P: "íƒêµ¬í˜•" };
+  return `
+    <section class="mbti-section form-field full" aria-labelledby="mbti-heading">
+      <div class="mbti-heading-row">
+        <div>
+          <span id="mbti-heading" class="form-label">ì„±ê²© ìœ í˜• <span class="required">*</span></span>
+          <p>ì•Œê³  ìžˆëŠ” ìœ í˜•ì„ ë°”ë¡œ ìž…ë ¥í•˜ê±°ë‚˜ 10ë¬¸í•­ìœ¼ë¡œ ê°„íŽ¸í•˜ê²Œ ê²€ì‚¬í•´ ë³´ì„¸ìš”.</p>
+        </div>
+        <output id="mbti-result" class="mbti-result" aria-live="polite">INFP</output>
+      </div>
+      <div class="mbti-mode-tabs" role="tablist" aria-label="ì„±ê²© ìœ í˜• ìž…ë ¥ ë°©ë²•">
+        <button class="mbti-mode-button active" type="button" role="tab" aria-selected="true" data-mbti-mode="direct">MBTI ë°”ë¡œ ìž…ë ¥í•˜ê¸°</button>
+        <button class="mbti-mode-button" type="button" role="tab" aria-selected="false" data-mbti-mode="test">MBTI ê°„íŽ¸ ê²€ì‚¬í•˜ê¸°</button>
+      </div>
+      <div class="mbti-panel active" data-mbti-panel="direct" role="tabpanel">
+        <p class="mbti-panel-guide">ê° í–‰ì—ì„œ ë‚˜ì™€ ê°€ê¹Œìš´ ì„±í–¥ì„ í•˜ë‚˜ì”© ì„ íƒí•´ ì£¼ì„¸ìš”.</p>
+        <div class="mbti-direct-grid">
+          ${directRows.map((pair, row) => pair.map((letter, column) => `
+            <label class="mbti-letter-option">
+              <input type="radio" name="mbti_${row}" value="${letter}" ${column === 0 ? "checked" : ""} />
+              <span><b>${letter}</b><small>${mbtiLabels[letter]}</small></span>
+            </label>`).join("")).join("")}
+        </div>
+      </div>
+      <div class="mbti-panel" data-mbti-panel="test" role="tabpanel" hidden>
+        <p class="mbti-panel-guide">ê° ì§ˆë¬¸ì—ì„œ ë‚˜ì™€ ë” ê°€ê¹Œìš´ ë‹µì„ ì„ íƒí•´ ì£¼ì„¸ìš”.</p>
+        <div class="mbti-question-list">
+          ${mbtiQuestions.map((question, index) => `
+            <fieldset class="mbti-question">
+              <legend><span>${index + 1}</span>${question[0]}</legend>
+              <div class="mbti-answer-grid">
+                <label><input type="radio" name="mbti_q${index}" value="${question[3]}" checked /><span><b>A</b>${question[1]}</span></label>
+                <label><input type="radio" name="mbti_q${index}" value="${question[4]}" /><span><b>B</b>${question[2]}</span></label>
+              </div>
+            </fieldset>`).join("")}
+        </div>
+      </div>
+      <input id="mbti-value" type="hidden" name="mbti" value="INFP" />
+    </section>`;
+}
+
+function renderTravelFields() {
+  return `
+    <section class="form-field full clock-range-field" aria-labelledby="clock-range-label">
+      <span id="clock-range-label" class="form-label">ì—¬í–‰ ê°€ëŠ¥ ì‹œê°„ <span class="required">*</span></span>
+      <div class="clock-range-layout">
+        <div id="travel-clock" class="time-clock" role="group" aria-label="ì—¬í–‰ ì‹œìž‘ ì‹œê°„ê³¼ ì¢…ë£Œ ì‹œê°„ ì„ íƒ">
+          <span class="clock-number n0">0</span><span class="clock-number n6">6</span><span class="clock-number n12">12</span><span class="clock-number n18">18</span>
+          <button class="clock-hand start" type="button" data-clock-hand="start" aria-label="ì‹œìž‘ ì‹œê°„ ì¡°ì ˆ"></button>
+          <button class="clock-hand end" type="button" data-clock-hand="end" aria-label="ì¢…ë£Œ ì‹œê°„ ì¡°ì ˆ"></button>
+        </div>
+        <div class="clock-range-copy">
+          <h4>ë‘ ë°”ëŠ˜ì„ ëŒë ¤ ì—¬í–‰ ì‹œê°„ì„ ì •í•´ ì£¼ì„¸ìš”</h4>
+          <p>ì£¼í™©ìƒ‰ ë°”ëŠ˜ì€ ì‹œìž‘, íŒŒëž€ìƒ‰ ë°”ëŠ˜ì€ ì¢…ë£Œ ì‹œê°„ìž…ë‹ˆë‹¤. ì‹œê³„ ìœ„ì—ì„œ ì›í•˜ëŠ” ì‹œê°„ì„ ë“œëž˜ê·¸í•  ìˆ˜ ìžˆì–´ìš”.</p>
+          <div class="clock-time-output"><span id="start-time-output">08:00</span><i>â†’</i><span id="end-time-output">20:00</span></div>
+        </div>
+      </div>
+      <input id="start-time" type="hidden" name="startTime" value="8" />
+      <input id="end-time" type="hidden" name="endTime" value="20" />
+    </section>
+    <div class="form-field">
+      <label for="location">í˜„ìž¬ ìœ„ì¹˜ <span class="required">*</span></label>
+      <select id="location" name="location" required>
+        <option value="í•´ìš´ëŒ€êµ¬" selected>í•´ìš´ëŒ€êµ¬</option>
+        <option value="ìˆ˜ì˜êµ¬">ìˆ˜ì˜êµ¬</option>
+        <option value="ì˜ë„êµ¬">ì˜ë„êµ¬</option>
+        <option value="ë‚¨êµ¬">ë‚¨êµ¬</option>
+        <option value="ì‚¬í•˜êµ¬">ì‚¬í•˜êµ¬</option>
+        <option value="ì„œêµ¬">ì„œêµ¬</option>
+        <option value="ê¸°ìž¥êµ°">ê¸°ìž¥êµ°</option>
+        <option value="ê°•ì„œêµ¬">ê°•ì„œêµ¬</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <span class="form-label">ì—¬í–‰ì§€ ë‚ ì”¨ <span class="required">ìžë™ ì—°ë™</span></span>
+      <div class="weather-card" aria-live="polite"><span id="weather-icon" class="weather-icon">â›…</span><span class="weather-copy"><b id="weather-status">ë‚ ì”¨ë¥¼ ë¶ˆëŸ¬ì˜¤ëŠ” ì¤‘â€¦</b><span id="weather-detail">ìœ„ì¹˜ì™€ ë‚ ì§œë¥¼ ê¸°ì¤€ìœ¼ë¡œ í™•ì¸í•©ë‹ˆë‹¤.</span></span></div>
+      <input id="weather" type="hidden" name="weather" value="í™•ì¸ ì¤‘" />
+    </div>
+    <div class="form-field">
+      <label for="date">ì—¬í–‰ ë‚ ì§œ <span class="required">*</span></label>
+      <input id="date" name="date" type="date" value="${getToday()}" required />
+    </div>
+  `;
+}
+
+function renderTourFields() {
+  return renderPersonalityFields() + renderTravelFields();
+}
+
+function renderPreference(name, title, options, defaultIndex = 0) {
+  return `
+    <div class="form-field food-preference">
+      <span class="form-label">${title} <span class="required">*</span></span>
+      <div class="option-pills food-option-pills">
+        ${options.map((option, index) => `
+          <label class="option-pill">
+            <input type="radio" name="${name}" value="${option.value}" ${index === defaultIndex ? "checked" : ""} />
+            <span>${option.label}</span>
+          </label>`).join("")}
+      </div>
+    </div>`;
+}
+
+function renderFoodFields(includeLocation = false) {
+  const locationField = includeLocation ? `
+    <div class="form-field food-location-field">
+      <label for="food-location">í˜„ìž¬ ìœ„ì¹˜ <span class="required">*</span></label>
+      <select id="food-location" name="location" required>
+        <option value="í•´ìš´ëŒ€êµ¬" selected>í•´ìš´ëŒ€êµ¬</option><option value="ìˆ˜ì˜êµ¬">ìˆ˜ì˜êµ¬</option><option value="ì˜ë„êµ¬">ì˜ë„êµ¬</option><option value="ë‚¨êµ¬">ë‚¨êµ¬</option>
+        <option value="ì‚¬í•˜êµ¬">ì‚¬í•˜êµ¬</option><option value="ì„œêµ¬">ì„œêµ¬</option><option value="ê¸°ìž¥êµ°">ê¸°ìž¥êµ°</option><option value="ê°•ì„œêµ¬">ê°•ì„œêµ¬</option>
+      </select>
+    </div>` : "";
+  return `
+    <section class="food-preference-section form-field full">
+      <div class="food-preference-heading">
+        <span class="form-label">ìŒì‹ ì·¨í–¥ ê²€ì‚¬ <span class="required">*</span></span>
+        <p>ë¨¹ê³  ì‹¶ì€ ì‹œê°„ê³¼ ìŒì‹ ì·¨í–¥ì„ ì•Œë ¤ì£¼ë©´ ë§žì¶¤ ë©”ë‰´ë¥¼ ê³¨ë¼ë“œë ¤ìš”.</p>
+      </div>
+      <div class="food-preference-grid">
+        ${locationField}
+        ${renderPreference("mealTime", "ì‹ì‚¬ ì‹œê°„", [{ value: "ì ì‹¬", label: "ì ì‹¬" }, { value: "ì €ë…", label: "ì €ë…" }])}
+        <div class="form-field food-preference spice-preference">
+          <label for="spice-level">1. ì–´ëŠ ì •ë„ ë§µê¸°ì˜ ìŒì‹ì„ ë“œì‹¤ ìˆ˜ ìžˆìœ¼ì‹ ê°€ìš”?</label>
+          <div class="spice-slider-card">
+            <div class="spice-value-row"><span>ë§µê¸° ë‹¨ê³„</span><output id="spice-output" for="spice-level">2</output></div>
+            <input id="spice-level" name="spiceLevel" type="range" min="0" max="5" step="1" value="2" />
+            <div class="spice-scale"><span>0 Â· ëª» ë¨¹ìŒ</span><span>5 Â· ë§¤ìš° ë§¤ì›€</span></div>
+          </div>
+        </div>
+        ${renderPreference("rawPreference", "2. ë‚ ê²ƒì„ ë“œì‹¤ ìˆ˜ ìžˆìœ¼ì‹ ê°€ìš”?", [
+          { value: "ë‚ ê²ƒ", label: "A Â· ë„¤" },
+          { value: "ë‚ ê²ƒ ì œì™¸", label: "B Â· ì•„ë‹ˆì˜¤" },
+        ], 1)}
+        ${renderPreference("adventurePreference", "3. í•œêµ­ì—ì„œë§Œ ì¦ê¸¸ ìˆ˜ ìžˆëŠ” ìŒì‹ì„ ë“œì…”ë³´ê³  ì‹¶ìœ¼ì‹ ê°€ìš”?", [
+          { value: "í•œêµ­ í–¥í† ", label: "A Â· ë„¤ (ì²˜ìŒ ë³´ëŠ” ìŒì‹ë„ ê´œì°®ì•„ìš”)" },
+          { value: "ë„ì „ ì‰¬ì›€", label: "B Â· ë„ì „í•˜ê¸° ì‰¬ìš´ ìŒì‹ì„ ë¨¹ê³  ì‹¶ì–´ìš”" },
+        ])}
+        ${renderPreference("cookingPreference", "4. ì–´ë–¤ ìŒì‹ ìœ í˜•ì„ ì„ í˜¸í•˜ì‹œë‚˜ìš”?", [
+          { value: "ë³¶ìŒ", label: "A Â· ë³¶ìŒ ìŒì‹" },
+          { value: "êµ¬ì´", label: "B Â· êµ¬ìš´ ìŒì‹" },
+          { value: "êµ­ë¬¼", label: "C Â· êµ­ë¬¼ ìŒì‹" },
+        ], 2)}
+      </div>
+    </section>`;
+}
+
+function renderAiRouteFields() {
+  const tourFields = renderTourFields();
+  const foodChoices = renderFoodFields();
+  return tourFields + foodChoices;
+}
+
+const districtCoordinates = {
+  "í•´ìš´ëŒ€êµ¬": [35.1631, 129.1635], "ìˆ˜ì˜êµ¬": [35.1457, 129.1132], "ì˜ë„êµ¬": [35.0912, 129.0680], "ë‚¨êµ¬": [35.1366, 129.0844],
+  "ì‚¬í•˜êµ¬": [35.1046, 128.9747], "ì„œêµ¬": [35.0979, 129.0244], "ê¸°ìž¥êµ°": [35.2445, 129.2223], "ê°•ì„œêµ¬": [35.2122, 128.9806],
+};
+
+function describeWeather(code) {
+  if (code === 0) return ["ë§‘ìŒ", "â˜€ï¸"];
+  if ([1, 2].includes(code)) return ["ëŒ€ì²´ë¡œ ë§‘ìŒ", "ðŸŒ¤ï¸"];
+  if (code === 3) return ["íë¦¼", "â˜ï¸"];
+  if ([45, 48].includes(code)) return ["ì•ˆê°œ", "ðŸŒ«ï¸"];
+  if ([51, 53, 55, 56, 57].includes(code)) return ["ì´ìŠ¬ë¹„", "ðŸŒ¦ï¸"];
+  if ([61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return ["ë¹„", "ðŸŒ§ï¸"];
+  if ([71, 73, 75, 77, 85, 86].includes(code)) return ["ëˆˆ", "ðŸŒ¨ï¸"];
+  if ([95, 96, 99].includes(code)) return ["ë‡Œìš°", "â›ˆï¸"];
+  return ["ë‚ ì”¨ ì •ë³´", "â›…"];
+}
+
+async function syncWeather() {
+  const location = document.querySelector("#location")?.value;
+  const date = document.querySelector("#date")?.value;
+  const hidden = document.querySelector("#weather");
+  const status = document.querySelector("#weather-status");
+  const detail = document.querySelector("#weather-detail");
+  const icon = document.querySelector("#weather-icon");
+  if (!location || !date || !hidden || !status) return;
+  const [latitude, longitude] = districtCoordinates[location];
+  status.textContent = "ë‚ ì”¨ë¥¼ ë¶ˆëŸ¬ì˜¤ëŠ” ì¤‘â€¦";
+  detail.textContent = `${location} Â· ${date}`;
+  try {
+    const params = new URLSearchParams({ latitude, longitude, daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max", timezone: "Asia/Seoul", forecast_days: "16" });
+    const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`);
+    if (!response.ok) throw new Error("weather request failed");
+    const data = await response.json();
+    const index = data.daily?.time?.indexOf(date) ?? -1;
+    if (index < 0) throw new Error("date unavailable");
+    const [label, symbol] = describeWeather(data.daily.weather_code[index]);
+    const rain = data.daily.precipitation_probability_max[index];
+    const low = Math.round(data.daily.temperature_2m_min[index]);
+    const high = Math.round(data.daily.temperature_2m_max[index]);
+    hidden.value = label.includes("ë¹„") || label.includes("ë‡Œìš°") ? "ë¹„" : label.includes("íë¦¼") || label.includes("ì•ˆê°œ") ? "íë¦¼" : "ë§‘ìŒ";
+    status.textContent = `${symbol} ${label} Â· ${low}~${high}â„ƒ`;
+    detail.textContent = `${location} ${date} Â· ê°•ìˆ˜í™•ë¥  ${rain ?? 0}% Â· Open-Meteo ìžë™ ì˜ˆë³´`;
+    icon.textContent = symbol;
+  } catch (_) {
+    hidden.value = "í™•ì¸ ë¶ˆê°€";
+    status.textContent = "ì˜ˆë³´ë¥¼ í™•ì¸í•  ìˆ˜ ì—†ì–´ìš”";
+    detail.textContent = "ì˜¤ëŠ˜ë¶€í„° 16ì¼ ì´ë‚´ ë‚ ì§œì¸ì§€ ì¸í„°ë„· ì—°ê²°ì„ í™•ì¸í•´ ì£¼ì„¸ìš”.";
+    icon.textContent = "ðŸ“¡";
+  }
+}
+
+function initializeClockPicker() {
+  const dial = document.querySelector("#travel-clock");
+  const startInput = document.querySelector("#start-time");
+  const endInput = document.querySelector("#end-time");
+  if (!dial || !startInput || !endInput) return;
+  let activeHand = "";
+  const circularDistance = (a, b) => Math.min(Math.abs(a - b), 24 - Math.abs(a - b));
+  const update = () => {
+    const start = Number(startInput.value);
+    const end = Number(endInput.value);
+    dial.style.setProperty("--start-angle", `${start * 15}deg`);
+    dial.style.setProperty("--end-angle", `${end * 15}deg`);
+    dial.style.setProperty("--range-size", `${(end - start) * 15}deg`);
+    document.querySelector("#start-time-output").textContent = `${String(start).padStart(2, "0")}:00`;
+    document.querySelector("#end-time-output").textContent = `${String(end).padStart(2, "0")}:00`;
+  };
+  const hourFromPointer = (event) => {
+    const rect = dial.getBoundingClientRect();
+    const x = event.clientX - (rect.left + rect.width / 2);
+    const y = event.clientY - (rect.top + rect.height / 2);
+    return Math.round(((Math.atan2(x, -y) * 180 / Math.PI + 360) % 360) / 15) % 24;
+  };
+  const move = (event) => {
+    if (!activeHand) return;
+    const hour = hourFromPointer(event);
+    if (activeHand === "start") startInput.value = Math.min(hour, Number(endInput.value) - 1);
+    else endInput.value = Math.max(hour, Number(startInput.value) + 1);
+    update();
+  };
+  dial.addEventListener("pointerdown", (event) => {
+    const hour = hourFromPointer(event);
+    activeHand = event.target.dataset.clockHand || (circularDistance(hour, Number(startInput.value)) <= circularDistance(hour, Number(endInput.value)) ? "start" : "end");
+    dial.setPointerCapture(event.pointerId);
+    move(event);
+  });
+  dial.addEventListener("pointermove", move);
+  dial.addEventListener("pointerup", () => { activeHand = ""; });
+  dial.addEventListener("pointercancel", () => { activeHand = ""; });
+  update();
+}
+
+function initializeDynamicControls() {
+  initializeClockPicker();
+  document.querySelector("#location")?.addEventListener("change", syncWeather);
+  document.querySelector("#date")?.addEventListener("change", syncWeather);
+  const spice = document.querySelector("#spice-level");
+  const spiceOutput = document.querySelector("#spice-output");
+  spice?.addEventListener("input", () => { spiceOutput.textContent = spice.value; });
+  syncWeather();
+}
+
+function setMbtiMode(mode) {
+  document.querySelectorAll("[data-mbti-mode]").forEach((button) => {
+    const active = button.dataset.mbtiMode === mode;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-selected", String(active));
+  });
+  document.querySelectorAll("[data-mbti-panel]").forEach((panel) => {
+    const active = panel.dataset.mbtiPanel === mode;
+    panel.hidden = !active;
+    panel.classList.toggle("active", active);
+  });
+  updateMbtiValue();
+}
+
+function updateMbtiValue() {
+  const activeMode = document.querySelector("[data-mbti-mode].active")?.dataset.mbtiMode || "direct";
+  let result;
+  if (activeMode === "direct") {
+    result = [0, 1, 2, 3].map((index) => document.querySelector(`input[name="mbti_${index}"]:checked`)?.value || "").join("");
+  } else {
+    const scores = { I: 0, E: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+    mbtiQuestions.forEach((_, index) => {
+      const value = document.querySelector(`input[name="mbti_q${index}"]:checked`)?.value;
+      if (value) scores[value] += 1;
+    });
+    result = `${scores.E > scores.I ? "E" : "I"}${scores.N > scores.S ? "N" : "S"}${scores.F > scores.T ? "F" : "T"}${scores.P > scores.J ? "P" : "J"}`;
+  }
+  const hiddenInput = document.querySelector("#mbti-value");
+  const output = document.querySelector("#mbti-result");
+  if (hiddenInput) hiddenInput.value = result;
+  if (output) output.textContent = result;
+}
+
+function prepareQuiz() {
+  state.categories = getSelectedValues("category");
+  const categoryError = document.querySelector("#category-error");
+  if (!state.categories.length) {
+    categoryError.hidden = false;
+    return;
+  }
+  categoryError.hidden = true;
+  state.service = state.categories[0];
+  state.companion = getSelectedValue("companion");
+  state.age = getSelectedValue("age");
+  state.language = getSelectedValue("language");
+  document.querySelector("#quiz-title").textContent = "ì„ íƒí•œ ë¶„ì•¼ì˜ ë§žì¶¤ ì •ë³´ë¥¼ ì•Œë ¤ì£¼ì„¸ìš”";
+  document.querySelector("#quiz-description").textContent = "ì„ íƒí•œ ëª¨ë“  ë¶„ì•¼ì—ì„œ ê°ê° ì„¸ ê°€ì§€ì”© ì¶”ì²œí•´ ë“œë ¤ìš”.";
+
+  const needsMbti = state.categories.some((category) => ["attraction", "activity"].includes(category));
+  const needsFood = state.categories.includes("food");
+  dynamicFields.innerHTML = [
+    needsMbti ? renderPersonalityFields() : "",
+    renderTravelFields(),
+    needsFood ? renderFoodFields(false) : "",
+  ].join("");
+
+  setMbtiMode("direct");
+  initializeDynamicControls();
+
+  showScreen("quiz");
+}
+
+function hashText(text) {
+  return [...text].reduce((sum, character) => sum + character.charCodeAt(0), 0);
+}
+
+function scoreAttraction(place, answers) {
+  let score = 40 + (hashText(place.name + (answers.date || "") + state.companion + state.age) % 13);
+  const mbti = answers.mbti || "UNKNOWN";
+  if (place.mbtiMatches?.includes(mbti)) score += 38;
+  else if (place.mbtiMatches) {
+    const closestMatch = Math.max(...place.mbtiMatches.map((type) =>
+      [...type].filter((letter, index) => letter === mbti[index]).length,
+    ));
+    score += closestMatch * 5;
+  }
+  const traits = [
+    mbti.startsWith("I") ? "ë‚´í–¥" : "ì™¸í–¥",
+    mbti.includes("N") ? "ì§ê´€" : "í˜„ì‹¤",
+    mbti.includes("F") ? "ê°ì„±" : "ì‚¬ê³ ",
+    mbti.endsWith("J") ? "ê³„íš" : "ì¦‰í¥",
+  ];
+
+  traits.forEach((trait) => {
+    if (place.tags.includes(trait)) score += 8;
+  });
+  if (place.tags.includes(answers.time)) score += 14;
+  if (place.tags.includes(answers.weather)) score += 17;
+  if (answers.weather === "ë¹„" && place.tags.includes("ì‹¤ë‚´")) score += 18;
+
+  const locationMatches = {
+    ë¶€ì‚°ì—­: ["ì˜ë„êµ¬", "ì„œêµ¬", "ì‚¬í•˜êµ¬", "ë‚¨êµ¬"],
+    í•´ìš´ëŒ€: ["í•´ìš´ëŒ€êµ¬", "ê¸°ìž¥êµ°", "ìˆ˜ì˜êµ¬"],
+    ì„œë©´: ["ìˆ˜ì˜êµ¬", "í•´ìš´ëŒ€êµ¬", "ë‚¨êµ¬"],
+    ê´‘ì•ˆë¦¬: ["ìˆ˜ì˜êµ¬", "í•´ìš´ëŒ€êµ¬", "ë‚¨êµ¬"],
+    ë‚¨í¬ë™: ["ì„œêµ¬", "ì˜ë„êµ¬", "ì‚¬í•˜êµ¬", "ê°•ì„œêµ¬"],
+  };
+  if ((locationMatches[answers.location] || []).some((area) => place.tags.includes(area))) score += 13;
+
+  return Math.min(score, 98);
+}
+
+function scoreFood(place, answers) {
+  let score = 35 + (hashText(place.name + (answers.mealTime || "") + state.companion + state.age) % 10);
+  if (place.tags.includes(answers.mealTime)) score += 26;
+
+  const likedTags = [answers.rawPreference, answers.adventurePreference, answers.cookingPreference]
+    .filter((value) => value && !value.includes("ì œì™¸"));
+  likedTags.forEach((tag) => {
+    if (place.tags.includes(tag)) score += 13;
+  });
+
+  if (answers.spiceLevel === "ë§¤ìš° ë§¤ì›€" && place.tags.includes("ë§¤ìš° ë§¤ì›€")) score += 18;
+  if (answers.spiceLevel === "ë³´í†µ ë§¤ì›€" && place.tags.includes("ë³´í†µ ë§¤ì›€")) score += 18;
+  if (answers.spiceLevel === "ë§¤ìš° ë§¤ì›€" && place.tags.includes("ë³´í†µ ë§¤ì›€")) score += 8;
+
+  const exclusions = [[answers.rawPreference, "ë‚ ê²ƒ"]];
+  exclusions.forEach(([preference, tag]) => {
+    if (preference?.includes("ì œì™¸") && place.tags.includes(tag)) score -= 100;
+  });
+  if (answers.spiceLevel === "ë§¤ìš´ë§› ì œì™¸" && (place.tags.includes("ë³´í†µ ë§¤ì›€") || place.tags.includes("ë§¤ìš° ë§¤ì›€"))) score -= 100;
+  if (answers.spiceLevel === "ë³´í†µ ë§¤ì›€" && place.tags.includes("ë§¤ìš° ë§¤ì›€")) score -= 100;
+
+  return Math.max(1, Math.min(score, 98));
+}
+
+function getAnswers(form) {
+  return Object.fromEntries(new FormData(form).entries());
+}
+
+function getRecommendations() {
+  if (personalizedData.length) {
+    const locationAreas = Object.fromEntries(Object.keys(districtCoordinates).map((district) => [district, [district]]));
+    const preferredAreas = locationAreas[state.answers.location] || [];
+    const selectedMbti = state.answers.mbti || "";
+
+    return state.categories.flatMap((category) => {
+      let candidates = verifiedPlaceCatalog[category].map((place) => makeVerifiedPlace(place, category));
+      candidates = candidates.filter((place) => preferredAreas.includes(place.area));
+
+      const ranked = candidates.map((place) => {
+        let score = 48 + (hashText(place.name + state.age) % 10);
+        if (preferredAreas.includes(place.area)) score += 18;
+        if (selectedMbti) score += hashText(`${place.name}-${selectedMbti}-${state.companion}`) % 24;
+        return { ...place, score: Math.min(score, 98) };
+      });
+
+      return ranked
+        .sort((a, b) => category === "food"
+          ? b.rating - a.rating || b.score - a.score
+          : b.score - a.score || b.rating - a.rating)
+        .slice(0, 3);
+    });
+  }
+
+  const foodCandidates = foodData.filter((place) => place.areas?.includes(state.answers.location));
+  return state.categories.flatMap((category) => {
+    if (category === "food") {
+      return foodCandidates
+        .map((place) => ({ ...place, score: scoreFood(place, state.answers), service: category }))
+        .filter((place) => place.score > 1)
+        .sort((a, b) => b.rating - a.rating || b.score - a.score)
+        .slice(0, 3);
+    }
+    const source = category === "cafe" ? cafeData : category === "activity" ? activityData : attractionData;
+    return source
+      .map((place) => ({ ...place, score: scoreAttraction(place, state.answers), service: category }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3);
+  });
+}
+
+function createMapUrl(name) {
+  const location = state.answers.location || "ë¶€ì‚°";
+  const place = state.recommendations.find((item) => item.name === name);
+  const area = place?.area || location;
+  return `https://map.kakao.com/link/search/${encodeURIComponent(`ë¶€ì‚° ${area} ${name}`)}`;
+}
+
+function createGoogleMapUrl(name) {
+  const place = state.recommendations.find((item) => item.name === name);
+  const area = place?.area || "ë¶€ì‚°";
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`ë¶€ì‚° ${area} ${name}`)}`;
+}
+
+function getFallbackPlaceImage(place) {
+  const exactQuery = encodeURIComponent(`ë¶€ì‚° ${place.area || ""} ${place.name}`);
+  return `https://tse2.mm.bing.net/th?q=${exactQuery}&w=900&h=540&c=7&rs=1&p=0`;
+}
+
+async function findPlaceImage(name, area) {
+  const cacheKey = `busan-real-photo-v2:${area}:${name}`;
+  const cached = sessionStorage.getItem(cacheKey);
+  if (cached) return cached;
+  const params = new URLSearchParams({
+    action: "query",
+    generator: "search",
+    gsrsearch: `intitle:\"${name}\" ë¶€ì‚°`,
+    gsrnamespace: "6",
+    gsrlimit: "5",
+    prop: "imageinfo",
+    iiprop: "url",
+    iiurlwidth: "900",
+    format: "json",
+    origin: "*",
+  });
+  try {
+    const response = await fetch(`https://commons.wikimedia.org/w/api.php?${params}`);
+    if (!response.ok) return "";
+    const data = await response.json();
+    const image = Object.values(data.query?.pages || {}).find((page) => page.imageinfo?.[0]?.thumburl)?.imageinfo?.[0]?.thumburl || "";
+    if (image) sessionStorage.setItem(cacheKey, image);
+    return image;
+  } catch (_) {
+    return "";
+  }
+}
+
+async function hydratePlaceImages() {
+  const imageElements = [...recommendationList.querySelectorAll("[data-place-image]")];
+  await Promise.all(imageElements.map(async (image) => {
+    image.addEventListener("error", () => {
+      if (image.src !== image.dataset.fallback) {
+        image.src = image.dataset.fallback;
+        return;
+      }
+      image.classList.add("is-unavailable");
+      image.closest(".place-visual")?.classList.add("photo-unavailable");
+    });
+    const source = await findPlaceImage(decodeURIComponent(image.dataset.placeImage), decodeURIComponent(image.dataset.area));
+    if (source) image.src = source;
+    image.classList.remove("is-loading");
+  }));
+}
+
+function renderRecommendations() {
+  const sectionNames = { attraction: "ðŸ“ ë³¼ê±°ë¦¬", food: "ðŸ´ ë§›ì§‘", cafe: "â˜•ï¸ ë·°&ì¹´íŽ˜", activity: "ðŸ„ ì²´í—˜" };
+  recommendationList.innerHTML = state.categories.map((category) => {
+    const places = state.recommendations.filter((place) => place.service === category);
+    return `<section class="recommendation-section">
+      <h3 class="recommendation-section-heading">${sectionNames[category]} <span>ì¶”ì²œ 3ê³³</span></h3>
+      <div class="recommendation-grid">${places.map(
+      (place, index) => `
+        <article class="place-card">
+          <div class="place-visual" style="--card-gradient: ${place.gradient}">
+            <a class="place-photo-link" href="${createGoogleMapUrl(place.name)}" target="_blank" rel="noopener noreferrer" aria-label="Google ì§€ë„ì—ì„œ ${place.name} ì‹¤ì œ ì‚¬ì§„ ë³´ê¸°">
+              <img class="place-photo is-loading" src="${getFallbackPlaceImage(place)}" data-fallback="${getFallbackPlaceImage(place)}" data-place-image="${encodeURIComponent(place.name)}" data-area="${encodeURIComponent(place.area || "ë¶€ì‚°")}" alt="${place.name} ì‹¤ì œ ìž¥ì†Œ ì‚¬ì§„" loading="lazy" />
+            </a>
+            <span class="place-photo-shade" aria-hidden="true"></span>
+            <span class="place-photo-label">ì‹¤ì œ ìž¥ì†Œ ì‚¬ì§„</span>
+            <span class="place-rank">${index + 1}</span>
+            <span class="match-badge">${place.service === "food" ? `í‰ì  ${place.rating.toFixed(1)}` : `ì·¨í–¥ ì¼ì¹˜ ${place.score}%`}</span>
+          </div>
+          <div class="place-content">
+            <p class="place-category">${place.category}</p>
+            <h3>${place.name}</h3>
+            <p class="place-description">${place.description}</p>
+            <div class="place-tags">
+              ${place.displayTags.map((tag) => `<span class="place-tag">${tag}</span>`).join("")}
+            </div>
+            <div class="review-box"><b>í•œì¤„ ë¦¬ë·°</b> Â· â€œ${place.review}â€</div>
+            <div class="map-link-row">
+              <a class="map-link" href="${createMapUrl(place.name)}" target="_blank" rel="noopener noreferrer" aria-label="ì¹´ì¹´ì˜¤ë§µì—ì„œ ${place.name} ê²€ìƒ‰í•˜ê¸°">ì¹´ì¹´ì˜¤ë§µ <span aria-hidden="true">â†—</span></a>
+              <a class="map-link google-map-link" href="${createGoogleMapUrl(place.name)}" target="_blank" rel="noopener noreferrer" aria-label="Google ì§€ë„ì—ì„œ ${place.name} ê²€ìƒ‰í•˜ê¸°">Google ì§€ë„ <span aria-hidden="true">â†—</span></a>
+            </div>
+          </div>
+        </article>
+      `).join("")}</div></section>`;
+  }).join("");
+  hydratePlaceImages();
+}
+
+function formatMbti(value) {
+  const labels = {
+    ISFJ: "ì•„ì´ì—ìŠ¤ì—í”„ì œì´",
+    INFP: "ì•„ì´ì—”ì—í”„í”¼",
+    ESFP: "ì´ì—ìŠ¤ì—í”„í”¼",
+    ENFJ: "ì´ì—”ì—í”„ì œì´",
+    INTJ: "ì•„ì´ì—”í‹°ì œì´",
+    ENTP: "ì´ì—”í‹°í”¼",
+    ESTJ: "ì´ì—ìŠ¤í‹°ì œì´",
+    UNKNOWN: "ì„±ê²© ìœ í˜• ëª¨ë¦„",
+  };
+  return labels[value] || value;
+}
+
+function renderSummary() {
+  const labels = [];
+  labels.push(state.language);
+  labels.push(state.companion);
+  labels.push(state.age);
+  const categoryNames = { attraction: "ë³¼ê±°ë¦¬", food: "ë§›ì§‘", cafe: "ë·°&ì¹´íŽ˜", activity: "ì²´í—˜" };
+  state.categories.forEach((category) => labels.push(categoryNames[category]));
+  if (state.answers.mbti) labels.push(formatMbti(state.answers.mbti));
+  if (state.answers.mealTime) labels.push(state.answers.mealTime);
+  [state.answers.spiceLevel, state.answers.rawPreference, state.answers.adventurePreference, state.answers.cookingPreference]
+    .filter(Boolean)
+    .forEach((value) => labels.push(value));
+  if (state.answers.startTime && state.answers.endTime) labels.push(`${state.answers.startTime}:00~${state.answers.endTime}:00`);
+  if (state.answers.location) labels.push(state.answers.location + " ì¶œë°œ");
+  if (state.answers.weather) labels.push(state.answers.weather);
+
+  document.querySelector("#result-summary").innerHTML = labels
+    .map((label) => `<span class="summary-chip">${label}</span>`)
+    .join("");
+}
+
+function renderRoute() {
+  routeSection.hidden = false;
+  const isFoodOnly = state.categories.length === 1 && state.categories[0] === "food";
+  const routeRecommendations = isFoodOnly
+    ? state.recommendations
+    : state.categories.map((category) => state.recommendations.find((place) => place.service === category)).filter(Boolean).slice(0, 3);
+  routeList.innerHTML = routeRecommendations
+    .map((place, index) => {
+      const stop = `
+        <div class="route-stop">
+          <em>${index + 1}ë²ˆì§¸ ì¶”ì²œ</em>
+          <b>${place.name}</b>
+          <span>${place.area} Â· ${index === 0 ? "ì—¬í–‰ ì‹œìž‘" : "ë‹¤ìŒ ì¶”ì²œ ìž¥ì†Œ"}</span>
+        </div>`;
+      const arrow = index < routeRecommendations.length - 1 ? `<div class="route-arrow" aria-hidden="true">â†’</div>` : "";
+      return stop + arrow;
+    })
+    .join("");
+  renderRouteMap(routeRecommendations);
+}
+
+function loadKakaoMaps(appKey) {
+  if (window.kakao?.maps?.services) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    document.querySelector("#kakao-maps-sdk")?.remove();
+    const script = document.createElement("script");
+    script.id = "kakao-maps-sdk";
+    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${encodeURIComponent(appKey)}&libraries=services&autoload=false`;
+    script.onload = () => window.kakao.maps.load(resolve);
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
+function searchWithKakao(query, district) {
+  return new Promise((resolve) => {
+    const placesService = new window.kakao.maps.services.Places();
+    placesService.keywordSearch(query, (results, status) => {
+      if (status !== window.kakao.maps.services.Status.OK) return resolve(null);
+      const exactAreaResult = results.find((result) =>
+        `${result.address_name || ""} ${result.road_address_name || ""}`.includes(district)
+      );
+      resolve(exactAreaResult ? {
+        x: Number(exactAreaResult.x), y: Number(exactAreaResult.y),
+        name: exactAreaResult.place_name, url: exactAreaResult.place_url,
+      } : null);
+    });
+  });
+}
+
+async function renderRouteMap(places) {
+  const mapElement = document.querySelector("#route-map");
+  const routeLink = document.querySelector("#kakao-route-link");
+  if (!mapElement || !places.length) return;
+  state.routeRecommendations = places;
+  routeLink.href = createMapUrl(places[0].name);
+  const appKey = localStorage.getItem("kakaoMapsJavaScriptKey") || "";
+  if (!appKey) {
+    mapElement.innerHTML = `<div class="map-empty-state"><b>ì¹´ì¹´ì˜¤ë§µ JavaScript í‚¤ë¥¼ ì—°ê²°í•´ ì£¼ì„¸ìš”</b><span>â€˜ì§€ë„ API ì„¤ì •â€™ì„ ëˆ„ë¥´ë©´ ì„ íƒ ì§€ì—­ì˜ ì¶”ì²œ ìž¥ì†Œ ë§ˆì»¤ì™€ ê²½ë¡œì„ ì´ í‘œì‹œë©ë‹ˆë‹¤.</span></div>`;
+    return;
+  }
+  mapElement.innerHTML = `<div class="map-empty-state"><b>ì¹´ì¹´ì˜¤ë§µì„ ë¶ˆëŸ¬ì˜¤ëŠ” ì¤‘â€¦</b><span>ìž¥ì†Œê°€ ì„ íƒí•œ ì§€ì—­ì— ìžˆëŠ”ì§€ í™•ì¸í•˜ê³  ìžˆìŠµë‹ˆë‹¤.</span></div>`;
+  try {
+    await loadKakaoMaps(appKey);
+    const coordinates = (await Promise.all(places.map(async (place) => ({ place, point: await searchWithKakao(`ë¶€ì‚° ${place.area} ${place.name}`, place.area) })))).filter((item) => item.point);
+    if (!coordinates.length) throw new Error("geocoding failed");
+    mapElement.innerHTML = "";
+    const center = new window.kakao.maps.LatLng(coordinates[0].point.y, coordinates[0].point.x);
+    const map = new window.kakao.maps.Map(mapElement, { center, level: 7 });
+    map.addControl(new window.kakao.maps.ZoomControl(), window.kakao.maps.ControlPosition.RIGHT);
+    const bounds = new window.kakao.maps.LatLngBounds();
+    const path = coordinates.map(({ place, point }, index) => {
+      const position = new window.kakao.maps.LatLng(point.y, point.x);
+      bounds.extend(position);
+      const marker = new window.kakao.maps.Marker({ position, map, title: `${index + 1}. ${place.name}` });
+      const overlay = new window.kakao.maps.CustomOverlay({
+        position, yAnchor: 2.1,
+        content: `<a href="${point.url}" target="_blank" rel="noopener" style="padding:6px 9px;border-radius:10px;background:#251d00;color:#fee500;font:700 12px sans-serif;text-decoration:none;box-shadow:0 4px 12px #0003">${index + 1}. ${place.name}</a>`,
+      });
+      overlay.setMap(map);
+      return position;
+    });
+    if (path.length > 1) new window.kakao.maps.Polyline({ map, path, strokeColor: "#e43b1c", strokeWeight: 6, strokeOpacity: 0.88, strokeStyle: "solid" });
+    map.setBounds(bounds, 55, 55, 55, 55);
+    const last = coordinates.at(-1);
+    routeLink.href = `https://map.kakao.com/link/to/${encodeURIComponent(last.point.name || last.place.name)},${last.point.y},${last.point.x}`;
+  } catch (_) {
+    mapElement.innerHTML = `<div class="map-empty-state"><b>ì¹´ì¹´ì˜¤ë§µì„ í‘œì‹œí•˜ì§€ ëª»í–ˆì–´ìš”</b><span>JavaScript í‚¤, ì¹´ì¹´ì˜¤ë§µ ì‚¬ìš© ì„¤ì •, ë“±ë¡ëœ ì‚¬ì´íŠ¸ ë„ë©”ì¸ì„ í™•ì¸í•´ ì£¼ì„¸ìš”.</span></div>`;
+  }
+}
+
+function showResults(event) {
+  event.preventDefault();
+  if (!quizForm.reportValidity()) return;
+
+  updateMbtiValue();
+  state.answers = getAnswers(quizForm);
+  state.recommendations = getRecommendations();
+  document.querySelector("#result-title").textContent = "ì„ íƒí•œ ëª¨ë“  ë¶„ì•¼ì˜ ë¶€ì‚° ë§žì¶¤ ì¶”ì²œ";
+  document.querySelector("#result-description").textContent = "ë™í–‰ ìœ í˜•, ë‚˜ì´ëŒ€ì™€ ë§žì¶¤ ê²€ì‚¬ ê²°ê³¼ë¥¼ ë°˜ì˜í•´ ë¶„ì•¼ë³„ë¡œ ì„¸ ê³³ì”© ê³¨ëžì–´ìš”.";
+  renderSummary();
+  renderRecommendations();
+  renderRoute();
+  showScreen("result");
+}
+
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
+  window.clearTimeout(showToast.timer);
+  showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 2400);
+}
+
+function saveResult() {
+  window.BusanI18n.downloadResult(state);
+  showToast("ì¶”ì²œ ê²°ê³¼ë¥¼ íŒŒì¼ë¡œ ì €ìž¥í–ˆì–´ìš”.");
+}
+
+startButton.addEventListener("click", prepareQuiz);
+quizForm.addEventListener("submit", showResults);
+document.querySelector("#restart-button").addEventListener("click", () => showScreen("start"));
+document.querySelector("#save-button").addEventListener("click", saveResult);
+document.querySelector("#map-api-settings")?.addEventListener("click", () => {
+  const current = localStorage.getItem("kakaoMapsJavaScriptKey") || "";
+  const appKey = window.prompt("ì¹´ì¹´ì˜¤ë””ë²¨ë¡œí¼ìŠ¤ì—ì„œ ë°œê¸‰í•œ JavaScript í‚¤ë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš”.\nì·¨ì†Œí•˜ë©´ í˜„ìž¬ ì„¤ì •ì„ ìœ ì§€í•©ë‹ˆë‹¤.", current);
+  if (appKey === null) return;
+  if (appKey.trim()) localStorage.setItem("kakaoMapsJavaScriptKey", appKey.trim());
+  else localStorage.removeItem("kakaoMapsJavaScriptKey");
+  renderRouteMap(state.routeRecommendations || []);
+});
+
+document.querySelectorAll("[data-back]").forEach((button) => {
+  button.addEventListener("click", () => showScreen(button.dataset.back));
+});
+
+dynamicFields.addEventListener("click", (event) => {
+  const modeButton = event.target.closest("[data-mbti-mode]");
+  if (modeButton) setMbtiMode(modeButton.dataset.mbtiMode);
+});
+
+dynamicFields.addEventListener("change", (event) => {
+  if (event.target.matches('input[name^="mbti_"]')) updateMbtiValue();
+});
+
+document.querySelectorAll("input[name='category']").forEach((input) => {
+  input.addEventListener("change", () => {
+    const selectedCard = input.closest(".category-check");
+    selectedCard?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    document.querySelector("#category-error").hidden = getSelectedValues("category").length > 0;
+  });
+});
