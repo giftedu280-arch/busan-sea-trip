@@ -143,6 +143,7 @@
     ["· 부산의 바다와 도시를 잇는 맞춤 여행 안내", "· 釜山の海と街をつなぐオーダーメイド旅行案内", "· 连接釜山大海与城市的个性化旅行指南", "· A personalized guide connecting Busan's sea and city"],
     ["별도 로그인 없이 이 브라우저 안에서만 작동합니다.", "ログイン不要で、このブラウザ内だけで動作します。", "无需登录，仅在此浏览器中运行。", "Works entirely in this browser with no sign-in."],
 
+
     // 검사와 결과 화면
     ["어떤 여행을 좋아하세요?", "どんな旅が好きですか？", "你喜欢怎样的旅行？", "What kind of travel do you enjoy?"],
     ["성격과 현재 여행 상황을 알려주면 관광지 세 곳을 골라드려요.", "性格と今の旅の状況から、観光地を3か所選びます。", "告诉我们你的性格和当前旅行情况，我们会推荐三个景点。", "Tell us your personality and plans for three attraction picks."],
@@ -154,13 +155,43 @@
     ["선택한 음식 취향과 잘 맞는 부산의 대표 맛집을 골랐어요.", "選んだ好みに合う釜山の人気店を選びました。", "我们选出了符合你饮食喜好的釜山代表餐厅。", "We picked notable Busan restaurants that match your tastes."],
     ["식사 시간과 음식 취향을 고르면 부산 추천 메뉴 세 가지를 골라드려요.", "食事時間と好みから、釜山のおすすめメニューを3つ選びます。", "根据用餐时间和饮食喜好，为你推荐三种釜山菜单。", "Choose your meal time and tastes for three Busan menu picks."],
     ["당신의 취향을 담은 부산 메뉴 세 가지", "あなたの好みに合う釜山メニュー3選", "符合你口味的三种釜山菜单", "Three Busan dishes for your tastes"],
-    ["좋아하는 음식과 먹지 못하는 조건을 반영해 메뉴를 골랐어요.", "好きな料理と食べられない条件を反映してメニューを選びました。…6769 tokens truncated…, "Korea National Maritime Museum"],
+    ["좋아하는 음식과 먹지 못하는 조건을 반영해 메뉴를 골랐어요.", "好きな料理と食べられない条件を反映してメニューを選びました…5709 tokens truncated…たりです。", "每条小巷都有小作品，很适合慢慢散步。", "Small artworks fill the alleys, making it perfect for a slow walk."],
+    ["골목 여행", "路地歩き", "巷弄之旅", "Alley walk"],
+    ["예술", "アート", "艺术", "Art"],
+    ["전망", "眺望", "景观", "View"],
+    ["흰여울문화마을", "ヒンヨウル文化村", "白浅文化村", "Huinnyeoul Culture Village"],
+    ["마을 · 바다", "街 · 海", "村落 · 大海", "Village · Sea"],
+    ["하얀 골목 아래로 영도 바다가 펼쳐지는 조용하고 감성적인 산책길이에요.", "白い路地の下に影島の海が広がる、静かで情緒ある散歩道です。", "白色小巷下方铺展开影岛海景，是一条安静又有氛围的步道。", "A quiet, atmospheric white alley walk overlooking the sea off Yeongdo."],
+    ["바다를 보며 골목을 걷는 시간이 영화처럼 느껴져요.", "海を眺めながら路地を歩く時間が、映画のワンシーンのようです。", "沿着小巷看海，仿佛置身电影场景。", "Walking the alleys beside the sea feels like a scene from a film."],
+    ["감성 사진", "雰囲気写真", "氛围照片", "Atmospheric photos"],
+    ["바다 전망", "オーシャンビュー", "海景", "Ocean view"],
+    ["태종대", "太宗台", "太宗台", "Taejongdae"],
+    ["자연 · 절경", "自然 · 絶景", "自然 · 绝景", "Nature · Scenery"],
+    ["울창한 숲과 바다 절벽을 함께 만나는 영도의 웅장한 자연 명소예요.", "深い森と海の断崖を一度に楽しめる、影島の雄大な自然名所です。", "在影岛这处壮丽自然景点，可以同时欣赏茂密森林与海边悬崖。", "A dramatic Yeongdo nature spot combining dense forest and sea cliffs."],
+    ["전망대에서 보는 탁 트인 바다가 시원하고 멋져요.", "展望台から眺める広い海は、爽快で見事です。", "从观景台眺望开阔大海，清爽又壮观。", "The wide-open sea from the observatory is refreshing and spectacular."],
+    ["자연", "自然", "自然", "Nature"],
+    ["전망대", "展望台", "观景台", "Observatory"],
+    ["걷기", "ウォーキング", "徒步", "Walking"],
+    ["송도해상케이블카", "松島海上ケーブルカー", "松岛海上缆车", "Songdo Marine Cable Car"],
+    ["체험 · 전망", "体験 · 眺望", "体验 · 景观", "Experience · View"],
+    ["바다 위를 가로지르며 송도 해안과 도시 풍경을 감상하는 특별한 체험이에요.", "海の上を渡りながら、松島の海岸と街並みを楽しめる特別な体験です。", "乘缆车横越海面，欣赏松岛海岸和城市风景。", "A special ride over the sea with views of Songdo's coast and cityscape."],
+    ["바닥이 보이는 칸은 짜릿하고 풍경도 정말 멋져요.", "床が透明なゴンドラはスリル満点で、景色も素晴らしいです。", "透明地板车厢很刺激，风景也非常漂亮。", "The glass-floor cabin is thrilling, and the views are fantastic."],
+    ["이색 체험", "ユニーク体験", "特色体验", "Unique experience"],
+    ["가족", "家族", "家庭", "Family"],
+    ["해동용궁사", "海東龍宮寺", "海东龙宫寺", "Haedong Yonggungsa Temple"],
+    ["사찰 · 바다", "寺院 · 海", "寺庙 · 大海", "Temple · Sea"],
+    ["푸른 바다 바로 옆에 자리한 아름다운 사찰에서 특별한 부산 풍경을 만나요.", "青い海のすぐそばに建つ美しい寺院で、特別な釜山の景色に出会えます。", "在紧邻蓝色大海的美丽寺庙中，欣赏独特的釜山风景。", "A beautiful seaside temple offering one of Busan's most distinctive views."],
+    ["이른 아침에 가면 비교적 조용하게 바다와 사찰을 볼 수 있어요.", "早朝なら、比較的静かに海と寺院を楽しめます。", "清晨前往，可以较安静地欣赏大海和寺庙。", "Visit early for a quieter view of the temple and sea."],
+    ["전통 문화", "伝統文化", "传统文化", "Traditional culture"],
+    ["아침", "朝", "早晨", "Morning"],
+    ["국립해양박물관", "国立海洋博物館", "国立海洋博物馆", "Korea National Maritime Museum"],
     ["박물관 · 실내", "博物館 · 屋内", "博物馆 · 室内", "Museum · Indoor"],
     ["한국의 바다 역사와 해양 생물을 편안한 실내에서 즐기는 박물관이에요.", "韓国の海の歴史や海洋生物を、快適な屋内で学べる博物館です。", "可以在舒适的室内了解韩国海洋历史和海洋生物。", "An indoor museum exploring Korea's maritime history and marine life."],
     ["비 오는 날에도 알차고 편하게 둘러볼 수 있어요.", "雨の日でも、快適に充実した時間を過ごせます。", "下雨天也能舒适、充实地参观。", "A comfortable and rewarding place to explore on a rainy day."],
     ["비 오는 날", "雨の日", "雨天", "Rainy day"],
     ["실내", "屋内", "室内", "Indoor"],
     ["해양 문화", "海洋文化", "海洋文化", "Maritime culture"],
+
 
     // 맛집
     ["본전돼지국밥", "ポンジョン・テジクッパ", "本钱猪肉汤饭", "Bonjeon Dwaeji Gukbap"],
@@ -214,6 +245,7 @@
     ["간식", "軽食", "小吃", "Snacks"],
     ["여러 메뉴", "多彩なメニュー", "多种菜单", "Many choices"],
 
+
     // 소요 시간
     ["약 1시간 30분", "約1時間30分", "约1小时30分钟", "About 1 hr 30 min"],
     ["약 2시간", "約2時間", "约2小时", "About 2 hours"],
@@ -226,6 +258,7 @@
     ["약 1시간 20분", "約1時間20分", "约1小时20分钟", "About 1 hr 20 min"],
   ];
 
+
   const languageIndex = { ko: 0, ja: 1, zh: 2, en: 3 };
   const valueToLanguage = { 한국어: "ko", 日本語: "ja", 中文: "zh", English: "en", 일본어: "ja", 중국어: "zh", 영어: "en" };
   const dictionaries = { ko: new Map(), ja: new Map(), zh: new Map(), en: new Map() };
@@ -235,50 +268,30 @@
     });
   });
 
-  // App-generated labels are not present in the initial HTML, so they need a
-  // small companion dictionary in addition to the static-page translation rows.
-  const dynamicRows = [
-    ["장소를 하나 이상 선택해 주세요", "場所を1つ以上選んでください", "请至少选择一个地点", "Select at least one place."],
-    ["장소를 선택했어요", "スポットを選びました", "已选择地点", "Place selected."],
-    ["장소 선택을 해제했어요", "スポットの選択を解除しました", "已取消选择地点", "Place selection cleared."],
-    ["새로운 장소를 추천했어요", "新しいスポットをおすすめしました", "已推荐新的地点", "New places recommended."],
-    ["권장 시간 반영", "推奨時間を反映", "已考虑推荐时间", "Recommended time included"],
-    ["약 2시간 체류 기준", "約2時間の滞在目安", "建议停留约2小时", "Based on a 2-hour stay"],
-    ["여행 가능 시간 안에 배치할 장소가 없습니다.", "旅行可能な時間内に配置できるスポットがありません。", "没有可在旅行时间内安排的地点。", "There are no places that fit within the available travel time."],
-    ["여기에 장소를 끌어다 놓으세요", "ここにスポットをドラッグしてください", "请将地点拖到这里", "Drag a place here"],
-    ["장소 빼기", "スポットを外す", "移除地点", "Remove place"],
-    ["블록 삭제", "時間枠を削除", "删除时间块", "Delete time block"],
-    ["일정에 추가", "予定に追加", "添加到行程", "Add to itinerary"],
-    ["실제 도로 이동 경로를 찾는 중…", "実際の道路ルートを検索中…", "正在查找实际道路路线…", "Finding the real road route…"],
-    ["카카오맵에서 실제 도로 경로를 찾는 중…", "Kakaoマップで実際の道路ルートを検索中…", "正在 Kakao 地图中查找实际道路路线…", "Finding the real road route in Kakao Map…"],
-    ["도로 경로를 찾지 못해 장소를 직선으로 연결했어요", "道路ルートが見つからず、スポットを直線で結びました", "未找到道路路线，已用直线连接地点", "A road route was unavailable, so the places are connected by straight lines."],
-    ["카카오 키 연결에 실패해 공개 지도로 표시했어요", "Kakaoキーに接続できなかったため、公開地図で表示しています", "Kakao 密钥连接失败，已显示公开地图", "The Kakao key could not be connected, so a public map is shown."],
-    ["날씨를 확인하는 중…", "天気を確認中…", "正在查看天气…", "Checking the weather…"],
-    ["예보를 확인할 수 없어요", "予報を確認できません", "无法查看预报", "The forecast is unavailable."],
-    ["날씨 정보 없이 안전한 장소를 우선 추천합니다.", "天気情報なしで、安全なスポットを優先しておすすめします。", "将在没有天气信息的情况下优先推荐安全地点。", "We will prioritize safe places without weather information."],
-  ];
-  dynamicRows.forEach((row) => {
-    Object.entries(languageIndex).forEach(([language, index]) => dictionaries[language].set(row[0], row[index]));
-  });
 
   const originalText = new WeakMap();
   const originalAttributes = new WeakMap();
+
 
   function getLanguage() {
     const value = document.querySelector('input[name="language"]:checked')?.value || "한국어";
     return valueToLanguage[value] || "ko";
   }
 
+
   function translate(source, language = getLanguage()) {
     if (!source || language === "ko") return source;
     const exact = dictionaries[language].get(source);
     if (exact) return exact;
 
+
     const scoreMatch = source.match(/^취향 일치\s+(\d+)%$/);
     if (scoreMatch) return `${translate("취향 일치", language)} ${scoreMatch[1]}%`;
 
+
     const reviewMatch = source.match(/^·\s*“(.+)”$/);
     if (reviewMatch) return `· “${translate(reviewMatch[1], language)}”`;
+
 
     const departureMatch = source.match(/^(.+) 출발$/);
     if (departureMatch) {
@@ -288,8 +301,10 @@
       return `From ${place}`;
     }
 
+
     const routeMatch = source.match(/^(.+) · (여행 시작|추천 이동)$/);
     if (routeMatch) return `${translate(routeMatch[1], language)} · ${translate(routeMatch[2], language)}`;
+
 
     const timeMatch = source.match(/^(오전|오후)\s+(\d+)시$/);
     if (timeMatch) {
@@ -299,29 +314,10 @@
       return `${translate(timeMatch[1], language)} ${hour}:00`;
     }
 
-    const durationMatch = source.match(/^(\d+(?:\.\d+)?)시간 · 추천 (\d+)장소$/);
-    if (durationMatch) {
-      const [, hours, count] = durationMatch;
-      if (language === "ja") return `${hours}時間 · おすすめ${count}か所`;
-      if (language === "zh") return `${hours}小时 · 推荐${count}个地点`;
-      return `${hours} hours · ${count} recommended places`;
-    }
-
-    const addedMatch = source.match(/^(.+)을\(를\) 일정에 추가했어요$/);
-    if (addedMatch) {
-      const place = translate(addedMatch[1], language);
-      if (language === "ja") return `${place}を予定に追加しました`;
-      if (language === "zh") return `已将${place}添加到行程`;
-      return `${place} was added to the itinerary.`;
-    }
-
-    const weatherMatch = source.match(/^(.+) · (\d+)~(\d+)℃$/);
-    if (weatherMatch) {
-      return `${translate(weatherMatch[1], language)} · ${weatherMatch[2]}–${weatherMatch[3]}°C`;
-    }
 
     return source;
   }
+
 
   function translateTextNode(node, language) {
     if (!originalText.has(node)) originalText.set(node, node.nodeValue);
@@ -332,6 +328,7 @@
     const trailing = source.match(/\s*$/)?.[0] || "";
     node.nodeValue = leading + translate(trimmed, language) + trailing;
   }
+
 
   function translateAttributes(element, language) {
     const attributes = ["aria-label", "content"];
@@ -344,18 +341,22 @@
     });
   }
 
+
   function translateTree(root = document.documentElement) {
     const language = getLanguage();
     document.documentElement.lang = language === "zh" ? "zh-CN" : language;
+
 
     if (root.nodeType === Node.TEXT_NODE) {
       translateTextNode(root, language);
       return;
     }
 
+
     if (root.nodeType !== Node.ELEMENT_NODE && root.nodeType !== Node.DOCUMENT_NODE) return;
     if (root.matches?.("script, style, [data-i18n-skip]")) return;
     if (root.nodeType === Node.ELEMENT_NODE) translateAttributes(root, language);
+
 
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
@@ -366,6 +367,7 @@
       },
     });
 
+
     let node = walker.nextNode();
     while (node) {
       if (node.nodeType === Node.TEXT_NODE) translateTextNode(node, language);
@@ -373,6 +375,7 @@
       node = walker.nextNode();
     }
   }
+
 
   function downloadResult(state) {
     const language = valueToLanguage[state.language] || getLanguage();
@@ -404,9 +407,11 @@
     URL.revokeObjectURL(url);
   }
 
+
   document.querySelectorAll('input[name="language"]').forEach((input) => {
     input.addEventListener("change", () => translateTree());
   });
+
 
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
@@ -414,6 +419,7 @@
     });
   });
   observer.observe(document.documentElement, { childList: true, subtree: true });
+
 
   window.BusanI18n = { t: translate, getLanguage, translateTree, downloadResult };
   translateTree();
