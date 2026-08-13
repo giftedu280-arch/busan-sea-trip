@@ -16,6 +16,9 @@
     ["바다처럼 설레게", "海のように心躍る旅へ", "像大海一样令人心动", "Let the sea stir your heart"],
     ["취향과 여행 상황을 알려주면 관광지와 맛집 세 곳,", "好みと旅の状況を教えていただければ、観光地やグルメを3か所、", "告诉我们你的喜好和旅行情况，即可获得三个景点或餐厅推荐，", "Tell us your tastes and travel plans for three attraction or restaurant picks,"],
     ["그리고 나만의 여행 동선을 추천해 드려요.", "そしてあなただけの旅程をご提案します。", "以及专属于你的旅行路线。", "plus a route made just for you."],
+    ["취향과 MBTI", "好みとMBTI", "喜好和MBTI", "Your tastes and MBTI "],
+    ["를 알려주면 관광지와 맛집,", "を教えていただければ、観光地やグルメを、", "告诉我们，即可推荐景点和餐厅，", "to get attraction and restaurant picks,"],
+    ["그리고 나만의 여행 동선을 추천해 드려요.", "そしてあなただけの旅程をご提案します。", "以及专属于你的旅行路线。", "plus a route made just for you."],
     ["설치 없음", "インストール不要", "无需安装", "No installation"],
     ["로그인 없음", "ログイン不要", "无需登录", "No sign-in"],
     ["약 1분 소요", "所要時間 約1分", "约需1分钟", "About 1 minute"],
@@ -425,7 +428,7 @@
   ];
 
   const languageIndex = { ko: 0, ja: 1, zh: 2, en: 3 };
-  const valueToLanguage = { 한국어: "ko", 일본어: "ja", 중국어: "zh", 영어: "en" };
+  const valueToLanguage = { 한국어: "ko", 日本語: "ja", 中文: "zh", English: "en", 일본어: "ja", 중국어: "zh", 영어: "en" };
   const dictionaries = { ko: new Map(), ja: new Map(), zh: new Map(), en: new Map() };
   rows.forEach((row) => {
     Object.entries(languageIndex).forEach(([language, index]) => {

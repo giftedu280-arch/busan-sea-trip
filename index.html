@@ -6,6 +6,7 @@
   <meta name="description" content="취향, 날씨, 식사 시간에 맞춘 부산 여행 로드맵">
   <title>마? 어데 가노 머 먹노?</title>
   <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
       <div class="hero-copy">
         <p class="eyebrow">외국인 관광객을 위한 맞춤 안내</p>
         <h1 id="hero-title">마? 어데 가노<br><strong>머 먹노?</strong></h1>
-        <p class="hero-lead">취향과 MBTI를 알려주면 관광지와 맛집,<br>그리고 <b>나만의 여행 동선</b>을 추천해 드려요.</p>
+        <p class="hero-lead"><b>취향과 MBTI</b>를 알려주면 관광지와 맛집,<br>그리고 나만의 여행 동선을 추천해 드려요.</p>
         <div class="feature-chips"><span>✓ 설치 없음</span><span>✓ 로그인 없음</span><span>✓ 날씨 자동 반영</span></div>
       </div>
       <figure class="hero-slider" aria-label="부산 여행 사진 슬라이드">
@@ -32,6 +33,10 @@
     </section>
 
     <section class="planner" aria-label="맞춤 여행 추천 만들기">
+      <section class="saved-plans" aria-labelledby="saved-plans-title">
+        <div class="saved-plans-head"><div><p class="section-kicker">나의 부산 여행</p><h2 id="saved-plans-title">저장한 일정표</h2></div><span>저장한 로드맵을 사진으로 다시 볼 수 있어요.</span></div>
+        <div id="saved-plan-list" class="saved-plan-list"><p class="saved-empty">아직 저장한 일정표가 없어요.</p></div>
+      </section>
       <nav class="steps" aria-label="진행 단계"><span class="active"><b>1</b>추천 선택</span><span><b>2</b>맞춤 검사</span><span><b>3</b>장소 선택·로드맵</span></nav>
 
       <section id="start-screen" class="screen active">
@@ -64,7 +69,7 @@
           </section>
 
           <section class="quiz-block"><h3>여행 가능 시간</h3><div class="clock-layout">
-            <div id="travel-clock" class="clock" aria-label="여행 시간 범위"><span class="range-ring"></span><span class="day-icon">☀️</span><span class="night-icon">🌙</span><span class="n0">0</span><span class="n6">6</span><span class="n12">12</span><span class="n18">18</span><button type="button" class="hand start" data-hand="start" aria-label="시작 시간 바늘"></button><button type="button" class="hand end" data-hand="end" aria-label="종료 시간 바늘"></button><span class="hand-label start-label">시작</span><span class="hand-label end-label">끝</span></div>
+            <div id="travel-clock" class="clock" aria-label="여행 시간 범위"><span class="range-ring"></span><span class="hour-ticks" aria-hidden="true"></span><span class="day-icon">☀️</span><span class="night-icon">🌙</span><span class="n0">0</span><span class="n6">6</span><span class="n12">12</span><span class="n18">18</span><button type="button" class="hand start" data-hand="start" aria-label="시작 시간 바늘"></button><button type="button" class="hand end" data-hand="end" aria-label="종료 시간 바늘"></button><span class="hand-label start-label">시작</span><span class="hand-label end-label">끝</span></div>
             <div class="time-editor"><h4>바늘 또는 실제 시간으로 정해 주세요</h4><p>테두리의 파란 범위가 주황색 시작 바늘 끝부터 시계 방향으로 종료 바늘까지 표시됩니다.</p><div><label>시작 <input id="start-time" name="startTime" type="time" value="08:00" step="300"></label><span>→</span><label>종료 <input id="end-time" name="endTime" type="time" value="20:00" step="300"></label></div><strong id="duration-copy">12시간 · 추천 7장소</strong></div>
           </div></section>
 
@@ -88,17 +93,20 @@
         <div id="count-guide" class="count-guide"></div><div id="recommendations"></div>
         <button id="build-route" class="primary">선택한 장소로 AI 로드맵 만들기 <span>→</span></button>
 
-        <section id="route-section" class="route-section" hidden><div class="section-kicker">AI 맞춤 동선</div><h2>AI가 추천해주는 로드맵</h2><p>여행 가능 시간과 아침·점심·저녁 시간을 고려해 배치했어요.</p><div id="route-list" class="route-list"></div>
-          <div class="map-head"><div><b>카카오 지도 경로</b><span>마커와 방문 순서를 직선 경로로 표시합니다.</span></div><button id="map-settings" type="button">지도 API 설정</button></div><div id="route-map" class="route-map"><div class="map-empty">카카오맵 JavaScript 키를 연결하면 지도가 표시됩니다.</div></div><a id="kakao-route-link" class="map-external" href="https://map.kakao.com" target="_blank" rel="noopener">카카오맵에서 열기 ↗</a>
+        <section id="route-section" class="route-section" hidden><div class="section-kicker">AI 맞춤 동선</div><h2>AI가 추천해주는 로드맵</h2><p>여행 가능 시간과 아침·점심·저녁 시간을 고려해 배치했어요.</p><div id="route-list" class="route-list"></div><button id="save-ai-route" type="button" class="save-plan">📸 AI 일정표 저장</button>
+          <div class="map-head"><div><b>카카오 지도 경로</b><span>마커와 방문 순서를 직선 경로로 표시합니다.</span></div><button id="map-settings" type="button">지도 API 설정</button></div>
+          <div id="kakao-key-panel" class="kakao-key-panel"><label>카카오 JavaScript 키<input id="kakao-key-input" type="text" inputmode="text" autocomplete="off" placeholder="JavaScript 키를 붙여 넣으세요"></label><button id="save-kakao-key" type="button">키 저장·지도 연결</button><a href="https://developers.kakao.com/console/app" target="_blank" rel="noopener">키 발급 화면 ↗</a><small>JavaScript SDK 도메인에 <b>https://giftedu280-arch.github.io</b>를 등록해야 합니다.</small></div>
+          <div id="route-map" class="route-map"><div class="map-empty">카카오맵 JavaScript 키를 연결하면 지도가 표시됩니다.</div></div><a id="kakao-route-link" class="map-external" href="https://map.kakao.com" target="_blank" rel="noopener">카카오맵에서 열기 ↗</a>
         </section>
 
-        <section id="custom-route" class="custom-route"><div class="section-kicker">내가 직접 만들기</div><h2>사용자 지정 로드맵</h2><p>추천 장소를 시간 블록으로 끌어다 놓으세요. 시간 블록은 자유롭게 추가·삭제할 수 있어요.</p><div class="slot-actions"><button id="add-custom-slot" type="button">＋ 시간 블록 추가</button></div><div id="custom-slots" class="custom-slots"></div><h3 class="pool-title">추천 장소 목록</h3><div id="custom-pool" class="custom-pool"></div><button id="render-custom-map" type="button" class="secondary">내 로드맵 지도에 표시</button></section>
+        <section id="custom-route" class="custom-route"><div class="section-kicker">내가 직접 만들기</div><h2>사용자 지정 로드맵</h2><p>추천 장소를 시간 블록으로 끌어다 놓으세요. 시간 블록은 자유롭게 추가·삭제할 수 있어요.</p><div class="slot-actions"><button id="add-custom-slot" type="button">＋ 시간 블록 추가</button></div><div id="custom-slots" class="custom-slots"></div><h3 class="pool-title">추천 장소 목록</h3><div id="custom-pool" class="custom-pool"></div><div class="custom-actions"><button id="render-custom-map" type="button" class="secondary">내 로드맵 지도에 표시</button><button id="save-custom-route" type="button" class="save-plan">📸 사용자 일정표 저장</button></div></section>
         <button id="home-button" type="button" class="back-home">처음으로 돌아가기</button>
       </section>
     </section>
   </main>
   <footer>마? 어데 가노 머 먹노? · 부산의 바다와 도시를 잇는 맞춤 여행 안내<br><small>메인 사진: <a href="https://commons.wikimedia.org/wiki/File:Busan_City_Haeundae_Beach.jpg" target="_blank" rel="noopener">부산광역시 (KOGL 1)</a> · <a href="https://commons.wikimedia.org/wiki/File:Gamcheon_Culture_Village.jpg" target="_blank" rel="noopener">Bernard Gagnon (CC0)</a> · <a href="https://commons.wikimedia.org/wiki/File:Haeundae_Beach_on_a_Sunny_Day.jpg" target="_blank" rel="noopener">Hajo Schatz (CC BY-SA 2.0)</a></small></footer>
   <div id="toast" class="toast" role="status"></div>
-  <script src="attraction-data.js"></script><script src="food-data.js"></script><script src="leisure-data.js"></script><script src="app.js"></script>
+  <dialog id="saved-plan-dialog" class="saved-plan-dialog"><button id="close-saved-plan" type="button" aria-label="닫기">×</button><img id="saved-plan-image" alt="저장한 여행 일정표 이미지"><a id="download-saved-plan" download="busan-trip.jpg">사진 내려받기</a></dialog>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script><script src="attraction-data.js"></script><script src="food-data.js"></script><script src="leisure-data.js"></script><script src="i18n.js"></script><script src="app.js"></script>
 </body>
 </html>
