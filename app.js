@@ -1,1059 +1,122 @@
-const legacyAttractionData = [
-  {
-    name: "광안리해수욕장",
-    category: "바다 · 야경",
-    symbol: "〰",
-    description: "광안대교와 부산의 밤바다를 한눈에 즐길 수 있는 활기찬 해변이에요.",
-    review: "해 질 무렵부터 야경까지 분위기가 정말 좋아요.",
-    tags: ["외향", "감성", "저녁", "맑음", "비", "수영구", "바다"],
-    displayTags: ["야경 명소", "산책", "사진"],
-    duration: "약 1시간 30분",
-    gradient: "linear-gradient(145deg, #43b5cb, #0d6f9c)",
-  },
-  {
-    name: "해운대해수욕장",
-    category: "바다 · 도심",
-    symbol: "☀",
-    description: "부산을 대표하는 넓은 백사장과 도심의 즐길 거리가 함께 있는 명소예요.",
-    review: "처음 부산에 왔다면 꼭 들를 만한 대표 장소예요.",
-    tags: ["외향", "현실", "오전", "오후", "맑음", "해운대", "바다"],
-    displayTags: ["부산 대표", "대중교통", "바다"],
-    duration: "약 1시간 30분",
-    gradient: "linear-gradient(145deg, #74d3dc, #1684ab)",
-  },
-  {
-    name: "감천문화마을",
-    category: "마을 · 예술",
-    symbol: "▦",
-    description: "알록달록한 집과 골목 예술이 어우러진 부산의 대표 문화 마을이에요.",
-    review: "골목마다 작은 작품이 있어 천천히 걷기 좋아요.",
-    tags: ["직관", "감성", "오전", "오후", "맑음", "흐림", "사하구", "문화"],
-    displayTags: ["골목 여행", "예술", "전망"],
-    duration: "약 2시간",
-    gradient: "linear-gradient(145deg, #ffb27b, #ed7271)",
-  },
-  {
-    name: "흰여울문화마을",
-    category: "마을 · 바다",
-    symbol: "⌂",
-    description: "하얀 골목 아래로 영도 바다가 펼쳐지는 조용하고 감성적인 산책길이에요.",
-    review: "바다를 보며 골목을 걷는 시간이 영화처럼 느껴져요.",
-    tags: ["내향", "직관", "감성", "오후", "맑음", "흐림", "영도", "문화", "바다"],
-    displayTags: ["감성 사진", "산책", "바다 전망"],
-    duration: "약 1시간 30분",
-    gradient: "linear-gradient(145deg, #76c9d1, #557fb1)",
-  },
-  {
-    name: "태종대",
-    category: "자연 · 절경",
-    symbol: "▲",
-    description: "울창한 숲과 바다 절벽을 함께 만나는 영도의 웅장한 자연 명소예요.",
-    review: "전망대에서 보는 탁 트인 바다가 시원하고 멋져요.",
-    tags: ["내향", "현실", "사고", "오전", "오후", "맑음", "영도", "자연"],
-    displayTags: ["자연", "전망대", "걷기"],
-    duration: "약 2시간 30분",
-    gradient: "linear-gradient(145deg, #4ba787, #1d6c76)",
-  },
-  {
-    name: "송도해상케이블카",
-    category: "체험 · 전망",
-    symbol: "◇",
-    description: "바다 위를 가로지르며 송도 해안과 도시 풍경을 감상하는 특별한 체험이에요.",
-    review: "바닥이 보이는 칸은 짜릿하고 풍경도 정말 멋져요.",
-    tags: ["외향", "직관", "사고", "오후", "맑음", "흐림", "서구", "체험"],
-    displayTags: ["이색 체험", "전망", "가족"],
-    duration: "약 1시간 30분",
-    gradient: "linear-gradient(145deg, #79bcd9, #4964a3)",
-  },
-  {
-    name: "해동용궁사",
-    category: "사찰 · 바다",
-    symbol: "♢",
-    description: "푸른 바다 바로 옆에 자리한 아름다운 사찰에서 특별한 부산 풍경을 만나요.",
-    review: "이른 아침에 가면 비교적 조용하게 바다와 사찰을 볼 수 있어요.",
-    tags: ["내향", "감성", "계획", "오전", "맑음", "흐림", "기장", "문화"],
-    displayTags: ["전통 문화", "바다 전망", "아침"],
-    duration: "약 1시간 30분",
-    gradient: "linear-gradient(145deg, #e69a71, #b85360)",
-  },
-  {
-    name: "국립해양박물관",
-    category: "박물관 · 실내",
-    symbol: "○",
-    description: "한국의 바다 역사와 해양 생물을 편안한 실내에서 즐기는 박물관이에요.",
-    review: "비 오는 날에도 알차고 편하게 둘러볼 수 있어요.",
-    tags: ["내향", "사고", "계획", "오전", "오후", "비", "영도", "실내"],
-    displayTags: ["비 오는 날", "실내", "해양 문화"],
-    duration: "약 2시간",
-    gradient: "linear-gradient(145deg, #5bbbc1, #315e8c)",
-  },
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const state={screen:"start",categories:["attraction"],answers:{},recommendations:[],selected:new Set(),refresh:{},route:[],custom:[]};
+const categoryMeta={attraction:["📍","볼거리"],food:["🍴","맛집"],cafe:["☕","뷰&카페"],activity:["🏄","체험"]};
+const districtCoordinates={해운대구:[35.1631,129.1635],수영구:[35.1457,129.1132],영도구:[35.0912,129.068],남구:[35.1366,129.0844],사하구:[35.1046,128.9747],서구:[35.0979,129.0244],기장군:[35.2445,129.2223],강서구:[35.2122,128.9806]};
+const indoorFallback=[
+  {name:"부산시립미술관",area:"해운대구",category:"미술관 · 실내",description:"비 오는 날에도 부산의 예술을 여유롭게 감상할 수 있어요.",tags:["실내","문화"],mbtiMatches:["INFP","INTJ","ISFJ"]},
+  {name:"SEA LIFE 부산아쿠아리움",area:"해운대구",category:"아쿠아리움 · 실내",description:"날씨 영향 없이 부산의 해양 생태를 만나는 실내 명소예요.",tags:["실내","해양"],mbtiMatches:["ISFP","ESFJ","ENFP"]},
+  {name:"국립해양박물관",area:"영도구",category:"박물관 · 실내",description:"바다의 역사와 과학을 깊이 살펴볼 수 있는 실내 여행지예요.",tags:["실내","역사"],mbtiMatches:["INTJ","ISTJ","INFJ"]},
+  {name:"F1963",area:"수영구",category:"복합문화공간 · 실내",description:"전시와 서점, 카페를 한 공간에서 즐기기 좋아요.",tags:["실내","문화"],mbtiMatches:["INFP","ENTP","ENFP"]}
 ];
 
-const attractionData = window.BUSAN_ATTRACTIONS || legacyAttractionData;
+const foodCombos={
+ AAAA:[["꼼장어구이(양념볶음)","낙지볶음","낙곱새"],"매콤하고 한국적인 강렬한 양념에 볶아내는 대표적인 모험형 해산물 볶음 요리입니다."],
+ AAAB:[["꼼장어구이(양념/소금)","장어구이(양념)"],"붉은 양념을 올려 구워 먹는 한국 특유의 보양 해산물 구이입니다."],
+ AAAC:[["물회(매콤하게)","회국수(매운 양념)","알탕"],"날것의 신선함과 칼칼한 국물·육수가 어우러진 메뉴입니다."],
+ ABAA:[["닭갈비(매운맛)","오징어볶음","비빔당면(매운 양념)"],"익힌 재료를 매콤하고 독특한 양념에 볶아낸 요리입니다."],
+ ABAB:[["돼지껍데기","닭발","오리불고기(매콤 양념)"],"매콤하고 식감이 독특한 한국식 특수 부위 구이입니다."],
+ ABAC:[["아구찜/아구탕","닭도리탕(매운맛)","부대찌개"],"푹 익힌 고기·해산물에 칼칼한 국물이 어우러진 요리입니다."],
+ ABBA:[["떡볶이","돼지불백(양념)","오징어볶음"],"누구나 쉽게 도전할 수 있는 대중적인 매콤 볶음입니다."],
+ ABBB:[["돼지갈비(양념)","삼겹살(김치 구이)"],"대중적인 구이를 매콤한 반찬과 함께 즐기는 조합입니다."],
+ ABBC:[["김치찌개","돼지찌개","매운 해물칼국수"],"대중적이면서 확실하게 매콤한 한국식 국물 요리입니다."],
+ BAAA:[["낙곱새","꼼장어구이(보통맛)"],"부산 특유의 조합을 적당한 맵기로 즐기는 볶음입니다."],
+ BAAB:[["장어구이","조개구이"],"싱싱한 해산물을 적당히 매콤한 양념과 함께 굽는 별미입니다."],
+ BAAC:[["물회","회덮밥","멍게비빔밥"],"날것의 신선함과 매콤새콤한 초장·육수가 어우러집니다."],
+ BBAA:[["비빔당면","동래파전"],"부산 향토 느낌이 나는 익힌 재료 기반 볶음·비빔류입니다."],
+ BBAB:[["오리불고기","막창/곱창 구이"],"적당한 매콤 양념을 입혀 구워내는 한국의 별미입니다."],
+ BBAC:[["순대국밥(다대기)","내장국밥","감자탕"],"한국적 재료에 다대기를 풀어 알싸하게 먹는 국물입니다."],
+ BBBA:[["비빔밀면","쫄면","비빔밥"],"누구나 좋아하는 매콤새콤한 면·밥 요리입니다."],
+ BBBB:[["돼지불고기","삼겹살","닭갈비(기본맛)"],"실패 없는 대중적인 매콤달콤 고기 구이입니다."],
+ BBBC:[["부대찌개","해물칼국수","만두전골"],"무난하게 즐길 수 있는 든든한 국물 요리입니다."],
+ CAAA:[["전복구이","생선구이","모둠회(간장)"],"매운 양념 대신 본연의 고소함으로 즐기는 해산물 요리입니다."],
+ CAAB:[["전복구이","생선구이","모둠회(간장)"],"매운 양념 대신 본연의 고소함으로 즐기는 해산물 요리입니다."],
+ CAAC:[["회국수(순한 양념)","전복죽","꼬막밥"],"해산물이 들어가며 맵지 않고 고소한 국물·밥 요리입니다."],
+ CBAA:[["동래파전","비빔당면(간장)","궁중떡볶이"],"맵지 않게 즐기는 부산·한국 향토 부침 및 볶음입니다."],
+ CBAB:[["고등어구이","갈치구이","소갈비"],"간장이나 소금 간으로 담백하게 구워내는 요리입니다."],
+ CBAC:[["재첩국","복국","아귀탕(맑은탕)"],"시원하고 맑은 국물로 깊은 맛을 내는 한국식 탕입니다."],
+ CBBA:[["수육백반","장어덮밥","잔치국수"],"자극적이지 않고 담백하고 든든한 대중적인 요리입니다."],
+ CBBB:[["삼겹살(소금구이)","돼지갈비(간장)","생선구이 정식"],"맵지 않고 고소해 누구나 좋아하는 구이입니다."],
+ CBBC:[["돼지국밥","곰탕","만두국"],"맵지 않은 익힌 재료로 든든하게 즐기는 대중적인 국물 요리입니다."]
+};
+const breakfastMenus=["전복죽","브런치 플레이트","돼지국밥","복국","토스트와 커피"];
+const realRestaurants={
+ 해운대구:["금수복국 해운대본점","해운대원조할매국밥","해운대암소갈비집","개미집 해운대점","원조전복죽"],수영구:["수변최고돼지국밥 민락본점","고옥","언양불고기 부산집","할매재첩국"],영도구:["재기돼지국밥","도날드","영도해녀촌"],남구:["쌍둥이돼지국밥 본점","내호냉면","오륙도낙지"],사하구:["영진돼지국밥 본점","하단끝집","복성반점"],서구:["송도공원","몽실종가돼지국밥","사천해물탕"],기장군:["기장끝집","바릇식당","대보름"],강서구:["명지첫집","오복미역 명지본점","합천일류돼지국밥 명지점"]
+};
+const realCafes=[
+ ["비비비당","해운대구","전통차 · 오션뷰"],["엣지993","해운대구","루프탑 · 오션뷰"],["랑데자뷰 해운대점","해운대구","디저트 · 오션뷰"],["별침대","수영구","광안대교 · 오션뷰"],["차선책 광안리","수영구","베이커리 · 오션뷰"],["카페385","영도구","대형카페 · 오션뷰"],["신기산업","영도구","항구뷰 · 카페"],["피아크","영도구","복합문화 · 카페"],["웨이브온 커피","기장군","건축 · 오션뷰"],["칠암사계","기장군","베이커리 · 오션뷰"],["TCC 송도점","서구","송도 · 오션뷰"]
+].map(([name,area,category])=>({name,area,category,description:`${area}에서 실제로 방문할 수 있는 ${category} 카페입니다.`,tags:["실내","카페"],displayTags:[area,"실제 업소"],service:"cafe"}));
+const realActivities=[
+ ["SEA LIFE 부산아쿠아리움","해운대구","아쿠아리움 · 실내"],["해운대블루라인파크 미포정거장","해운대구","해변열차 · 스카이캡슐"],["부산요트투어 요트탈래","수영구","요트 · 체험"],["송도해상케이블카","서구","케이블카 · 전망"],["국립해양박물관","영도구","박물관 · 실내"],["부산현대미술관","사하구","미술관 · 실내"],["롯데월드 어드벤처 부산","기장군","테마파크 · 체험"]
+].map(([name,area,category])=>({name,area,category,description:`${area}에서 실제로 이용할 수 있는 ${category} 장소입니다.`,tags:/실내|박물관|미술관|아쿠아리움/.test(category)?["실내","체험"]:["체험"],displayTags:[area,"실제 장소"],service:"activity"}));
 
-const legacyFoodData = [
-  {
-    name: "본전돼지국밥",
-    category: "돼지국밥",
-    symbol: "♨",
-    description: "부산역 근처에서 진한 국물과 부드러운 고기를 맛볼 수 있는 대표 국밥집이에요.",
-    review: "부산에 도착하자마자 든든한 한 끼로 좋아요.",
-    tags: ["한식", "국물", "고기", "부산역", "아침", "점심"],
-    displayTags: ["부산 향토 음식", "든든한 식사", "부산역"],
-    duration: "식사 약 50분",
-    gradient: "linear-gradient(145deg, #f2b56d, #d36d46)",
-  },
-  {
-    name: "해운대암소갈비집",
-    category: "고기 · 갈비",
-    symbol: "♨",
-    description: "해운대에서 달콤하고 부드러운 한우 갈비를 즐기는 오랜 부산 대표 맛집이에요.",
-    review: "특별한 날 부산식 양념갈비를 경험하기 좋아요.",
-    tags: ["한식", "고기", "해운대", "점심", "저녁"],
-    displayTags: ["한우 갈비", "해운대", "특별한 식사"],
-    duration: "식사 약 1시간 20분",
-    gradient: "linear-gradient(145deg, #df9770, #a64c43)",
-  },
-  {
-    name: "수변최고돼지국밥 민락본점",
-    category: "돼지국밥",
-    symbol: "♨",
-    description: "진하고 깔끔한 국물로 사랑받는 민락동의 부산식 돼지국밥 맛집이에요.",
-    review: "광안리 여행 전후에 따뜻하게 먹기 좋은 곳이에요.",
-    tags: ["한식", "국물", "고기", "수영구", "아침", "점심", "저녁"],
-    displayTags: ["국물 음식", "민락동", "혼밥"],
-    duration: "식사 약 50분",
-    gradient: "linear-gradient(145deg, #eda55e, #bd5d45)",
-  },
-  {
-    name: "할매가야밀면",
-    category: "밀면",
-    symbol: "≋",
-    description: "시원한 육수와 쫄깃한 면으로 부산의 별미인 밀면을 맛볼 수 있는 곳이에요.",
-    review: "더운 날 가볍고 시원하게 먹기 좋은 부산다운 한 끼예요.",
-    tags: ["면", "한식", "서면", "점심", "저녁"],
-    displayTags: ["부산 별미", "시원한 육수", "가벼운 식사"],
-    duration: "식사 약 45분",
-    gradient: "linear-gradient(145deg, #63c7b3, #2f8e8e)",
-  },
-  {
-    name: "금수복국 해운대본점",
-    category: "해산물 · 복국",
-    symbol: "○",
-    description: "담백하고 맑은 복국으로 부산 바다의 맛을 편안하게 즐길 수 있는 식당이에요.",
-    review: "자극적이지 않고 시원한 국물이 아침 식사로도 좋아요.",
-    tags: ["해산물", "국물", "한식", "해운대", "아침", "점심"],
-    displayTags: ["복어요리", "맑은 국물", "해운대"],
-    duration: "식사 약 1시간",
-    gradient: "linear-gradient(145deg, #57bcc7, #326d9e)",
-  },
-  {
-    name: "마가만두",
-    category: "중식 · 만두",
-    symbol: "◒",
-    description: "부산역 차이나타운에서 바삭하고 촉촉한 중국식 만두를 맛볼 수 있는 곳이에요.",
-    review: "여럿이 다양한 만두를 나누어 먹기 좋아요.",
-    tags: ["중식", "면", "부산역", "점심", "저녁"],
-    displayTags: ["차이나타운", "만두", "나눠 먹기"],
-    duration: "식사 약 1시간",
-    gradient: "linear-gradient(145deg, #ef9574, #c64f54)",
-  },
-  {
-    name: "이재모피자 부산본점",
-    category: "양식 · 피자",
-    symbol: "△",
-    description: "풍부한 치즈와 푸짐한 토핑으로 오랫동안 사랑받는 부산의 유명 피자집이에요.",
-    review: "익숙한 음식이 생각날 때 편하고 맛있게 즐길 수 있어요.",
-    tags: ["양식", "치즈", "남포동", "점심", "저녁"],
-    displayTags: ["치즈", "남포동", "가족 식사"],
-    duration: "식사 약 1시간 10분",
-    gradient: "linear-gradient(145deg, #f1b04e, #df6f48)",
-  },
-  {
-    name: "부평깡통시장 먹자골목",
-    category: "길거리 음식",
-    symbol: "◎",
-    description: "떡볶이부터 씨앗호떡까지 여러 부산 길거리 음식을 한자리에서 경험해요.",
-    review: "조금씩 여러 음식을 맛보며 시장 구경까지 하기 좋아요.",
-    tags: ["길거리 음식", "한식", "남포동", "저녁"],
-    displayTags: ["시장", "간식", "여러 메뉴"],
-    duration: "약 1시간 20분",
-    gradient: "linear-gradient(145deg, #ffb160, #ed6654)",
-  },
+const mbtiQuestions=[
+ ["새 장소에서 먼저 하고 싶은 것은?","사람들과 활기차게 둘러보기","조용히 분위기부터 느끼기","E","I"],
+ ["더 끌리는 여행지는?","유명하고 활기찬 명소","한적하고 숨은 장소","E","I"],
+ ["여행 계획은?","시간대별로 꼼꼼하게","큰 방향만 잡고 즉흥적으로","J","P"],
+ ["장소를 고를 때 중요한 것은?","실제 볼거리와 편의성","독특한 분위기와 가능성","S","N"],
+ ["더 좋아하는 활동은?","직접 체험하고 움직이기","풍경을 보며 영감 얻기","S","N"],
+ ["예상 못 한 일이 생기면?","바로 새 선택지를 찾는다","원래 계획을 지키고 싶다","P","J"],
+ ["사진은 어디서?","검증된 대표 포토스팟","우연히 찾은 새로운 구도","S","N"],
+ ["어떤 경험이 더 좋은가요?","색다른 문화와 이야기","익숙하고 편안한 경험","N","S"],
+ ["여행의 핵심은?","효율과 다양한 경험","편안함과 좋은 감정","T","F"],
+ ["하루만 있다면?","많은 곳을 빠르게","적은 곳을 깊고 여유롭게","E","I"]
 ];
 
-const foodData = window.BUSAN_FOODS || legacyFoodData;
-const cafeData = window.BUSAN_CAFES || [];
-const activityData = window.BUSAN_ACTIVITIES || [];
-const personalizedData = window.BUSAN_PERSONALIZED || [];
-
-const verifiedPlaceCatalog = {
-  attraction: [
-    ["해운대구", "부산엑스더스카이"], ["해운대구", "해운대해수욕장"], ["해운대구", "동백섬"],
-    ["수영구", "광안리해수욕장"], ["수영구", "F1963"], ["수영구", "수영사적공원"],
-    ["영도구", "태종대유원지"], ["영도구", "흰여울문화마을"], ["영도구", "국립해양박물관"],
-    ["남구", "오륙도 스카이워크"], ["남구", "UN기념공원"], ["남구", "이기대수변공원"],
-    ["사하구", "다대포해수욕장"], ["사하구", "감천문화마을"], ["사하구", "아미산전망대"],
-    ["서구", "송도해수욕장"], ["서구", "송도용궁구름다리"], ["서구", "암남공원"],
-    ["기장군", "해동용궁사"], ["기장군", "죽성드림세트장"], ["기장군", "오시리아 해안산책로"],
-    ["강서구", "을숙도 철새공원"], ["강서구", "가덕도 연대봉"], ["강서구", "명지오션시티 해안산책로"]
-  ],
-  food: [
-    ["해운대구", "해운대암소갈비집"], ["해운대구", "금수복국 해운대본점"], ["해운대구", "해운대원조할매국밥"],
-    ["수영구", "언양불고기 부산집"], ["수영구", "수변최고돼지국밥 민락본점"], ["수영구", "톤쇼우 광안점"],
-    ["영도구", "재기돼지국밥"], ["영도구", "도날드"], ["영도구", "왔다식당"],
-    ["남구", "쌍둥이돼지국밥 본점"], ["남구", "내호냉면"], ["남구", "할매팥빙수단팥죽"],
-    ["사하구", "영진돼지국밥 본점"], ["사하구", "하단끝집"], ["사하구", "복성반점"],
-    ["서구", "몽실종가돼지국밥"], ["서구", "소문난주문진막국수"], ["서구", "사천해물탕"],
-    ["기장군", "기장끝집"], ["기장군", "바릇식당"], ["기장군", "어보"],
-    ["강서구", "오복미역 명지본점"], ["강서구", "명지첫집"], ["강서구", "합천일류돼지국밥 명지점"]
-  ],
-  cafe: [
-    ["해운대구", "비비비당"], ["해운대구", "엣지993"], ["해운대구", "랑데자뷰 해운대점"],
-    ["수영구", "별침대"], ["수영구", "차선책 광안리"], ["수영구", "컵앤컵"],
-    ["영도구", "피아크"], ["영도구", "카페385"], ["영도구", "신기산업"],
-    ["남구", "메그네이트"], ["남구", "카페 이정원"], ["남구", "딜라잇식스"],
-    ["사하구", "투썸플레이스 다대포해변점"], ["사하구", "이터널선샤인"], ["사하구", "카페만디"],
-    ["서구", "EL16.52"], ["서구", "카페베이스"], ["서구", "TCC 송도점"],
-    ["기장군", "웨이브온 커피"], ["기장군", "칠암사계"], ["기장군", "오프오"],
-    ["강서구", "포레스트3002"], ["강서구", "그랑독"], ["강서구", "카페진목"]
-  ],
-  activity: [
-    ["해운대구", "해운대블루라인파크 미포정거장"], ["해운대구", "SEA LIFE 부산아쿠아리움"], ["해운대구", "클럽디오아시스"],
-    ["수영구", "웨이브락 클라이밍 광안점"], ["수영구", "광안리해양레포츠센터"], ["수영구", "밀락더마켓"],
-    ["영도구", "태종대 다누비열차"], ["영도구", "국립해양박물관"], ["영도구", "태종대 오션플라잉테마파크"],
-    ["남구", "부산문화회관"], ["남구", "부산박물관"], ["남구", "국립일제강제동원역사관"],
-    ["사하구", "낙동강하구에코센터"], ["사하구", "부산현대미술관"], ["사하구", "다대포 꿈의 낙조분수"],
-    ["서구", "송도해상케이블카"], ["서구", "송도해양레포츠센터"], ["서구", "구덕문화공원"],
-    ["기장군", "롯데월드 어드벤처 부산"], ["기장군", "스카이라인 루지 부산"], ["기장군", "국립부산과학관"],
-    ["강서구", "렛츠런파크 부산경남"], ["강서구", "대저생태공원"], ["강서구", "맥도생태공원"]
-  ]
-};
-
-function makeVerifiedPlace([area, name], service) {
-  const categoryNames = { attraction: "볼거리", food: "맛집", cafe: "뷰&디저트", activity: "놀거리/체험" };
-  const symbols = { attraction: "📍", food: "🍴", cafe: "☕", activity: "🏄" };
-  const descriptions = {
-    attraction: `${area}에서 실제로 방문할 수 있는 부산 대표 명소입니다.`,
-    food: `${area}에서 고유 상호로 검색되는 실제 음식점입니다.`,
-    cafe: `${area}에서 고유 상호로 검색되는 실제 카페입니다.`,
-    activity: `${area}에서 실제로 이용할 수 있는 체험·문화 장소입니다.`,
-  };
-  const seed = hashText(`${area}-${name}-${service}`);
-  return {
-    area, name, service, category: categoryNames[service], symbol: symbols[service],
-    description: descriptions[service], review: `카카오맵에서 상호와 위치를 바로 확인할 수 있어요.`,
-    tags: [area, categoryNames[service]], displayTags: [area, "실제 장소", "카카오맵 검색"],
-    mbti: [], rating: Number((4.2 + (seed % 8) / 10).toFixed(1)),
-    gradient: "linear-gradient(145deg, #48b8cf, #136f9a)",
-  };
-}
-
-const serviceConfig = {
-  attraction: {
-    title: "어떤 여행을 좋아하세요?",
-    description: "성격과 현재 여행 상황을 알려주면 관광지 세 곳을 골라드려요.",
-    resultTitle: "당신을 위한 부산 관광지 세 곳",
-    resultDescription: "성격, 시간, 위치, 날씨를 함께 살펴 가장 잘 맞는 명소를 골랐어요.",
-  },
-  food: {
-    title: "오늘은 무엇을 먹고 싶나요?",
-    description: "식사 시간과 음식 취향을 고르면 부산 추천 메뉴 세 가지를 골라드려요.",
-    resultTitle: "당신의 취향을 담은 부산 메뉴 세 가지",
-    resultDescription: "좋아하는 음식과 먹지 못하는 조건을 반영해 메뉴를 골랐어요.",
-  },
-  cafe: {
-    title: "어떤 부산 감성을 만나고 싶나요?",
-    description: "위치와 여행 상황에 맞춰 오션뷰·감성 카페와 디저트를 추천해 드려요.",
-    resultTitle: "당신을 위한 부산 뷰&디저트 세 곳",
-    resultDescription: "오션뷰와 감성 키워드를 중심으로 부산다운 공간을 골랐어요.",
-  },
-  activity: {
-    title: "부산에서 어떤 체험을 해볼까요?",
-    description: "성격과 여행 상황에 맞춰 해양 레저와 체험 세 가지를 추천해 드려요.",
-    resultTitle: "당신을 위한 부산 놀거리·체험 세 가지",
-    resultDescription: "서핑, 요트, 케이블카, 공방 등 체험형 장소를 골랐어요.",
-  },
-};
-
-const screens = {
-  start: document.querySelector("#start-screen"),
-  quiz: document.querySelector("#quiz-screen"),
-  result: document.querySelector("#result-screen"),
-};
-
-const state = {
-  service: "attraction",
-  categories: ["attraction"],
-  companion: "커플",
-  age: "20대",
-  language: "한국어",
-  answers: {},
-  recommendations: [],
-};
-
-const startButton = document.querySelector("#start-button");
-const quizForm = document.querySelector("#quiz-form");
-const dynamicFields = document.querySelector("#dynamic-fields");
-const recommendationList = document.querySelector("#recommendation-list");
-const routeSection = document.querySelector("#route-section");
-const routeList = document.querySelector("#route-list");
-const toast = document.querySelector("#toast");
-
-function showScreen(screenName) {
-  Object.entries(screens).forEach(([name, element]) => {
-    const isTarget = name === screenName;
-    element.hidden = !isTarget;
-    element.classList.toggle("active", isTarget);
-  });
-
-  const stepNumber = { start: 1, quiz: 2, result: 3 }[screenName];
-  document.querySelectorAll(".step").forEach((step, index) => {
-    step.classList.toggle("active", index + 1 === stepNumber);
-    step.classList.toggle("complete", index + 1 < stepNumber);
-  });
-
-  document.querySelector(".planner").scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-function getSelectedValue(name) {
-  return document.querySelector(`input[name="${name}"]:checked`)?.value || "";
-}
-
-function getSelectedValues(name) {
-  return [...document.querySelectorAll(`input[name="${name}"]:checked`)].map((input) => input.value);
-}
-
-function getToday() {
-  const now = new Date();
-  const timezoneOffset = now.getTimezoneOffset() * 60000;
-  return new Date(now.getTime() - timezoneOffset).toISOString().slice(0, 10);
-}
-
-const mbtiQuestions = [
-  ["여행지에 도착하면 가장 먼저 하고 싶은 것은?", "유명한 관광지 돌아다니기", "카페나 숙소에서 여유롭게 쉬기", "E", "I"],
-  ["여행을 간다면 어떤 장소가 더 끌려?", "사람이 많고 활기찬 번화가", "조용하고 한적한 자연 속", "E", "I"],
-  ["여행 계획은 어떻게 짜는 편이 좋아?", "시간대별로 꼼꼼하게 계획하기", "대략적인 장소만 정하고 즉흥적으로 움직이기", "J", "P"],
-  ["관광지를 고른다면 무엇이 더 중요해?", "실제로 볼거리와 체험거리가 많은 곳", "분위기가 좋고 특별한 느낌이 드는 곳", "S", "N"],
-  ["여행 중 더 좋아하는 활동은?", "맛집, 쇼핑, 체험 등 직접 즐기는 활동", "풍경 구경, 사진 찍기, 산책처럼 여유로운 활동", "S", "N"],
-  ["여행 중 예상치 못한 일이 생긴다면?", "그 상황에 맞춰 바로 다른 계획을 세운다", "당황해서 원래 계획대로 하고 싶어진다", "P", "J"],
-  ["여행지에서 사진을 찍는다면?", "유명한 포토스팟에서 인증샷을 남긴다", "우연히 발견한 예쁜 장소에서 찍는다", "S", "N"],
-  ["어떤 여행지가 더 끌려?", "새로운 문화와 색다른 경험을 할 수 있는 곳", "익숙하고 편안하게 즐길 수 있는 곳", "N", "S"],
-  ["여행에서 가장 중요하다고 생각하는 것은?", "재미있고 다양한 경험", "편안함과 좋은 분위기", "T", "F"],
-  ["딱 하루만 관광할 수 있다면?", "최대한 많은 곳을 돌아다닌다", "한두 곳을 천천히 제대로 즐긴다", "E", "I"],
-];
-
-function renderPersonalityFields() {
-  const directRows = [["I", "E"], ["S", "N"], ["T", "F"], ["J", "P"]];
-  const mbtiLabels = { I: "내향형", E: "외향형", S: "관찰형", N: "직관형", T: "사고형", F: "감정형", J: "계획형", P: "탐구형" };
-  return `
-    <section class="mbti-section form-field full" aria-labelledby="mbti-heading">
-      <div class="mbti-heading-row">
-        <div>
-          <span id="mbti-heading" class="form-label">성격 유형 <span class="required">*</span></span>
-          <p>알고 있는 유형을 바로 입력하거나 10문항으로 간편하게 검사해 보세요.</p>
-        </div>
-        <output id="mbti-result" class="mbti-result" aria-live="polite">INFP</output>
-      </div>
-      <div class="mbti-mode-tabs" role="tablist" aria-label="성격 유형 입력 방법">
-        <button class="mbti-mode-button active" type="button" role="tab" aria-selected="true" data-mbti-mode="direct">MBTI 바로 입력하기</button>
-        <button class="mbti-mode-button" type="button" role="tab" aria-selected="false" data-mbti-mode="test">MBTI 간편 검사하기</button>
-      </div>
-      <div class="mbti-panel active" data-mbti-panel="direct" role="tabpanel">
-        <p class="mbti-panel-guide">각 행에서 나와 가까운 성향을 하나씩 선택해 주세요.</p>
-        <div class="mbti-direct-grid">
-          ${directRows.map((pair, row) => pair.map((letter, column) => `
-            <label class="mbti-letter-option">
-              <input type="radio" name="mbti_${row}" value="${letter}" ${column === 0 ? "checked" : ""} />
-              <span><b>${letter}</b><small>${mbtiLabels[letter]}</small></span>
-            </label>`).join("")).join("")}
-        </div>
-      </div>
-      <div class="mbti-panel" data-mbti-panel="test" role="tabpanel" hidden>
-        <p class="mbti-panel-guide">각 질문에서 나와 더 가까운 답을 선택해 주세요.</p>
-        <div class="mbti-question-list">
-          ${mbtiQuestions.map((question, index) => `
-            <fieldset class="mbti-question">
-              <legend><span>${index + 1}</span>${question[0]}</legend>
-              <div class="mbti-answer-grid">
-                <label><input type="radio" name="mbti_q${index}" value="${question[3]}" checked /><span><b>A</b>${question[1]}</span></label>
-                <label><input type="radio" name="mbti_q${index}" value="${question[4]}" /><span><b>B</b>${question[2]}</span></label>
-              </div>
-            </fieldset>`).join("")}
-        </div>
-      </div>
-      <input id="mbti-value" type="hidden" name="mbti" value="INFP" />
-    </section>`;
-}
-
-function renderTravelFields() {
-  return `
-    <section class="form-field full clock-range-field" aria-labelledby="clock-range-label">
-      <span id="clock-range-label" class="form-label">여행 가능 시간 <span class="required">*</span></span>
-      <div class="clock-range-layout">
-        <div id="travel-clock" class="time-clock" role="group" aria-label="여행 시작 시간과 종료 시간 선택">
-          <span class="clock-number n0">0</span><span class="clock-number n6">6</span><span class="clock-number n12">12</span><span class="clock-number n18">18</span>
-          <button class="clock-hand start" type="button" data-clock-hand="start" aria-label="시작 시간 조절"></button>
-          <button class="clock-hand end" type="button" data-clock-hand="end" aria-label="종료 시간 조절"></button>
-        </div>
-        <div class="clock-range-copy">
-          <h4>두 바늘을 돌려 여행 시간을 정해 주세요</h4>
-          <p>주황색 바늘은 시작, 파란색 바늘은 종료 시간입니다. 시계 위에서 원하는 시간을 드래그할 수 있어요.</p>
-          <div class="clock-time-output"><span id="start-time-output">08:00</span><i>→</i><span id="end-time-output">20:00</span></div>
-        </div>
-      </div>
-      <input id="start-time" type="hidden" name="startTime" value="8" />
-      <input id="end-time" type="hidden" name="endTime" value="20" />
-    </section>
-    <div class="form-field">
-      <label for="location">현재 위치 <span class="required">*</span></label>
-      <select id="location" name="location" required>
-        <option value="해운대구" selected>해운대구</option>
-        <option value="수영구">수영구</option>
-        <option value="영도구">영도구</option>
-        <option value="남구">남구</option>
-        <option value="사하구">사하구</option>
-        <option value="서구">서구</option>
-        <option value="기장군">기장군</option>
-        <option value="강서구">강서구</option>
-      </select>
-    </div>
-    <div class="form-field">
-      <span class="form-label">여행지 날씨 <span class="required">자동 연동</span></span>
-      <div class="weather-card" aria-live="polite"><span id="weather-icon" class="weather-icon">⛅</span><span class="weather-copy"><b id="weather-status">날씨를 불러오는 중…</b><span id="weather-detail">위치와 날짜를 기준으로 확인합니다.</span></span></div>
-      <input id="weather" type="hidden" name="weather" value="확인 중" />
-    </div>
-    <div class="form-field">
-      <label for="date">여행 날짜 <span class="required">*</span></label>
-      <input id="date" name="date" type="date" value="${getToday()}" required />
-    </div>
-  `;
-}
-
-function renderTourFields() {
-  return renderPersonalityFields() + renderTravelFields();
-}
-
-function renderPreference(name, title, options, defaultIndex = 0) {
-  return `
-    <div class="form-field food-preference">
-      <span class="form-label">${title} <span class="required">*</span></span>
-      <div class="option-pills food-option-pills">
-        ${options.map((option, index) => `
-          <label class="option-pill">
-            <input type="radio" name="${name}" value="${option.value}" ${index === defaultIndex ? "checked" : ""} />
-            <span>${option.label}</span>
-          </label>`).join("")}
-      </div>
-    </div>`;
-}
-
-function renderFoodFields(includeLocation = false) {
-  const locationField = includeLocation ? `
-    <div class="form-field food-location-field">
-      <label for="food-location">현재 위치 <span class="required">*</span></label>
-      <select id="food-location" name="location" required>
-        <option value="해운대구" selected>해운대구</option><option value="수영구">수영구</option><option value="영도구">영도구</option><option value="남구">남구</option>
-        <option value="사하구">사하구</option><option value="서구">서구</option><option value="기장군">기장군</option><option value="강서구">강서구</option>
-      </select>
-    </div>` : "";
-  return `
-    <section class="food-preference-section form-field full">
-      <div class="food-preference-heading">
-        <span class="form-label">음식 취향 검사 <span class="required">*</span></span>
-        <p>먹고 싶은 시간과 음식 취향을 알려주면 맞춤 메뉴를 골라드려요.</p>
-      </div>
-      <div class="food-preference-grid">
-        ${locationField}
-        ${renderPreference("mealTime", "식사 시간", [{ value: "점심", label: "점심" }, { value: "저녁", label: "저녁" }])}
-        <div class="form-field food-preference spice-preference">
-          <label for="spice-level">1. 어느 정도 맵기의 음식을 드실 수 있으신가요?</label>
-          <div class="spice-slider-card">
-            <div class="spice-value-row"><span>맵기 단계</span><output id="spice-output" for="spice-level">2</output></div>
-            <input id="spice-level" name="spiceLevel" type="range" min="0" max="5" step="1" value="2" />
-            <div class="spice-scale"><span>0 · 못 먹음</span><span>5 · 매우 매움</span></div>
-          </div>
-        </div>
-        ${renderPreference("rawPreference", "2. 날것을 드실 수 있으신가요?", [
-          { value: "날것", label: "A · 네" },
-          { value: "날것 제외", label: "B · 아니오" },
-        ], 1)}
-        ${renderPreference("adventurePreference", "3. 한국에서만 즐길 수 있는 음식을 드셔보고 싶으신가요?", [
-          { value: "한국 향토", label: "A · 네 (처음 보는 음식도 괜찮아요)" },
-          { value: "도전 쉬움", label: "B · 도전하기 쉬운 음식을 먹고 싶어요" },
-        ])}
-        ${renderPreference("cookingPreference", "4. 어떤 음식 유형을 선호하시나요?", [
-          { value: "볶음", label: "A · 볶음 음식" },
-          { value: "구이", label: "B · 구운 음식" },
-          { value: "국물", label: "C · 국물 음식" },
-        ], 2)}
-      </div>
-    </section>`;
-}
-
-function renderAiRouteFields() {
-  const tourFields = renderTourFields();
-  const foodChoices = renderFoodFields();
-  return tourFields + foodChoices;
-}
-
-const districtCoordinates = {
-  "해운대구": [35.1631, 129.1635], "수영구": [35.1457, 129.1132], "영도구": [35.0912, 129.0680], "남구": [35.1366, 129.0844],
-  "사하구": [35.1046, 128.9747], "서구": [35.0979, 129.0244], "기장군": [35.2445, 129.2223], "강서구": [35.2122, 128.9806],
-};
-
-function describeWeather(code) {
-  if (code === 0) return ["맑음", "☀️"];
-  if ([1, 2].includes(code)) return ["대체로 맑음", "🌤️"];
-  if (code === 3) return ["흐림", "☁️"];
-  if ([45, 48].includes(code)) return ["안개", "🌫️"];
-  if ([51, 53, 55, 56, 57].includes(code)) return ["이슬비", "🌦️"];
-  if ([61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return ["비", "🌧️"];
-  if ([71, 73, 75, 77, 85, 86].includes(code)) return ["눈", "🌨️"];
-  if ([95, 96, 99].includes(code)) return ["뇌우", "⛈️"];
-  return ["날씨 정보", "⛅"];
-}
-
-async function syncWeather() {
-  const location = document.querySelector("#location")?.value;
-  const date = document.querySelector("#date")?.value;
-  const hidden = document.querySelector("#weather");
-  const status = document.querySelector("#weather-status");
-  const detail = document.querySelector("#weather-detail");
-  const icon = document.querySelector("#weather-icon");
-  if (!location || !date || !hidden || !status) return;
-  const [latitude, longitude] = districtCoordinates[location];
-  status.textContent = "날씨를 불러오는 중…";
-  detail.textContent = `${location} · ${date}`;
-  try {
-    const params = new URLSearchParams({ latitude, longitude, daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max", timezone: "Asia/Seoul", forecast_days: "16" });
-    const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`);
-    if (!response.ok) throw new Error("weather request failed");
-    const data = await response.json();
-    const index = data.daily?.time?.indexOf(date) ?? -1;
-    if (index < 0) throw new Error("date unavailable");
-    const [label, symbol] = describeWeather(data.daily.weather_code[index]);
-    const rain = data.daily.precipitation_probability_max[index];
-    const low = Math.round(data.daily.temperature_2m_min[index]);
-    const high = Math.round(data.daily.temperature_2m_max[index]);
-    hidden.value = label.includes("비") || label.includes("뇌우") ? "비" : label.includes("흐림") || label.includes("안개") ? "흐림" : "맑음";
-    status.textContent = `${symbol} ${label} · ${low}~${high}℃`;
-    detail.textContent = `${location} ${date} · 강수확률 ${rain ?? 0}% · Open-Meteo 자동 예보`;
-    icon.textContent = symbol;
-  } catch (_) {
-    hidden.value = "확인 불가";
-    status.textContent = "예보를 확인할 수 없어요";
-    detail.textContent = "오늘부터 16일 이내 날짜인지 인터넷 연결을 확인해 주세요.";
-    icon.textContent = "📡";
-  }
-}
-
-function initializeClockPicker() {
-  const dial = document.querySelector("#travel-clock");
-  const startInput = document.querySelector("#start-time");
-  const endInput = document.querySelector("#end-time");
-  if (!dial || !startInput || !endInput) return;
-  let activeHand = "";
-  const circularDistance = (a, b) => Math.min(Math.abs(a - b), 24 - Math.abs(a - b));
-  const update = () => {
-    const start = Number(startInput.value);
-    const end = Number(endInput.value);
-    dial.style.setProperty("--start-angle", `${start * 15}deg`);
-    dial.style.setProperty("--end-angle", `${end * 15}deg`);
-    dial.style.setProperty("--range-size", `${(end - start) * 15}deg`);
-    document.querySelector("#start-time-output").textContent = `${String(start).padStart(2, "0")}:00`;
-    document.querySelector("#end-time-output").textContent = `${String(end).padStart(2, "0")}:00`;
-  };
-  const hourFromPointer = (event) => {
-    const rect = dial.getBoundingClientRect();
-    const x = event.clientX - (rect.left + rect.width / 2);
-    const y = event.clientY - (rect.top + rect.height / 2);
-    return Math.round(((Math.atan2(x, -y) * 180 / Math.PI + 360) % 360) / 15) % 24;
-  };
-  const move = (event) => {
-    if (!activeHand) return;
-    const hour = hourFromPointer(event);
-    if (activeHand === "start") startInput.value = Math.min(hour, Number(endInput.value) - 1);
-    else endInput.value = Math.max(hour, Number(startInput.value) + 1);
-    update();
-  };
-  dial.addEventListener("pointerdown", (event) => {
-    const hour = hourFromPointer(event);
-    activeHand = event.target.dataset.clockHand || (circularDistance(hour, Number(startInput.value)) <= circularDistance(hour, Number(endInput.value)) ? "start" : "end");
-    dial.setPointerCapture(event.pointerId);
-    move(event);
-  });
-  dial.addEventListener("pointermove", move);
-  dial.addEventListener("pointerup", () => { activeHand = ""; });
-  dial.addEventListener("pointercancel", () => { activeHand = ""; });
-  update();
-}
-
-function initializeDynamicControls() {
-  initializeClockPicker();
-  document.querySelector("#location")?.addEventListener("change", syncWeather);
-  document.querySelector("#date")?.addEventListener("change", syncWeather);
-  const spice = document.querySelector("#spice-level");
-  const spiceOutput = document.querySelector("#spice-output");
-  spice?.addEventListener("input", () => { spiceOutput.textContent = spice.value; });
-  syncWeather();
-}
-
-function setMbtiMode(mode) {
-  document.querySelectorAll("[data-mbti-mode]").forEach((button) => {
-    const active = button.dataset.mbtiMode === mode;
-    button.classList.toggle("active", active);
-    button.setAttribute("aria-selected", String(active));
-  });
-  document.querySelectorAll("[data-mbti-panel]").forEach((panel) => {
-    const active = panel.dataset.mbtiPanel === mode;
-    panel.hidden = !active;
-    panel.classList.toggle("active", active);
-  });
-  updateMbtiValue();
-}
-
-function updateMbtiValue() {
-  const activeMode = document.querySelector("[data-mbti-mode].active")?.dataset.mbtiMode || "direct";
-  let result;
-  if (activeMode === "direct") {
-    result = [0, 1, 2, 3].map((index) => document.querySelector(`input[name="mbti_${index}"]:checked`)?.value || "").join("");
-  } else {
-    const scores = { I: 0, E: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
-    mbtiQuestions.forEach((_, index) => {
-      const value = document.querySelector(`input[name="mbti_q${index}"]:checked`)?.value;
-      if (value) scores[value] += 1;
-    });
-    result = `${scores.E > scores.I ? "E" : "I"}${scores.N > scores.S ? "N" : "S"}${scores.F > scores.T ? "F" : "T"}${scores.P > scores.J ? "P" : "J"}`;
-  }
-  const hiddenInput = document.querySelector("#mbti-value");
-  const output = document.querySelector("#mbti-result");
-  if (hiddenInput) hiddenInput.value = result;
-  if (output) output.textContent = result;
-}
-
-function prepareQuiz() {
-  state.categories = getSelectedValues("category");
-  const categoryError = document.querySelector("#category-error");
-  if (!state.categories.length) {
-    categoryError.hidden = false;
-    return;
-  }
-  categoryError.hidden = true;
-  state.service = state.categories[0];
-  state.companion = getSelectedValue("companion");
-  state.age = getSelectedValue("age");
-  state.language = getSelectedValue("language");
-  document.querySelector("#quiz-title").textContent = "선택한 분야의 맞춤 정보를 알려주세요";
-  document.querySelector("#quiz-description").textContent = "선택한 모든 분야에서 각각 세 가지씩 추천해 드려요.";
-
-  const needsMbti = state.categories.some((category) => ["attraction", "activity"].includes(category));
-  const needsFood = state.categories.includes("food");
-  dynamicFields.innerHTML = [
-    needsMbti ? renderPersonalityFields() : "",
-    renderTravelFields(),
-    needsFood ? renderFoodFields(false) : "",
-  ].join("");
-
-  setMbtiMode("direct");
-  initializeDynamicControls();
-
-  showScreen("quiz");
-}
-
-function hashText(text) {
-  return [...text].reduce((sum, character) => sum + character.charCodeAt(0), 0);
-}
-
-function scoreAttraction(place, answers) {
-  let score = 40 + (hashText(place.name + (answers.date || "") + state.companion + state.age) % 13);
-  const mbti = answers.mbti || "UNKNOWN";
-  if (place.mbtiMatches?.includes(mbti)) score += 38;
-  else if (place.mbtiMatches) {
-    const closestMatch = Math.max(...place.mbtiMatches.map((type) =>
-      [...type].filter((letter, index) => letter === mbti[index]).length,
-    ));
-    score += closestMatch * 5;
-  }
-  const traits = [
-    mbti.startsWith("I") ? "내향" : "외향",
-    mbti.includes("N") ? "직관" : "현실",
-    mbti.includes("F") ? "감성" : "사고",
-    mbti.endsWith("J") ? "계획" : "즉흥",
-  ];
-
-  traits.forEach((trait) => {
-    if (place.tags.includes(trait)) score += 8;
-  });
-  if (place.tags.includes(answers.time)) score += 14;
-  if (place.tags.includes(answers.weather)) score += 17;
-  if (answers.weather === "비" && place.tags.includes("실내")) score += 18;
-
-  const locationMatches = {
-    부산역: ["영도구", "서구", "사하구", "남구"],
-    해운대: ["해운대구", "기장군", "수영구"],
-    서면: ["수영구", "해운대구", "남구"],
-    광안리: ["수영구", "해운대구", "남구"],
-    남포동: ["서구", "영도구", "사하구", "강서구"],
-  };
-  if ((locationMatches[answers.location] || []).some((area) => place.tags.includes(area))) score += 13;
-
-  return Math.min(score, 98);
-}
-
-function scoreFood(place, answers) {
-  let score = 35 + (hashText(place.name + (answers.mealTime || "") + state.companion + state.age) % 10);
-  if (place.tags.includes(answers.mealTime)) score += 26;
-
-  const likedTags = [answers.rawPreference, answers.adventurePreference, answers.cookingPreference]
-    .filter((value) => value && !value.includes("제외"));
-  likedTags.forEach((tag) => {
-    if (place.tags.includes(tag)) score += 13;
-  });
-
-  if (answers.spiceLevel === "매우 매움" && place.tags.includes("매우 매움")) score += 18;
-  if (answers.spiceLevel === "보통 매움" && place.tags.includes("보통 매움")) score += 18;
-  if (answers.spiceLevel === "매우 매움" && place.tags.includes("보통 매움")) score += 8;
-
-  const exclusions = [[answers.rawPreference, "날것"]];
-  exclusions.forEach(([preference, tag]) => {
-    if (preference?.includes("제외") && place.tags.includes(tag)) score -= 100;
-  });
-  if (answers.spiceLevel === "매운맛 제외" && (place.tags.includes("보통 매움") || place.tags.includes("매우 매움"))) score -= 100;
-  if (answers.spiceLevel === "보통 매움" && place.tags.includes("매우 매움")) score -= 100;
-
-  return Math.max(1, Math.min(score, 98));
-}
-
-function getAnswers(form) {
-  return Object.fromEntries(new FormData(form).entries());
-}
-
-function getRecommendations() {
-  if (personalizedData.length) {
-    const locationAreas = Object.fromEntries(Object.keys(districtCoordinates).map((district) => [district, [district]]));
-    const preferredAreas = locationAreas[state.answers.location] || [];
-    const selectedMbti = state.answers.mbti || "";
-
-    return state.categories.flatMap((category) => {
-      let candidates = verifiedPlaceCatalog[category].map((place) => makeVerifiedPlace(place, category));
-      candidates = candidates.filter((place) => preferredAreas.includes(place.area));
-
-      const ranked = candidates.map((place) => {
-        let score = 48 + (hashText(place.name + state.age) % 10);
-        if (preferredAreas.includes(place.area)) score += 18;
-        if (selectedMbti) score += hashText(`${place.name}-${selectedMbti}-${state.companion}`) % 24;
-        return { ...place, score: Math.min(score, 98) };
-      });
-
-      return ranked
-        .sort((a, b) => category === "food"
-          ? b.rating - a.rating || b.score - a.score
-          : b.score - a.score || b.rating - a.rating)
-        .slice(0, 3);
-    });
-  }
-
-  const foodCandidates = foodData.filter((place) => place.areas?.includes(state.answers.location));
-  return state.categories.flatMap((category) => {
-    if (category === "food") {
-      return foodCandidates
-        .map((place) => ({ ...place, score: scoreFood(place, state.answers), service: category }))
-        .filter((place) => place.score > 1)
-        .sort((a, b) => b.rating - a.rating || b.score - a.score)
-        .slice(0, 3);
-    }
-    const source = category === "cafe" ? cafeData : category === "activity" ? activityData : attractionData;
-    return source
-      .map((place) => ({ ...place, score: scoreAttraction(place, state.answers), service: category }))
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 3);
-  });
-}
-
-function createMapUrl(name) {
-  const location = state.answers.location || "부산";
-  const place = state.recommendations.find((item) => item.name === name);
-  const area = place?.area || location;
-  return `https://map.kakao.com/link/search/${encodeURIComponent(`부산 ${area} ${name}`)}`;
-}
-
-function createGoogleMapUrl(name) {
-  const place = state.recommendations.find((item) => item.name === name);
-  const area = place?.area || "부산";
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`부산 ${area} ${name}`)}`;
-}
-
-function getFallbackPlaceImage(place) {
-  const exactQuery = encodeURIComponent(`부산 ${place.area || ""} ${place.name}`);
-  return `https://tse2.mm.bing.net/th?q=${exactQuery}&w=900&h=540&c=7&rs=1&p=0`;
-}
-
-async function findPlaceImage(name, area) {
-  const cacheKey = `busan-real-photo-v2:${area}:${name}`;
-  const cached = sessionStorage.getItem(cacheKey);
-  if (cached) return cached;
-  const params = new URLSearchParams({
-    action: "query",
-    generator: "search",
-    gsrsearch: `intitle:\"${name}\" 부산`,
-    gsrnamespace: "6",
-    gsrlimit: "5",
-    prop: "imageinfo",
-    iiprop: "url",
-    iiurlwidth: "900",
-    format: "json",
-    origin: "*",
-  });
-  try {
-    const response = await fetch(`https://commons.wikimedia.org/w/api.php?${params}`);
-    if (!response.ok) return "";
-    const data = await response.json();
-    const image = Object.values(data.query?.pages || {}).find((page) => page.imageinfo?.[0]?.thumburl)?.imageinfo?.[0]?.thumburl || "";
-    if (image) sessionStorage.setItem(cacheKey, image);
-    return image;
-  } catch (_) {
-    return "";
-  }
-}
-
-async function hydratePlaceImages() {
-  const imageElements = [...recommendationList.querySelectorAll("[data-place-image]")];
-  await Promise.all(imageElements.map(async (image) => {
-    image.addEventListener("error", () => {
-      if (image.src !== image.dataset.fallback) {
-        image.src = image.dataset.fallback;
-        return;
-      }
-      image.classList.add("is-unavailable");
-      image.closest(".place-visual")?.classList.add("photo-unavailable");
-    });
-    const source = await findPlaceImage(decodeURIComponent(image.dataset.placeImage), decodeURIComponent(image.dataset.area));
-    if (source) image.src = source;
-    image.classList.remove("is-loading");
-  }));
-}
-
-function renderRecommendations() {
-  const sectionNames = { attraction: "📍 볼거리", food: "🍴 맛집", cafe: "☕️ 뷰&카페", activity: "🏄 체험" };
-  recommendationList.innerHTML = state.categories.map((category) => {
-    const places = state.recommendations.filter((place) => place.service === category);
-    return `<section class="recommendation-section">
-      <h3 class="recommendation-section-heading">${sectionNames[category]} <span>추천 3곳</span></h3>
-      <div class="recommendation-grid">${places.map(
-      (place, index) => `
-        <article class="place-card">
-          <div class="place-visual" style="--card-gradient: ${place.gradient}">
-            <a class="place-photo-link" href="${createGoogleMapUrl(place.name)}" target="_blank" rel="noopener noreferrer" aria-label="Google 지도에서 ${place.name} 실제 사진 보기">
-              <img class="place-photo is-loading" src="${getFallbackPlaceImage(place)}" data-fallback="${getFallbackPlaceImage(place)}" data-place-image="${encodeURIComponent(place.name)}" data-area="${encodeURIComponent(place.area || "부산")}" alt="${place.name} 실제 장소 사진" loading="lazy" />
-            </a>
-            <span class="place-photo-shade" aria-hidden="true"></span>
-            <span class="place-photo-label">실제 장소 사진</span>
-            <span class="place-rank">${index + 1}</span>
-            <span class="match-badge">${place.service === "food" ? `평점 ${place.rating.toFixed(1)}` : `취향 일치 ${place.score}%`}</span>
-          </div>
-          <div class="place-content">
-            <p class="place-category">${place.category}</p>
-            <h3>${place.name}</h3>
-            <p class="place-description">${place.description}</p>
-            <div class="place-tags">
-              ${place.displayTags.map((tag) => `<span class="place-tag">${tag}</span>`).join("")}
-            </div>
-            <div class="review-box"><b>한줄 리뷰</b> · “${place.review}”</div>
-            <div class="map-link-row">
-              <a class="map-link" href="${createMapUrl(place.name)}" target="_blank" rel="noopener noreferrer" aria-label="카카오맵에서 ${place.name} 검색하기">카카오맵 <span aria-hidden="true">↗</span></a>
-              <a class="map-link google-map-link" href="${createGoogleMapUrl(place.name)}" target="_blank" rel="noopener noreferrer" aria-label="Google 지도에서 ${place.name} 검색하기">Google 지도 <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-        </article>
-      `).join("")}</div></section>`;
-  }).join("");
-  hydratePlaceImages();
-}
-
-function formatMbti(value) {
-  const labels = {
-    ISFJ: "아이에스에프제이",
-    INFP: "아이엔에프피",
-    ESFP: "이에스에프피",
-    ENFJ: "이엔에프제이",
-    INTJ: "아이엔티제이",
-    ENTP: "이엔티피",
-    ESTJ: "이에스티제이",
-    UNKNOWN: "성격 유형 모름",
-  };
-  return labels[value] || value;
-}
-
-function renderSummary() {
-  const labels = [];
-  labels.push(state.language);
-  labels.push(state.companion);
-  labels.push(state.age);
-  const categoryNames = { attraction: "볼거리", food: "맛집", cafe: "뷰&카페", activity: "체험" };
-  state.categories.forEach((category) => labels.push(categoryNames[category]));
-  if (state.answers.mbti) labels.push(formatMbti(state.answers.mbti));
-  if (state.answers.mealTime) labels.push(state.answers.mealTime);
-  [state.answers.spiceLevel, state.answers.rawPreference, state.answers.adventurePreference, state.answers.cookingPreference]
-    .filter(Boolean)
-    .forEach((value) => labels.push(value));
-  if (state.answers.startTime && state.answers.endTime) labels.push(`${state.answers.startTime}:00~${state.answers.endTime}:00`);
-  if (state.answers.location) labels.push(state.answers.location + " 출발");
-  if (state.answers.weather) labels.push(state.answers.weather);
-
-  document.querySelector("#result-summary").innerHTML = labels
-    .map((label) => `<span class="summary-chip">${label}</span>`)
-    .join("");
-}
-
-function renderRoute() {
-  routeSection.hidden = false;
-  const isFoodOnly = state.categories.length === 1 && state.categories[0] === "food";
-  const routeRecommendations = isFoodOnly
-    ? state.recommendations
-    : state.categories.map((category) => state.recommendations.find((place) => place.service === category)).filter(Boolean).slice(0, 3);
-  routeList.innerHTML = routeRecommendations
-    .map((place, index) => {
-      const stop = `
-        <div class="route-stop">
-          <em>${index + 1}번째 추천</em>
-          <b>${place.name}</b>
-          <span>${place.area} · ${index === 0 ? "여행 시작" : "다음 추천 장소"}</span>
-        </div>`;
-      const arrow = index < routeRecommendations.length - 1 ? `<div class="route-arrow" aria-hidden="true">→</div>` : "";
-      return stop + arrow;
-    })
-    .join("");
-  renderRouteMap(routeRecommendations);
-}
-
-function loadKakaoMaps(appKey) {
-  if (window.kakao?.maps?.services) return Promise.resolve();
-  return new Promise((resolve, reject) => {
-    document.querySelector("#kakao-maps-sdk")?.remove();
-    const script = document.createElement("script");
-    script.id = "kakao-maps-sdk";
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${encodeURIComponent(appKey)}&libraries=services&autoload=false`;
-    script.onload = () => window.kakao.maps.load(resolve);
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-}
-
-function searchWithKakao(query, district) {
-  return new Promise((resolve) => {
-    const placesService = new window.kakao.maps.services.Places();
-    placesService.keywordSearch(query, (results, status) => {
-      if (status !== window.kakao.maps.services.Status.OK) return resolve(null);
-      const exactAreaResult = results.find((result) =>
-        `${result.address_name || ""} ${result.road_address_name || ""}`.includes(district)
-      );
-      resolve(exactAreaResult ? {
-        x: Number(exactAreaResult.x), y: Number(exactAreaResult.y),
-        name: exactAreaResult.place_name, url: exactAreaResult.place_url,
-      } : null);
-    });
-  });
-}
-
-async function renderRouteMap(places) {
-  const mapElement = document.querySelector("#route-map");
-  const routeLink = document.querySelector("#kakao-route-link");
-  if (!mapElement || !places.length) return;
-  state.routeRecommendations = places;
-  routeLink.href = createMapUrl(places[0].name);
-  const appKey = localStorage.getItem("kakaoMapsJavaScriptKey") || "";
-  if (!appKey) {
-    mapElement.innerHTML = `<div class="map-empty-state"><b>카카오맵 JavaScript 키를 연결해 주세요</b><span>‘지도 API 설정’을 누르면 선택 지역의 추천 장소 마커와 경로선이 표시됩니다.</span></div>`;
-    return;
-  }
-  mapElement.innerHTML = `<div class="map-empty-state"><b>카카오맵을 불러오는 중…</b><span>장소가 선택한 지역에 있는지 확인하고 있습니다.</span></div>`;
-  try {
-    await loadKakaoMaps(appKey);
-    const coordinates = (await Promise.all(places.map(async (place) => ({ place, point: await searchWithKakao(`부산 ${place.area} ${place.name}`, place.area) })))).filter((item) => item.point);
-    if (!coordinates.length) throw new Error("geocoding failed");
-    mapElement.innerHTML = "";
-    const center = new window.kakao.maps.LatLng(coordinates[0].point.y, coordinates[0].point.x);
-    const map = new window.kakao.maps.Map(mapElement, { center, level: 7 });
-    map.addControl(new window.kakao.maps.ZoomControl(), window.kakao.maps.ControlPosition.RIGHT);
-    const bounds = new window.kakao.maps.LatLngBounds();
-    const path = coordinates.map(({ place, point }, index) => {
-      const position = new window.kakao.maps.LatLng(point.y, point.x);
-      bounds.extend(position);
-      const marker = new window.kakao.maps.Marker({ position, map, title: `${index + 1}. ${place.name}` });
-      const overlay = new window.kakao.maps.CustomOverlay({
-        position, yAnchor: 2.1,
-        content: `<a href="${point.url}" target="_blank" rel="noopener" style="padding:6px 9px;border-radius:10px;background:#251d00;color:#fee500;font:700 12px sans-serif;text-decoration:none;box-shadow:0 4px 12px #0003">${index + 1}. ${place.name}</a>`,
-      });
-      overlay.setMap(map);
-      return position;
-    });
-    if (path.length > 1) new window.kakao.maps.Polyline({ map, path, strokeColor: "#e43b1c", strokeWeight: 6, strokeOpacity: 0.88, strokeStyle: "solid" });
-    map.setBounds(bounds, 55, 55, 55, 55);
-    const last = coordinates.at(-1);
-    routeLink.href = `https://map.kakao.com/link/to/${encodeURIComponent(last.point.name || last.place.name)},${last.point.y},${last.point.x}`;
-  } catch (_) {
-    mapElement.innerHTML = `<div class="map-empty-state"><b>카카오맵을 표시하지 못했어요</b><span>JavaScript 키, 카카오맵 사용 설정, 등록된 사이트 도메인을 확인해 주세요.</span></div>`;
-  }
-}
-
-function showResults(event) {
-  event.preventDefault();
-  if (!quizForm.reportValidity()) return;
-
-  updateMbtiValue();
-  state.answers = getAnswers(quizForm);
-  state.recommendations = getRecommendations();
-  document.querySelector("#result-title").textContent = "선택한 모든 분야의 부산 맞춤 추천";
-  document.querySelector("#result-description").textContent = "동행 유형, 나이대와 맞춤 검사 결과를 반영해 분야별로 세 곳씩 골랐어요.";
-  renderSummary();
-  renderRecommendations();
-  renderRoute();
-  showScreen("result");
-}
-
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add("show");
-  window.clearTimeout(showToast.timer);
-  showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 2400);
-}
-
-function saveResult() {
-  window.BusanI18n.downloadResult(state);
-  showToast("추천 결과를 파일로 저장했어요.");
-}
-
-startButton.addEventListener("click", prepareQuiz);
-quizForm.addEventListener("submit", showResults);
-document.querySelector("#restart-button").addEventListener("click", () => showScreen("start"));
-document.querySelector("#save-button").addEventListener("click", saveResult);
-document.querySelector("#map-api-settings")?.addEventListener("click", () => {
-  const current = localStorage.getItem("kakaoMapsJavaScriptKey") || "";
-  const appKey = window.prompt("카카오디벨로퍼스에서 발급한 JavaScript 키를 입력해 주세요.\n취소하면 현재 설정을 유지합니다.", current);
-  if (appKey === null) return;
-  if (appKey.trim()) localStorage.setItem("kakaoMapsJavaScriptKey", appKey.trim());
-  else localStorage.removeItem("kakaoMapsJavaScriptKey");
-  renderRouteMap(state.routeRecommendations || []);
-});
-
-document.querySelectorAll("[data-back]").forEach((button) => {
-  button.addEventListener("click", () => showScreen(button.dataset.back));
-});
-
-dynamicFields.addEventListener("click", (event) => {
-  const modeButton = event.target.closest("[data-mbti-mode]");
-  if (modeButton) setMbtiMode(modeButton.dataset.mbtiMode);
-});
-
-dynamicFields.addEventListener("change", (event) => {
-  if (event.target.matches('input[name^="mbti_"]')) updateMbtiValue();
-});
-
-document.querySelectorAll("input[name='category']").forEach((input) => {
-  input.addEventListener("change", () => {
-    const selectedCard = input.closest(".category-check");
-    selectedCard?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    document.querySelector("#category-error").hidden = getSelectedValues("category").length > 0;
-  });
-});
+function toast(message){const el=$("#toast");el.textContent=message;el.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),2200)}
+function selectedValues(name){return $$(`input[name="${name}"]:checked`).map(x=>x.value)}
+function selectedValue(name){return $(`input[name="${name}"]:checked`)?.value||""}
+function hash(text){return [...String(text)].reduce((n,c)=>((n*31+c.charCodeAt(0))>>>0),7)}
+function shuffleRank(items,seed){return [...items].map(x=>({x,n:hash(`${x.name}-${seed}`)})).sort((a,b)=>a.n-b.n).map(v=>v.x)}
+function timeMinutes(value){const [h,m]=value.split(":").map(Number);return h*60+m}
+function formatTime(min){min=Math.max(0,Math.min(1439,Math.round(min/5)*5));return `${String(Math.floor(min/60)).padStart(2,"0")}:${String(min%60).padStart(2,"0")}`}
+function durationHours(){return Math.max(1,(timeMinutes($("#end-time").value)-timeMinutes($("#start-time").value))/60)}
+function suggestedCount(hours=durationHours()){return hours<5?3:4+Math.floor((hours-5)/2)}
+
+function showScreen(name){state.screen=name;$$('.screen').forEach(x=>{x.hidden=x.id!==`${name}-screen`;x.classList.toggle("active",!x.hidden)});$$('.steps span').forEach((x,i)=>x.classList.toggle("active",i==={start:0,quiz:1,result:2}[name]));$('.planner').scrollIntoView({behavior:"smooth",block:"start"})}
+
+function initSlider(){let current=0;const slides=$$('.hero-slide'),dots=$$('.slide-dots i');setInterval(()=>{slides[current].classList.remove('active');dots[current].classList.remove('active');current=(current+1)%slides.length;slides[current].classList.add('active');dots[current].classList.add('active')},3000)}
+function initMbti(){const rows=[["I","E"],["S","N"],["T","F"],["J","P"]],labels={I:"내향",E:"외향",S:"현실",N:"직관",T:"사고",F:"감정",J:"계획",P:"즉흥"};$('#mbti-direct').innerHTML=rows.map((pair,i)=>`<div class="mbti-pair">${pair.map((l,j)=>`<label><input type="radio" name="mbti${i}" value="${l}" ${j===0?'checked':''}>${l}<small> ${labels[l]}</small></label>`).join('')}</div>`).join('');$('#mbti-quiz').innerHTML=mbtiQuestions.map((q,i)=>`<fieldset class="mbti-question"><legend>${i+1}. ${q[0]}</legend><div class="quiz-answer"><label><input type="radio" name="mq${i}" value="${q[3]}" checked>A · ${q[1]}</label><label><input type="radio" name="mq${i}" value="${q[4]}">B · ${q[2]}</label></div></fieldset>`).join('');updateMbti()}
+function updateMbti(){const quiz=!$('#mbti-quiz').hidden;let result;if(!quiz)result=[0,1,2,3].map(i=>selectedValue(`mbti${i}`)).join('');else{const score={I:0,E:0,S:0,N:0,T:0,F:0,J:0,P:0};mbtiQuestions.forEach((q,i)=>score[selectedValue(`mq${i}`)]++);result=(score.I>=score.E?'I':'E')+(score.S>=score.N?'S':'N')+(score.T>=score.F?'T':'F')+(score.J>=score.P?'J':'P')}$('#mbti-value').value=result;$('#mbti-output').textContent=result}
+
+function updateClock(){const start=timeMinutes($('#start-time').value),end=timeMinutes($('#end-time').value);if(end<=start)$('#end-time').value=formatTime(Math.min(start+60,1435));const e=timeMinutes($('#end-time').value),angle=start/4,size=(e-start)/4;const dial=$('#travel-clock');dial.style.setProperty('--start-angle',`${angle}deg`);dial.style.setProperty('--range-size',`${size}deg`);const placeLabel=(selector,minutes)=>{const a=minutes/1440*Math.PI*2,r=99,x=120+Math.sin(a)*r,y=120-Math.cos(a)*r,el=$(selector);el.style.left=`${x}px`;el.style.top=`${y}px`};placeLabel('.start-label',start);placeLabel('.end-label',e);$('#duration-copy').textContent=`${((e-start)/60).toFixed((e-start)%60?1:0)}시간 · 추천 ${suggestedCount((e-start)/60)}장소`}
+function initClock(){const dial=$('#travel-clock');let active='';function fromPointer(e){const r=dial.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;return Math.round((((Math.atan2(x,-y)*180/Math.PI+360)%360)/360*1440)/5)*5%1440}const distance=(a,b)=>Math.min(Math.abs(a-b),1440-Math.abs(a-b));function move(e){if(!active)return;const m=fromPointer(e),other=timeMinutes($(active==='start'?'#end-time':'#start-time').value);if(active==='start'&&m<=other-5)$('#start-time').value=formatTime(m);if(active==='end'&&m>=other+5)$('#end-time').value=formatTime(m);updateClock()}dial.addEventListener('pointerdown',e=>{const m=fromPointer(e),start=timeMinutes($('#start-time').value),end=timeMinutes($('#end-time').value);active=e.target.dataset.hand||(distance(m,start)<=distance(m,end)?'start':'end');dial.setPointerCapture(e.pointerId);move(e)});dial.addEventListener('pointermove',move);dial.addEventListener('pointerup',()=>active='');dial.addEventListener('pointercancel',()=>active='');['#start-time','#end-time'].forEach(s=>$(s).addEventListener('input',updateClock));updateClock()}
+
+function describeWeather(code){if(code===0)return['맑음','☀️'];if([1,2].includes(code))return['맑음','🌤️'];if(code===3)return['흐림','☁️'];if([51,53,55,61,63,65,80,81,82,95,96,99].includes(code))return['비','🌧️'];if([71,73,75,77,85,86].includes(code))return['눈','🌨️'];return['흐림','⛅']}
+async function syncWeather(){const loc=$('#location').value,date=$('#date').value;if(!date)return;$('#weather-status').textContent='날씨를 확인하는 중…';try{const [latitude,longitude]=districtCoordinates[loc],p=new URLSearchParams({latitude,longitude,daily:'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max',timezone:'Asia/Seoul',forecast_days:'16'}),data=await fetch(`https://api.open-meteo.com/v1/forecast?${p}`).then(r=>{if(!r.ok)throw Error();return r.json()}),i=data.daily.time.indexOf(date);if(i<0)throw Error();const [label,icon]=describeWeather(data.daily.weather_code[i]);$('#weather').value=label;$('#weather-icon').textContent=icon;$('#weather-status').textContent=`${label} · ${Math.round(data.daily.temperature_2m_min[i])}~${Math.round(data.daily.temperature_2m_max[i])}℃`;$('#weather-detail').textContent=`강수확률 ${data.daily.precipitation_probability_max[i]??0}% · 자동 예보`}catch{$('#weather').value='확인 불가';$('#weather-icon').textContent='📡';$('#weather-status').textContent='예보를 확인할 수 없어요';$('#weather-detail').textContent='날씨 정보 없이 안전한 장소를 우선 추천합니다.'}}
+
+function comboCodes(){const spice=Number($('#spice-range').value),q1=spice===3?'A':spice===2?'B':'C',raw=selectedValue('raw')||'B',adventure=selectedValue('adventure')||'A',types=selectedValues('cooking');return (types.length?types:['A']).map(t=>q1+raw+adventure+t)}
+function comboResult(){const codes=comboCodes(),entries=codes.map(c=>foodCombos[c]).filter(Boolean),menus=[...new Set(entries.flatMap(e=>e[0]))];return{codes,menus,reasons:entries.map(e=>e[1])}}
+function updateComboPreview(){const {codes,menus,reasons}=comboResult();$('#food-combo-preview').innerHTML=`<b>${codes.join(' · ')} 조합</b><br>추천 음식: ${menus.join(', ')}<br><small>${[...new Set(reasons)].join(' ')}</small>`}
+
+function prepareQuiz(){state.categories=selectedValues('category');if(!state.categories.length){$('#category-error').hidden=false;return}$('#category-error').hidden=true;$('#food-block').hidden=!state.categories.includes('food');$('#mbti-block').hidden=!state.categories.some(c=>c==='attraction'||c==='activity');showScreen('quiz');syncWeather();updateComboPreview()}
+
+function placeScore(place,category){let score=45+(hash(place.name+JSON.stringify(state.answers)+state.refresh[category])%18);const mbti=state.answers.mbti;if(place.mbtiMatches?.includes(mbti))score+=32;else if(place.mbtiMatches?.length)score+=Math.max(...place.mbtiMatches.map(t=>[...t].filter((x,i)=>x===mbti[i]).length))*6;if(place.area===state.answers.location)score+=15;if(state.answers.weather==='비'&&place.tags?.includes('실내'))score+=25;return Math.min(98,score)}
+function isOutdoorUnsafe(place){const text=`${place.name} ${place.category} ${(place.tags||[]).join(' ')}`;return /서핑|요트|해수욕장|해양스포츠|수상|패들|카약|해안산책|스카이워크|공원|전망대/.test(text)&&!place.tags?.includes('실내')}
+function normalizePlace(p,service){return{...p,service,area:p.area||state.answers.location,tags:p.tags||[],displayTags:p.displayTags||p.tags?.slice(0,3)||[],score:placeScore(p,service),description:p.description||`${state.answers.location}에서 즐기기 좋은 부산 추천 장소예요.`}}
+function foodPlaces(){const meals=state.answers.mealTimes||['점심'],combo=comboResult(),shops=realRestaurants[state.answers.location]||realRestaurants.해운대구,items=[];meals.forEach((meal,mi)=>{const menus=meal==='아침'?breakfastMenus:combo.menus;menus.slice(0,3).forEach((menu,i)=>items.push({menu,meal,code:combo.codes[i%combo.codes.length],shop:shops[(i+mi*2)%shops.length]}))});return items.map(({menu,meal,code,shop},i)=>({name:shop,menu,service:'food',area:state.answers.location,mealTime:meal,category:`${meal} · ${menu}`,description:`실제 영업 중인 업소를 기준으로 ${meal}에 어울리는 ${menu} 메뉴를 찾아볼 수 있어요. 방문 전 운영시간과 실제 메뉴를 확인해 주세요.`,tags:[meal,...combo.codes],displayTags:[meal,menu,"실제 업소"],score:92-(i%10)}))}
+function sourceFor(category){if(category==='food')return foodPlaces();let source=category==='attraction'?(window.BUSAN_ATTRACTIONS||[]):category==='cafe'?realCafes:realActivities;source=source.map(p=>normalizePlace(p,category));if(state.answers.weather==='비'){if(category==='attraction')source=indoorFallback.map(p=>normalizePlace(p,'attraction'));else if(category==='activity')source=source.filter(p=>/아쿠아리움|박물관|미술관|실내/.test(`${p.name} ${p.category}`));else source=source.filter(p=>!isOutdoorUnsafe(p))}return source}
+function buildRecommendations(){state.recommendations=state.categories.flatMap(category=>{const source=sourceFor(category),local=source.filter(p=>!p.area||p.area===state.answers.location),pool=local.length>=5?local:source;return shuffleRank(pool,`${JSON.stringify(state.answers)}-${state.refresh[category]||0}`).sort((a,b)=>(b.score||0)-(a.score||0)).slice(0,6).map(p=>({...p,service:category,id:`${category}-${hash(p.name)}`}))});state.selected.clear()}
+
+function categorySuggestion(){const total=suggestedCount(Number(state.answers.duration)),count=state.categories.length,base=Math.floor(total/count),rest=total%count;return Object.fromEntries(state.categories.map((c,i)=>[c,base+(i<rest?1:0)]))}
+function renderSummary(){const sug=categorySuggestion();$('#count-guide').innerHTML=`⏱ 여행 가능 시간은 <b>${state.answers.duration}시간</b>이에요. 약 2시간당 한 장소를 기준으로 총 <b>${suggestedCount(Number(state.answers.duration))}곳</b>을 권장해요.<br>${state.categories.map(c=>`${categoryMeta[c][0]} ${categoryMeta[c][1]} ${sug[c]}곳`).join(' · ')}`}
+function placeImage(p){return`https://tse2.mm.bing.net/th?q=${encodeURIComponent(`부산 ${p.area||''} ${p.name}`)}&w=800&h=450&c=7&rs=1&p=0`}
+function mapSearch(place){return`https://map.kakao.com/link/search/${encodeURIComponent(`부산 ${place.area||state.answers.location} ${place.menu||place.name.replace(' 맛집','')}`)}`}
+function renderRecommendations(){const sug=categorySuggestion();$('#recommendations').innerHTML=state.categories.map(c=>{const places=state.recommendations.filter(p=>p.service===c);return`<section class="recommend-section"><div class="recommend-head"><h3>${categoryMeta[c][0]} ${categoryMeta[c][1]} <small>권장 ${sug[c]}곳 · 자유 선택</small></h3><button class="refresh" data-refresh="${c}">↻ 이 카테고리 새로 추천</button></div><div class="card-grid">${places.map(p=>`<article class="place-card ${state.selected.has(p.id)?'selected':''}" draggable="true" data-id="${p.id}"><img class="card-photo" src="${placeImage(p)}" alt="${p.name} 실제 장소 사진" loading="lazy" onerror="this.style.display='none'"><div class="card-top ${c}"><b>${p.name}</b><span class="score">${c==='food'?p.mealTime:`취향 ${p.score}%`}</span></div><div class="card-body"><strong>${p.category}</strong><p>${p.description}</p><div class="tags">${(p.displayTags||[]).slice(0,3).map(t=>`<i>${t}</i>`).join('')}</div><p><a href="${mapSearch(p)}" target="_blank" rel="noopener">카카오맵에서 확인 ↗</a></p></div><button class="select-place" data-select="${p.id}">${state.selected.has(p.id)?'✓ 선택됨':'이 장소 선택'}</button></article>`).join('')}</div></section>`}).join('');bindCards()}
+function bindCards(){$$('[data-select]').forEach(b=>b.onclick=()=>{const id=b.dataset.select;state.selected.has(id)?state.selected.delete(id):state.selected.add(id);renderRecommendations()});$$('[data-refresh]').forEach(b=>b.onclick=()=>{state.refresh[b.dataset.refresh]=(state.refresh[b.dataset.refresh]||0)+1;const keep=state.recommendations.filter(p=>p.service!==b.dataset.refresh),fresh=sourceFor(b.dataset.refresh),pool=shuffleRank(fresh,Date.now()).slice(0,6).map(p=>({...p,service:b.dataset.refresh,id:`${b.dataset.refresh}-${hash(p.name)}`}));state.recommendations=[...keep,...fresh];[...state.selected].forEach(id=>{if(id.startsWith(`${b.dataset.refresh}-`))state.selected.delete(id)});renderRecommendations();toast('새로운 장소를 추천했어요')});$$('.place-card').forEach(card=>card.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',card.dataset.id)))}
+
+function submitQuiz(e){e.preventDefault();updateMbti();const fd=new FormData(e.currentTarget);state.answers={language:selectedValue('language'),companion:selectedValue('companion'),age:selectedValue('age'),mbti:$('#mbti-value').value,startTime:fd.get('startTime'),endTime:fd.get('endTime'),duration:((timeMinutes(fd.get('endTime'))-timeMinutes(fd.get('startTime')))/60).toFixed(1).replace('.0',''),location:fd.get('location'),date:fd.get('date'),weather:fd.get('weather'),mealTimes:fd.getAll('mealTime'),spice:fd.get('spice'),raw:fd.get('raw'),adventure:fd.get('adventure'),cooking:fd.getAll('cooking')};if(state.categories.includes('food')&&!state.answers.mealTimes.length){toast('식사 시간을 하나 이상 선택해 주세요');return}buildRecommendations();renderSummary();renderRecommendations();buildCustomSlots();showScreen('result')}
+
+function mealWindow(place){return{아침:[420,480,450],점심:[720,780,750],저녁:[1110,1200,1140]}[place.mealTime]||null}
+function buildAiRoute(){let chosen=state.recommendations.filter(p=>state.selected.has(p.id));if(!chosen.length){toast('장소를 하나 이상 선택해 주세요');return}const start=timeMinutes(state.answers.startTime),end=timeMinutes(state.answers.endTime),meals=chosen.filter(p=>p.service==='food'),others=chosen.filter(p=>p.service!=='food'),events=[];meals.forEach(p=>{const w=mealWindow(p);if(w&&start<=w[1]&&end>=w[0]){let t=Math.max(start,Math.min(end,w[2]));while(events.some(e=>Math.abs(e.time-t)<40)&&t+45<=end)t+=45;events.push({place:p,time:t,meal:true})}else others.push(p)});let cursor=start;others.forEach(p=>{while(events.some(e=>Math.abs(e.time-cursor)<75))cursor+=90;if(cursor<=end)events.push({place:p,time:cursor,meal:false});cursor+=120});events.sort((a,b)=>a.time-b.time);state.route=events;renderRoute(events);renderRouteMap(events.map(e=>e.place));$('#route-section').hidden=false;$('#route-section').scrollIntoView({behavior:'smooth'});fillCustomPool(chosen)}
+function renderRoute(events){$('#route-list').innerHTML=events.map((e,i)=>`<div class="route-stop ${e.meal?'meal':''}"><time>${formatTime(e.time)}</time><b>${i+1}. ${e.place.name}</b><small>${e.meal?`${e.place.mealTime} 권장 시간 반영`:'약 2시간 체류 기준'}</small></div>`).join('')||'<p>여행 가능 시간 안에 배치할 장소가 없습니다.</p>'}
+
+function loadKakaoMaps(key){if(window.kakao?.maps?.services)return Promise.resolve();return new Promise((resolve,reject)=>{document.querySelector('#kakao-sdk')?.remove();const s=document.createElement('script');s.id='kakao-sdk';s.src=`https://dapi.kakao.com/v2/maps/sdk.js?appkey=${encodeURIComponent(key)}&libraries=services&autoload=false`;s.onload=()=>kakao.maps.load(resolve);s.onerror=reject;document.head.appendChild(s)})}
+function kakaoSearch(place){return new Promise(resolve=>{new kakao.maps.services.Places().keywordSearch(`부산 ${place.area||state.answers.location} ${place.menu||place.name.replace(' 맛집','')}`,(r,status)=>resolve(status===kakao.maps.services.Status.OK?r[0]:null))})}
+async function renderRouteMap(places){const el=$('#route-map');if(!places.length)return;$('#kakao-route-link').href=mapSearch(places[0]);const key=localStorage.getItem('kakaoMapsJavaScriptKey');if(!key){el.innerHTML='<div class="map-empty"><b>카카오맵 JavaScript 키가 필요해요.</b><br>‘지도 API 설정’을 눌러 키를 연결하면 마커와 경로선이 표시됩니다.</div>';return}el.innerHTML='<div class="map-empty">카카오맵을 불러오는 중…</div>';try{await loadKakaoMaps(key);const found=(await Promise.all(places.map(async place=>({place,result:await kakaoSearch(place)})))).filter(x=>x.result);if(!found.length)throw Error();el.innerHTML='';const map=new kakao.maps.Map(el,{center:new kakao.maps.LatLng(found[0].result.y,found[0].result.x),level:7}),bounds=new kakao.maps.LatLngBounds(),path=[];found.forEach(({place,result},i)=>{const pos=new kakao.maps.LatLng(result.y,result.x);bounds.extend(pos);path.push(pos);new kakao.maps.Marker({map,position:pos,title:`${i+1}. ${place.name}`});new kakao.maps.CustomOverlay({map,position:pos,yAnchor:2,content:`<span style="background:#082d4e;color:white;padding:5px 8px;border-radius:8px;font:bold 12px sans-serif">${i+1}. ${place.name}</span>`})});if(path.length>1)new kakao.maps.Polyline({map,path,strokeColor:'#0786a3',strokeWeight:6,strokeOpacity:.85});map.setBounds(bounds,45,45,45,45);const last=found.at(-1).result;$('#kakao-route-link').href=`https://map.kakao.com/link/to/${encodeURIComponent(last.place_name)},${last.y},${last.x}`}catch{el.innerHTML='<div class="map-empty">지도를 표시하지 못했어요. JavaScript 키와 등록 도메인을 확인해 주세요.</div>'}}
+
+function buildCustomSlots(){const start=timeMinutes(state.answers.startTime),end=timeMinutes(state.answers.endTime),count=suggestedCount(Number(state.answers.duration));state.custom=Array.from({length:count},(_,i)=>({time:Math.min(start+i*120,end),place:null}));renderCustomSlots();fillCustomPool([])}
+function fillCustomPool(chosen){const places=chosen.length?chosen:state.recommendations;$('#custom-pool').innerHTML=places.map(p=>`<button class="drag-place ${p.service}" draggable="true" data-custom-add="${p.id}">${p.name}<small> · 직접 일정에 추가</small></button>`).join('');$$('.drag-place').forEach(x=>{x.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',x.dataset.customAdd));x.onclick=()=>{let slot=state.custom.find(s=>!s.place);if(!slot){state.custom.push({time:Math.min(timeMinutes(state.answers.endTime),timeMinutes(state.answers.startTime)+state.custom.length*120),place:null});slot=state.custom.at(-1)}slot.place=state.recommendations.find(p=>p.id===x.dataset.customAdd);renderCustomSlots()}})}
+function renderCustomSlots(){$('#custom-slots').innerHTML=state.custom.map((s,i)=>`<div class="custom-slot" data-slot="${i}"><input class="slot-time" type="time" value="${formatTime(s.time)}" data-slot-time="${i}"><span class="slot-place">${s.place?s.place.name:'여기에 장소를 끌어다 놓으세요'}</span>${s.place?`<button class="slot-remove" data-slot-remove="${i}">장소 빼기</button>`:''}<button class="slot-delete" data-slot-delete="${i}">블록 삭제</button></div>`).join('');$$('.custom-slot').forEach(slot=>{slot.ondragover=e=>{e.preventDefault();slot.classList.add('drag-over')};slot.ondragleave=()=>slot.classList.remove('drag-over');slot.ondrop=e=>{e.preventDefault();slot.classList.remove('drag-over');state.custom[Number(slot.dataset.slot)].place=state.recommendations.find(p=>p.id===e.dataTransfer.getData('text/plain'));renderCustomSlots()}});$$('[data-slot-remove]').forEach(b=>b.onclick=()=>{state.custom[Number(b.dataset.slotRemove)].place=null;renderCustomSlots()});$$('[data-slot-delete]').forEach(b=>b.onclick=()=>{state.custom.splice(Number(b.dataset.slotDelete),1);renderCustomSlots()});$$('[data-slot-time]').forEach(i=>i.onchange=()=>state.custom[Number(i.dataset.slotTime)].time=timeMinutes(i.value))}
+
+function init(){initSlider();initMbti();initClock();const today=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,10);$('#date').value=today;const spiceNames=['0단계 · 튀김우동','1단계 · 안성탕면','2단계 · 신라면','3단계 · 불닭볶음면'];const updateSpice=()=>{const v=Number($('#spice-range').value),size=26+v*7;$('#spice-range').style.setProperty('--pepper-size',`${size}px`);$('.spice-current').style.setProperty('--pepper-size',`${size}px`);$('#spice-current-text').textContent=spiceNames[v];updateComboPreview()};$('#spice-range').addEventListener('input',updateSpice);updateSpice();$('#start-button').onclick=prepareQuiz;$('#quiz-form').onsubmit=submitQuiz;$$('[data-screen]').forEach(b=>b.onclick=()=>showScreen(b.dataset.screen));$$('[data-mbti-tab]').forEach(b=>b.onclick=()=>{$$('[data-mbti-tab]').forEach(x=>x.classList.toggle('active',x===b));$('#mbti-direct').hidden=b.dataset.mbtiTab!=='direct';$('#mbti-quiz').hidden=b.dataset.mbtiTab!=='quiz';updateMbti()});$('#mbti-block').addEventListener('change',updateMbti);$('#food-block').addEventListener('change',updateComboPreview);$('#location').onchange=syncWeather;$('#date').onchange=syncWeather;$('#build-route').onclick=buildAiRoute;$('#add-custom-slot').onclick=()=>{const last=state.custom.at(-1)?.time??timeMinutes(state.answers.startTime);state.custom.push({time:Math.min(last+120,timeMinutes(state.answers.endTime)),place:null});renderCustomSlots()};$('#home-button').onclick=()=>{showScreen('start');window.scrollTo({top:0,behavior:'smooth'})};$('#map-settings').onclick=()=>{const key=prompt('카카오디벨로퍼스 JavaScript 키를 입력해 주세요.',localStorage.getItem('kakaoMapsJavaScriptKey')||'');if(key===null)return;key.trim()?localStorage.setItem('kakaoMapsJavaScriptKey',key.trim()):localStorage.removeItem('kakaoMapsJavaScriptKey');renderRouteMap(state.route.map(e=>e.place))};$('#render-custom-map').onclick=()=>{const items=state.custom.filter(s=>s.place).sort((a,b)=>a.time-b.time);if(!items.length)return toast('사용자 지정 로드맵에 장소를 넣어 주세요');state.route=items;renderRoute(items.map(x=>({place:x.place,time:x.time,meal:x.place.service==='food'})));renderRouteMap(items.map(x=>x.place));$('#route-section').hidden=false;$('#route-section').scrollIntoView({behavior:'smooth'})};syncWeather()}
+init();
