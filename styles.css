@@ -10,4 +10,8 @@
 .drag-place{display:flex;align-items:center;justify-content:space-between;gap:10px;touch-action:manipulation}
 .drag-place>span{min-width:0;overflow-wrap:anywhere}
 .drag-place>button{flex:0 0 auto;min-height:44px;border:0;border-radius:8px;padding:8px 11px;background:var(--navy);color:#fff;font-weight:900;touch-action:manipulation}
+.custom-slot.attraction{border-color:#168ac0;background:#edf8ff}
+.custom-slot.food{border-color:#ef7b3d;background:#fff4ec}
+.custom-slot.cafe{border-color:#9366bb;background:#f8efff}
+.custom-slot.activity{border-color:#4a9d64;background:#effaf2}
 @media(max-width:580px){.custom-pool{display:grid}.drag-place{width:100%;cursor:default}.drag-place>button{min-width:112px}}
